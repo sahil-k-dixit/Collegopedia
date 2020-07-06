@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "832735406485",
+    "firebase_url": "https://collegopedia-c5533.firebaseio.com",
+    "project_id": "collegopedia-c5533",
+    "storage_bucket": "collegopedia-c5533.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:832735406485:android:db252da715686bae4f2e9c",
+        "android_client_info": {
+          "package_name": "com.virus.collegopedia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "832735406485-bmqvbbtjaqcnv4c8bvb1i7gsdq6c8fr2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.virus.collegopedia",
+            "certificate_hash": "014d1eac1955590ad1395852fd8b7c8baca1ae25"
+          }
+        },
+        {
+          "client_id": "832735406485-1uamfjcq7si8mc09p7mivv6pv4urr5vk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJja_6OKW97-rweKolA6ZE3YBPT-80Zug"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "832735406485-1uamfjcq7si8mc09p7mivv6pv4urr5vk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
