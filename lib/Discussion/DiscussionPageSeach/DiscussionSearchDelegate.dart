@@ -39,8 +39,11 @@ class DiscussionSearch extends SearchDelegate {
   @override
   Widget buildResults(BuildContext context) {
     // show result based on selection
-    return Container(
-      child: Text(query),
+    return Scaffold(
+      backgroundColor: Color(0xFF1D1F2D),
+      body: Container(
+        child: Text(query),
+      ),
     );
   }
 

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>832735406485-o5dc2gbc38s888vuvjivc4o766fpavml.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.832735406485-o5dc2gbc38s888vuvjivc4o766fpavml</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>832735406485-bmqvbbtjaqcnv4c8bvb1i7gsdq6c8fr2.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCQX_DG8rmdYhWZJprJRNBZClieTu1xY0E</string>
+	<key>GCM_SENDER_ID</key>
+	<string>832735406485</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.virus.collegopedia</string>
+	<key>PROJECT_ID</key>
+	<string>collegopedia-c5533</string>
+	<key>STORAGE_BUCKET</key>
+	<string>collegopedia-c5533.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:832735406485:ios:3c93ea8bd1dbcfe54f2e9c</string>
+	<key>DATABASE_URL</key>
+	<string>https://collegopedia-c5533.firebaseio.com</string>
+</dict>
+</plist>

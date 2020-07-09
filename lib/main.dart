@@ -1,3 +1,8 @@
+import 'package:collegopedia/Confused/ConfusedMainPage.dart';
+import 'package:collegopedia/Confused/technical/backendpage.dart';
+import 'package:collegopedia/Confused/technical/frontendPage.dart';
+import 'package:collegopedia/Confused/technical/fullstackpage.dart';
+import 'package:collegopedia/Confused/technical/technicalpagemain.dart';
 import 'package:collegopedia/Contest/Contest.dart';
 import 'package:collegopedia/Discussion/AddQuestion.dart';
 import 'package:collegopedia/Discussion/DiscussionForum.dart';
@@ -11,6 +16,8 @@ import 'package:collegopedia/Placement/add_your_experience_page.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
+import 'package:google_fonts/google_fonts.dart';
+
 void main() => runApp(MyApp());
 String companyNameSpecific;
 String specificQuestion;
@@ -23,18 +30,29 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Collegopedia',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark(),
+      theme: ThemeData.dark().copyWith(
+          //backgroundColor: Color(0xFF4A5065),
+          primaryColorDark: Color(0xFF4A5065),
+          appBarTheme: AppBarTheme(
+            color: Color(0xFF0E0F1B),
+          )),
       routes: <String, WidgetBuilder>{
+        '/main': (BuildContext context) => MyApp(),
         '/home': (BuildContext context) => Home(),
         '/login': (BuildContext context) => LoginPage(),
         '/placement': (BuildContext context) => PlacementPage(),
+        '/confused': (BuildContext context) => ConfusedMainPage(),
         '/addexperience': (BuildContext context) => AddYourExperience(),
-        '/company': (BuildContext context) =>
+        '/company/$companyNameSpecific': (BuildContext context) =>
             CompanySpecificPlacementPage(companyNameSpecific),
         '/contest': (BuildContext context) => Contest(),
         '/job': (BuildContext context) => JobSection(),
         '/discuss': (BuildContext context) => DiscussionForum(),
         '/question': (BuildContext context) => AddQuestion(),
+        '/tech': (BuildContext context) => TechnicalPage(),
+        '/back': (BuildContext context) => BackEndPage(),
+        '/fullstack': (BuildContext context)=>FullStackPage(),
+        '/front': (BuildContext context)=>FrontEndPage(),
         '/questionspecific': (BuildContext context) =>
             QuestionSpecificPage(specificQuestion),
       },

@@ -106,8 +106,8 @@ class _AddYourExperienceState extends State<AddYourExperience> {
                   padding: EdgeInsets.all(20),
                   child: TextFormField(
                     minLines: 5,
-                    maxLength: 500,
-                    maxLines: 10,
+                    maxLength: 1000,
+                    maxLines: 15,
                     controller: experience,
                     validator: (value) {
                       if (value.isEmpty) {
@@ -140,7 +140,7 @@ class _AddYourExperienceState extends State<AddYourExperience> {
                         experience.clear();
 
                         showAlertDialog(context);
-                        Navigator.pushNamed(context, '/placements');
+                        // Navigator.pushNamed(context, '/placement');
                       }
                     },
                     child: Text('Submit'),
@@ -161,7 +161,7 @@ showAlertDialog(BuildContext context) {
     child: Text("OK"),
     onPressed: () {
       Navigator.of(context).pop();
-      Navigator.pop(context);
+      Navigator.pop(context, false);
     },
   );
 

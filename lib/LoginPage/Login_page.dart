@@ -19,11 +19,19 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   void initState() {
     super.initState();
+    //signInWithGoogle();
     Timer.run(() {
       try {
         InternetAddress.lookup('google.com').then((result) {
           if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
             print('connected');
+            getUser().then((user) {
+              if (user != null) {
+                userName = (user.displayName);
+
+                Navigator.pushNamed(context, '/home');
+              }
+            });
           } else {
             _showDialog(); // show dialog
           }
@@ -35,6 +43,9 @@ class _LoginPageState extends State<LoginPage> {
         print('not connected'); // show dialog
       }
     });
+  }
+  Future<FirebaseUser> getUser() async {
+    return await _auth.currentUser();
   }
 
   void _showDialog() {
@@ -75,6 +86,7 @@ class _LoginPageState extends State<LoginPage> {
                 //crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Expanded(
+                    flex: 1,
                     child: Text(
                       "Collegopedia",
                       textAlign: TextAlign.center,
@@ -115,11 +127,11 @@ class _LoginPageState extends State<LoginPage> {
                                   image: AssetImage("images/google_logo.png"),
                                   height: 35.0),
                               Padding(
-                                padding: const EdgeInsets.only(left: 10),
+                                padding: const EdgeInsets.only(left: 10,right: 20),
                                 child: Text(
                                   'Sign in with Google',
                                   style: TextStyle(
-                                    fontSize: 20,
+                                    fontSize: 15,
                                     color: Colors.grey,
                                   ),
                                 ),
@@ -139,6 +151,7 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 }
+
 
 Future<String> signInWithGoogle() async {
   final GoogleSignInAccount googleSignInAccount = await googleSignIn.signIn();

@@ -1,4 +1,4 @@
-import 'package:collegopedia/Placement/add_your_experience_page.dart';
+import 'package:collegopedia/globals.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 
@@ -26,39 +26,44 @@ class _AddQuestionState extends State<AddQuestion> {
           key: _formKey,
           child: Column(
             children: <Widget>[
+//              Padding(
+//                  padding: EdgeInsets.all(20),
+//                  child: TextFormField(
+//                    maxLength: 30,
+//                    controller: name,
+//                    validator: (value) {
+//                      if (value.isEmpty) {
+//                        return 'Please enter your name ';
+//                      }
+//                      return null;
+//                    },
+//                    decoration: InputDecoration(
+//                      hintText: "Enter your name",
+//                      enabledBorder: OutlineInputBorder(
+//                        borderRadius: BorderRadius.circular(10.0),
+//                      ),
+//                    ),
+//                  )),
               Padding(
                   padding: EdgeInsets.all(20),
-                  child: TextFormField(
-                    maxLength: 30,
-                    controller: name,
-                    validator: (value) {
-                      if (value.isEmpty) {
-                        return 'Please enter your name ';
-                      }
-                      return null;
-                    },
-                    decoration: InputDecoration(
-                      hintText: "Enter your name",
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                    ),
-                  )),
-              Padding(
-                  padding: EdgeInsets.all(20),
-                  child: TextFormField(
-                    maxLength: 100,
-                    controller: question,
-                    validator: (value) {
-                      if (value.isEmpty) {
-                        return 'Please enter your question ';
-                      }
-                      return null;
-                    },
-                    decoration: InputDecoration(
-                      hintText: "Enter your question",
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10.0),
+                  child: Container(
+                    child: TextFormField(
+                      enableSuggestions: true,
+                      maxLength: 100,
+                      minLines: 5,
+                      maxLines: 10,
+                      controller: question,
+                      validator: (value) {
+                        if (value.isEmpty) {
+                          return 'Please enter your question ';
+                        }
+                        return null;
+                      },
+                      decoration: InputDecoration(
+                        hintText: "Enter your question",
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
                       ),
                     ),
                   )),
@@ -70,17 +75,17 @@ class _AddQuestionState extends State<AddQuestion> {
                     onPressed: () {
                       if (_formKey.currentState.validate()) {
                         dbRef.child(question.text).push().set({
-                          "name": name.text,
+                          "name": userName,
                           "vote": 0,
                         });
                         name.clear();
                         question.clear();
 
                         showAlertDialog(context);
-                        Navigator.pushNamed(context, '/discuss');
+                        //Navigator.pushNamed(context, '/discuss');
                       }
                     },
-                    child: Text('Submit'),
+                    child: Text('Add'),
                   ),
                 ),
               )
@@ -88,4 +93,35 @@ class _AddQuestionState extends State<AddQuestion> {
           )),
     );
   }
+}
+
+showAlertDialog(BuildContext context) {
+  // Create button
+  Widget okButton = FlatButton(
+    child: Text("OK"),
+    onPressed: () {
+      Navigator.of(context).pop();
+      Navigator.pop(context, false);
+    },
+  );
+
+  // Create AlertDialog
+  AlertDialog alert = AlertDialog(
+    title: Text(
+      "Response",
+      textAlign: TextAlign.center,
+    ),
+    content: Text("Thanks for your valuable time!"),
+    actions: [
+      okButton,
+    ],
+  );
+
+  // show the dialog
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return alert;
+    },
+  );
 }

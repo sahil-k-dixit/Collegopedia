@@ -20,3 +20,5 @@ BoxDecoration tileDecoration = BoxDecoration(
     borderRadius: BorderRadius.circular(10),
     shape: BoxShape.rectangle,
     border: Border.all(color: Colors.grey, width: 2, style: BorderStyle.solid));
+
+Color mainColor = Color(0xFF1D1F2D);

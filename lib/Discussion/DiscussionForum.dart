@@ -9,6 +9,7 @@ class DiscussionForum extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFF1D1F2D),
       appBar: AppBar(
         title: Text("Discussion Forum"),
         actions: <Widget>[
@@ -23,13 +24,19 @@ class DiscussionForum extends StatelessWidget {
         ],
       ),
       drawer: DrawerrBarr(),
-      body: QuestionStream(),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {
-          Navigator.pushNamed(context, '/question');
-        },
-        icon: Icon(Icons.add),
-        label: Text("Got a Question?"),
+      body: Padding(
+        padding: EdgeInsets.fromLTRB(10, 10, 10, 100),
+        child: QuestionStream(),
+      ),
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.only(bottom: 20),
+        child: FloatingActionButton.extended(
+          onPressed: () {
+            Navigator.pushNamed(context, '/question');
+          },
+          icon: Icon(Icons.add),
+          label: Text("Got a Question?"),
+        ),
       ),
     );
   }

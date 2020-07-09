@@ -25,7 +25,9 @@ class _PlacementPageState extends State<PlacementPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFF1D1F2D),
       appBar: AppBar(
+        backgroundColor: Color(0xFF0E0F1B),
         title: Center(child: Text("List of Companies")),
         actions: <Widget>[
           IconButton(
@@ -50,9 +52,8 @@ class _PlacementPageState extends State<PlacementPage> {
               data.forEach((index, data) {
                 companyList.add(index);
               });
-              print(companyList);
               return ListView.builder(
-                padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
+                padding: EdgeInsets.fromLTRB(40, 10, 40, 10),
                 itemCount: companyList.length,
                 itemBuilder: (context, index) {
                   return ListTile(

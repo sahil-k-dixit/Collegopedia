@@ -1,6 +1,7 @@
 import 'package:collegopedia/Drawer/DrawerClass.dart';
 import 'package:collegopedia/Home/HomePage.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class DrawerrBarr extends StatelessWidget {
   const DrawerrBarr({
@@ -11,13 +12,35 @@ class DrawerrBarr extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: Column(
-        //padding: EdgeInsets.zero,
         children: <Widget>[
           DrawerHeader(
-            child: null,
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage('images/a.png'), fit: BoxFit.cover)),
+            child: Column(
+              children: <Widget>[
+                SizedBox(
+                  width: 60,
+                  height: 60,
+                  child: Container(
+                    child: Image.asset(
+                      'images/university.png',
+                      width: 39,
+                      height: 39,
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    'Collegopedia',
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.lato(
+                        textStyle: Theme.of(context).textTheme.headline4,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16),
+                  ),
+                ),
+              ],
+            ),
           ),
           Expanded(
             child: ListView(
@@ -30,27 +53,63 @@ class DrawerrBarr extends StatelessWidget {
               ],
             ),
           ),
-          Container(
-            child: Align(
-              alignment: FractionalOffset.bottomCenter,
-              child: Column(
-                children: <Widget>[
-                  Divider(),
-                  ListTile(
-                    leading: Icon(Icons.lock),
-                    title: Text(
-                      "Sign out",
-                      textAlign: TextAlign.right,
-                      style: TextStyle(fontSize: 15),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(20, 0, 20, 10),
+            child: Container(
+              decoration: BoxDecoration(
+                  border: Border(
+                      top: BorderSide(
+                          color: Colors.grey,
+                          width: 1,
+                          style: BorderStyle.solid),
+                      bottom: BorderSide(
+                          color: Colors.grey,
+                          width: 1,
+                          style: BorderStyle.solid))),
+              child: Align(
+                  alignment: FractionalOffset.bottomCenter,
+                  child: Container(
+                    child: FlatButton(
+                      onPressed: () {
+                        signOutGoogle();
+                        Navigator.pushNamedAndRemoveUntil(
+                            context, '/login', (Route<dynamic> route) => false);
+                      },
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
+                          Expanded(
+                            flex: 1,
+                            child: SizedBox(
+                              child: Container(
+                                child: Image.asset(
+                                  'images/logout.png',
+                                  width: 39,
+                                  height: 39,
+                                ),
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            flex: 3,
+                            child: Center(
+                                child: Text(
+                              'Sign out',
+                              textAlign: TextAlign.center,
+                              style: GoogleFonts.lato(
+                                  textStyle:
+                                      Theme.of(context).textTheme.display1,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14),
+                            )),
+                          ),
+                          Expanded(
+                              flex: 1, child: Icon(Icons.arrow_forward_ios)),
+                        ],
+                      ),
                     ),
-                    onTap: () {
-                      signOutGoogle();
-                      Navigator.pushNamedAndRemoveUntil(
-                          context, '/login', (Route<dynamic> route) => false);
-                    },
-                  ),
-                ],
-              ),
+                  )),
             ),
           )
         ],
