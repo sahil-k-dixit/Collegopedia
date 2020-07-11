@@ -112,8 +112,50 @@ class _TechnicalPageState extends State<TechnicalPage> {
                   txt:
                       'Mobile app developer primary duty is to create, maintain and implement the source code to develop mobile apps',
                   imageURL: 'images/TechnicalPage/smartphone.png',
+                  onPress: () => Navigator.pushNamed(context, '/mobile'),
                 ),
                 MainTile(
+                  heading: 'Cybersecurity engineer',
+                  colorBox: Colors.black,
+                  txt:
+                      'Cyber security refers to the body of technologies, processes, and practices designed to '
+                      'protect networks, devices, programs, and data from attack, damage, or unauthorized access.',
+                  imageURL: 'images/TechnicalPage/cyber-security.png',
+                ),
+                MainTile(
+                  heading: 'Cloud engineer',
+                  colorBox: Colors.black,
+                  txt:
+                      'Cyber security refers to the body of technologies, processes, and practices designed to '
+                      'protect networks, devices, programs, and data from attack, damage, or unauthorized access.',
+                  imageURL: 'images/TechnicalPage/cloud-computing.png',
+                ),
+                MainTile(
+                  heading: 'DevOps engineer',
+                  colorBox: Colors.black,
+                  txt:
+                      'Cyber security refers to the body of technologies, processes, and practices designed to '
+                      'protect networks, devices, programs, and data from attack, damage, or unauthorized access.',
+                  imageURL: 'images/TechnicalPage/code.png',
+                ),
+                MainTile(
+                  heading: 'System engineer',
+                  colorBox: Colors.black,
+                  txt:
+                  'Cyber security refers to the body of technologies, processes, and practices designed to '
+                      'protect networks, devices, programs, and data from attack, damage, or unauthorized access.',
+                  imageURL: 'images/TechnicalPage/code.png',
+                ),
+                MainTile(
+                  heading: 'Game Developer',
+                  colorBox: Colors.black,
+                  txt:
+                  'Cyber security refers to the body of technologies, processes, and practices designed to '
+                      'protect networks, devices, programs, and data from attack, damage, or unauthorized access.',
+                  imageURL: 'images/TechnicalPage/code.png',
+                ),
+                MainTile(
+                  onPress: () => Navigator.pushNamed(context, '/quality'),
                   colorBox: null,
                   heading: 'Quality Assurance Analyst',
                   imageURL: 'images/TechnicalPage/exam.png',

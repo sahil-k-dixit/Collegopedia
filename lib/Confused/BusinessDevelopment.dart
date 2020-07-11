@@ -1,17 +1,18 @@
 import 'package:collegopedia/Confused/technical/Tile.dart';
 import 'package:flutter/material.dart';
 
-class MobileDeveloperPage extends StatefulWidget {
+class BusinessDevelopmentPage extends StatefulWidget {
   @override
-  _MobileDeveloperPageState createState() => _MobileDeveloperPageState();
+  _BusinessDevelopmentPageState createState() =>
+      _BusinessDevelopmentPageState();
 }
 
-class _MobileDeveloperPageState extends State<MobileDeveloperPage> {
+class _BusinessDevelopmentPageState extends State<BusinessDevelopmentPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: Text("Mobile App Developer")),
+        title: Center(child: Text(" QA Engineer ")),
         backgroundColor: Colors.black,
       ),
       backgroundColor: Color(0xFF0E0F1B),
@@ -22,17 +23,15 @@ class _MobileDeveloperPageState extends State<MobileDeveloperPage> {
             // mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Tile(
-                  heading: 'Mobile App Developer',
+                  heading: 'QA Engineer',
                   txt:
-                      'So the question arises “What is the role of a Mobile App Developer?”'
-                      'Mobile app developers create apps on iOS or Android devices and maintain these apps over time. For example, an app developer'
-                      ' may be tasked with creating an app which allows customers to track deliveries on their phone; they may have to build a '
-                      'feature on a social network.'),
+                      'The main focus of a QA analyst is testing, troubleshooting and problem-solving. '
+                      'QA analysts are specialized in the software development lifecycle phase of testing.'),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
                   child: Text(
-                    'How to become a Mobile App Developer?',
+                    'How to become a QA Engineer ?',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Colors.white,
@@ -41,22 +40,6 @@ class _MobileDeveloperPageState extends State<MobileDeveloperPage> {
                     ),
                   ),
                 ),
-              ),
-              Tile(
-                heading: 'Choose one of the major platforms.',
-                txt: 'The major platforms are Android, Apple Ios.',
-              ),
-              Tile(
-                heading: 'Choose the tools for opting App development',
-                txt:
-                    'There are many tools available to opt from but we will suggest you to use Android Studio with Kotlin in case of Android App Development '
-                    'and use Xcode with Swift in case of Ios app development. These tools are old and native and thats why they have large market and community to support them'
-                    'Also while searching for jobs related to Mobile app development one of these tool is mandatory, so choose wisely',
-              ),
-              Tile(
-                heading: 'From where to learn ?',
-                txt:
-                    'There are many free resources available for both and also you can learn from official documentation, they are really good.',
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -89,5 +72,3 @@ class _MobileDeveloperPageState extends State<MobileDeveloperPage> {
     );
   }
 }
-
-/// Not Completed

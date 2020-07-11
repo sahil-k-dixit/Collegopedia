@@ -1,7 +1,12 @@
 import 'package:collegopedia/Confused/ConfusedMainPage.dart';
+import 'package:collegopedia/Confused/DataScience.dart';
+import 'package:collegopedia/Confused/artificial.dart';
 import 'package:collegopedia/Confused/technical/backendpage.dart';
+import 'package:collegopedia/Confused/technical/cybersecurity.dart';
 import 'package:collegopedia/Confused/technical/frontendPage.dart';
 import 'package:collegopedia/Confused/technical/fullstackpage.dart';
+import 'package:collegopedia/Confused/technical/mobilepage.dart';
+import 'package:collegopedia/Confused/technical/qualityassurance.dart';
 import 'package:collegopedia/Confused/technical/technicalpagemain.dart';
 import 'package:collegopedia/Contest/Contest.dart';
 import 'package:collegopedia/Discussion/AddQuestion.dart';
@@ -51,8 +56,13 @@ class MyApp extends StatelessWidget {
         '/question': (BuildContext context) => AddQuestion(),
         '/tech': (BuildContext context) => TechnicalPage(),
         '/back': (BuildContext context) => BackEndPage(),
-        '/fullstack': (BuildContext context)=>FullStackPage(),
-        '/front': (BuildContext context)=>FrontEndPage(),
+        '/fullstack': (BuildContext context) => FullStackPage(),
+        '/front': (BuildContext context) => FrontEndPage(),
+        '/mobile': (BuildContext context) => MobileDeveloperPage(),
+        '/quality': (BuildContext context) => QualityAssurancePage(),
+        '/artificial': (BuildContext context) => ArtificialIntelligence(),
+        '/datascience': (BuildContext context) => DataScientist(),
+        '/cyber': (BuildContext context) => CyberSecurity(),
         '/questionspecific': (BuildContext context) =>
             QuestionSpecificPage(specificQuestion),
       },

@@ -1,4 +1,3 @@
-import 'package:collegopedia/DataSearch/DataSearch.dart';
 import 'package:collegopedia/Drawer/DrawerBarr.dart';
 import 'package:collegopedia/Placement/MessageModel.dart';
 import 'package:collegopedia/Placement/TIleMode.dart';
@@ -42,8 +41,15 @@ class _CompanySpecificPlacementPageState
                 List<MessageModel> listOfMessage = [];
                 print(data.toString());
                 data.forEach((index, data) {
-                  MessageModel m = MessageModel(widget.s, data['name'],
-                      data['description'], data["mode"]);
+                  MessageModel m = MessageModel(
+                      companyName: widget.s,
+                      role: data["role"],
+                      name: data["name"],
+                      description: data["description"],
+                      apptitude: data["apptitude"],
+                      interview: data["personal"],
+                      batch: data["batch"],
+                      mode: data["mode"]);
                   listOfMessage.add(m);
                 });
 

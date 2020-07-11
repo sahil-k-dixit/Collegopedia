@@ -1,4 +1,3 @@
-import 'package:collegopedia/Contest/ContestTile.dart';
 import 'package:collegopedia/Drawer/DrawerBarr.dart';
 import 'package:collegopedia/UniversalTile.dart';
 import 'package:flutter/material.dart';

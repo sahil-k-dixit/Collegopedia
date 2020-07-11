@@ -4,6 +4,9 @@ class MessageModel {
   String description;
   String companyName;
   String mode;
-
-  MessageModel(this.companyName, this.name, this.description, this.mode);
+  String role;
+  String apptitude;
+  String interview;
+  String batch;
+  MessageModel({this.companyName, this.name, this.description, this.mode,this.role,this.batch,this.apptitude,this.interview});
 }
