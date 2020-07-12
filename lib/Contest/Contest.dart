@@ -57,12 +57,13 @@ class Contest extends StatelessWidget {
                 ),
               ),
             ),
-            MainTile(
-              txt: 'Checkout the ongoing events',
-              // url: '',
-              imageURL: 'images/Contest/calendar.png',
-              heading: 'Live Events',
-            ),
+            // Live events
+//            MainTile(
+//              txt: 'Checkout the ongoing events',
+//              // url: '',
+//              imageURL: 'images/Contest/calendar.png',
+//              heading: 'Live Events',
+//            ),
             MainTile(
               txt: 'Participate in Hackerrank Events',
               //url: 'https://www.hackerrank.com/contests',

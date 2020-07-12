@@ -94,10 +94,12 @@ class _AddYourExperienceState extends State<AddYourExperience> {
               Padding(
                 padding: const EdgeInsets.all(20),
                 child: DropdownButtonFormField(
+                  validator: (value) => value == null ? 'field required' : null,
                   items: categories.map((String c) {
                     return DropdownMenuItem(
                       child: Text(c),
                       value: c,
+
                     );
                   }).toList(),
                   onChanged: (value) {
@@ -153,6 +155,8 @@ class _AddYourExperienceState extends State<AddYourExperience> {
               Padding(
                 padding: const EdgeInsets.all(20),
                 child: DropdownButtonFormField(
+                  //autovalidate: true,
+                  validator: (value) => value == null ? 'field required' : null,
                   items: difficultyLevel.map((String c) {
                     return DropdownMenuItem(
                       child: Text(c),
@@ -177,6 +181,7 @@ class _AddYourExperienceState extends State<AddYourExperience> {
               Padding(
                 padding: const EdgeInsets.all(20),
                 child: DropdownButtonFormField(
+                  validator: (value) => value == null ? 'field required' : null,
                   items: difficultyLevel.map((String c) {
                     return DropdownMenuItem(
                       child: Text(c),

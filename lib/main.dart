@@ -21,8 +21,6 @@ import 'package:collegopedia/Placement/add_your_experience_page.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
-import 'package:google_fonts/google_fonts.dart';
-
 void main() => runApp(MyApp());
 String companyNameSpecific;
 String specificQuestion;
