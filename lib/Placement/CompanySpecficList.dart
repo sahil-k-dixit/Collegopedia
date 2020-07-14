@@ -70,7 +70,11 @@ class _CompanySpecificPlacementPageState
                   },
                 );
               } else
-                return Center(child: Text("No data"));
+                return Center(
+                  child: CircularProgressIndicator(
+                    valueColor: AlwaysStoppedAnimation<Color>(Colors.redAccent),
+                  ),
+                );
             }),
       ),
     );
