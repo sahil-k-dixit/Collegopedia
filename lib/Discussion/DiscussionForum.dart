@@ -74,7 +74,11 @@ class _QuestionStreamState extends State<QuestionStream> {
               },
             );
           } else
-            return Center(child: Text("No data"));
+            return Center(
+              child: CircularProgressIndicator(
+                valueColor: AlwaysStoppedAnimation<Color>(Colors.redAccent),
+              ),
+            );
         });
   }
 }

@@ -30,9 +30,13 @@ class DrawerBar extends StatelessWidget {
                 Navigator.pushNamed(context, '/contest');
               } else if (text.toLowerCase() == 'jobs') {
                 Navigator.pushNamed(context, '/job');
-              } else {
+              } else if(text == 'Discussion'){
                 Navigator.pushNamed(context, '/discuss');
               }
+              else
+                {
+                  Navigator.pushNamed(context, '/confused');
+                }
             },
             child: Row(
                mainAxisAlignment: MainAxisAlignment.spaceEvenly,

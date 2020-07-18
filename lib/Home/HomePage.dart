@@ -3,6 +3,7 @@ import 'package:collegopedia/UniversalTile.dart';
 import 'package:collegopedia/globals.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
@@ -19,6 +20,33 @@ class _HomeState extends State<Home> {
   void initState() {
     // TODO: implement initState
     super.initState();
+  }
+  Future<bool> onBackPressed() {
+    return showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text('Are you sure?'),
+            content: Text('You are going to log out from the  application!!'),
+            actions: <Widget>[
+              FlatButton(
+                child: Text('NO'),
+                onPressed: () {
+                  Navigator.of(context).pop(false);
+                },
+              ),
+              FlatButton(
+                child: Text('YES'),
+                onPressed: ()
+                {
+                  signOutGoogle();
+                  Navigator.pushNamedAndRemoveUntil(
+                      context, '/login', (Route<dynamic> route) => false);
+                },
+              ),
+            ],
+          );
+        });
   }
 
   @override
@@ -39,7 +67,8 @@ class _HomeState extends State<Home> {
       body: ListView(
         //mainAxisAlignment: MainAxisAlignment.center,
         //crossAxisAlignment: CrossAxisAlignment.stretch,
-       // crossAxisAlignment: CrossAxisAlignment.center,
+        // crossAxisAlignment: CrossAxisAlignment.center,
+        scrollDirection: Axis.vertical,
         children: <Widget>[
           Container(
             decoration: BoxDecoration(
@@ -167,6 +196,9 @@ void signOutGoogle() async {
   print("User Sign Out");
 }
 
+
+
+
 //class HomeTile extends StatelessWidget {
 //  String heading;
 //  String txt;
@@ -260,3 +292,4 @@ void signOutGoogle() async {
 //    );
 //  }
 //}
+

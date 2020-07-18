@@ -25,6 +25,7 @@ class QuestionListTile extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Text(
               questionText,
+              textAlign: TextAlign.left,
               style: GoogleFonts.lato(
                   textStyle: Theme.of(context).textTheme.display1,
                   color: Colors.white,

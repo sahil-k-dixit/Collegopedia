@@ -63,7 +63,11 @@ class _PlacementPageState extends State<PlacementPage> {
                 },
               );
             } else
-              return Center(child: Text("No data"));
+              return Center(
+                child: CircularProgressIndicator(
+                  valueColor: AlwaysStoppedAnimation<Color>(Colors.redAccent),
+                ),
+              );
           }),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {

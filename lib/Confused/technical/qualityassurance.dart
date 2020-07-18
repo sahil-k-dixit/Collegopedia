@@ -11,7 +11,7 @@ class _QualityAssurancePageState extends State<QualityAssurancePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: Text("FullStack Developer")),
+        title: Center(child: Text(" QA Engineer ")),
         backgroundColor: Colors.black,
       ),
       backgroundColor: Color(0xFF0E0F1B),
@@ -22,19 +22,15 @@ class _QualityAssurancePageState extends State<QualityAssurancePage> {
             // mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Tile(
-                heading: 'QA Analyst',
-                txt:
-                    'The main focus of a QA analyst is testing, troubleshooting and problem-solving. '
-                    'QA analysts are specialized in the software development lifecycle phase of testing.'
-                    ' \n\n '
-                    'Every Full Stack Ninja must have their tools! And so there are multiple skills that are required '
-                    'for a Full Stack Web Developer ranging across different fields',
-              ),
+                  heading: 'QA Engineer',
+                  txt:
+                      'The main focus of a QA analyst is testing, troubleshooting and problem-solving. '
+                      'QA analysts are specialized in the software development lifecycle phase of testing.'),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
                   child: Text(
-                    'How to become a FullStack Developer?',
+                    'How to become a QA Engineer ?',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Colors.white,
@@ -44,23 +40,18 @@ class _QualityAssurancePageState extends State<QualityAssurancePage> {
                   ),
                 ),
               ),
-              FlatButton(
-                  onPressed: () => Navigator.pushNamed(context, '/front'),
-                  child: Tile(
-                    heading: ' Front End Development',
-                    txt: 'Click here',
-                  )),
-              FlatButton(
-                  onPressed: () => Navigator.pushNamed(context, '/back'),
-                  child: Tile(
-                    heading: ' Back End Development',
-                    txt: 'Click here',
-                  )),
               Tile(
-                heading: 'Version Control System',
-                txt:
-                    'It’s basically a system that records the changes made to the application '
-                    'files over time so that specific versions can be recalled later if required.',
+                heading: 'Required Skill Set',
+                txt: 'Understanding and use of QA methodologies'
+                    '\nSQL'
+                    ' \nSDLC'
+                    '\nAbility to research'
+                    '\nUnderstanding and use of Agile methodologies'
+                    '\nTest planning, testing, and test automation'
+                    '\nRisk analysis'
+                    '\nTroubleshooting'
+                    '\nAbility to use source code repositories'
+                    ' \nDocumentation skills',
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),

@@ -5,6 +5,7 @@ import 'package:collegopedia/globals.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'dart:io';
 
@@ -79,7 +80,7 @@ class _LoginPageState extends State<LoginPage> {
         child: SafeArea(
           child: Center(
             child: Padding(
-              padding: const EdgeInsets.fromLTRB(50, 100, 50, 50),
+              padding: const EdgeInsets.fromLTRB(10, 70, 10, 50),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -90,16 +91,16 @@ class _LoginPageState extends State<LoginPage> {
                     child: Text(
                       "Collegopedia",
                       textAlign: TextAlign.center,
-                      style: TextStyle(
-                          fontFamily: 'Times new Roman',
-                          fontSize: 40,
-                          fontWeight: FontWeight.bold,
+                      style: GoogleFonts.lato(
+                          textStyle: Theme.of(context).textTheme.display1,
+                          color: Colors.white,
                           fontStyle: FontStyle.italic,
-                          color: Colors.white),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 40),
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.fromLTRB(50,8,50,8),
                     child: Container(
                       color: Colors.transparent,
                       child: OutlineButton(

@@ -69,7 +69,7 @@ class _QuestionSpecificPageState extends State<QuestionSpecificPage> {
                                   child: Column(
                                     children: <Widget>[
                                       TextFormField(
-                                        maxLength: 1000,
+                                        maxLength: 2500,
                                         minLines: 5,
                                         maxLines: 15,
                                         controller: answer,

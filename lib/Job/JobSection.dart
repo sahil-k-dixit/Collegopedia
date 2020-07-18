@@ -1,5 +1,4 @@
 import 'package:collegopedia/Drawer/DrawerBarr.dart';
-import 'package:collegopedia/Job/JobTile.dart';
 import 'package:collegopedia/UniversalTile.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -19,6 +18,7 @@ class JobSection extends StatelessWidget {
         drawer: DrawerrBarr(),
         backgroundColor: Color(0xFF1D1F2D),
         body: ListView(
+          scrollDirection: Axis.vertical,
           children: <Widget>[
             MainTile(
               txt: 'Want to work with Startups? \n' +

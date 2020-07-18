@@ -50,6 +50,7 @@ class DrawerrBarr extends StatelessWidget {
                 DrawerBar('Jobs', Icon(Icons.business_center)),
                 DrawerBar('Contest', Icon(Icons.event)),
                 DrawerBar('Discussion', Icon(Icons.question_answer)),
+                DrawerBar('Confused?', Icon(Icons.help)),
               ],
             ),
           ),

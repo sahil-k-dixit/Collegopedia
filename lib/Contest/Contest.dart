@@ -1,4 +1,3 @@
-import 'package:collegopedia/Contest/ContestTile.dart';
 import 'package:collegopedia/Drawer/DrawerBarr.dart';
 import 'package:collegopedia/UniversalTile.dart';
 import 'package:flutter/material.dart';
@@ -40,11 +39,13 @@ class Contest extends StatelessWidget {
                       padding: const EdgeInsets.all(8.0),
                       child: Container(
                         child: Text(
-                          'It allows programmer to improve their knowledge on data structures and algorithms and the way of using those according to the problem statement.'
+                          ' Allows programmer to improve their knowledge on data structures and algorithms and the way of using those according to the problem statement.'
                           ' Competitive coding is independent of programming language.  '
                           'The understanding and solving the problem using algorithms and data structures is important here.'
                           'So simple if want to crack into big tech or startup who should participate in competitive coding. '
-                          'Incase if are asking someone to refer you competitive coding plays a vital role. ',
+                          'Incase if are asking someone to refer you competitive coding plays a vital role. '
+                              'Ranking and badges of coding competition matter alot and add an extra weightage to your resume. '
+                              'This really comes handy when you are applying offcampus.',
                           textAlign: TextAlign.left,
                           style: TextStyle(
                             color: Colors.white,

@@ -1,4 +1,3 @@
-import 'package:collegopedia/DataSearch/DataSearch.dart';
 import 'package:collegopedia/Drawer/DrawerBarr.dart';
 import 'package:collegopedia/Placement/MessageModel.dart';
 import 'package:collegopedia/Placement/TIleMode.dart';
@@ -26,7 +25,7 @@ class _CompanySpecificPlacementPageState
         title: Text("Placement Page"),
       ),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(0, 8, 0, 70),
+        padding: const EdgeInsets.fromLTRB(0, 8, 0, 0),
         child: StreamBuilder(
             stream: FirebaseDatabase()
                 .reference()
@@ -42,15 +41,22 @@ class _CompanySpecificPlacementPageState
                 List<MessageModel> listOfMessage = [];
                 print(data.toString());
                 data.forEach((index, data) {
-                  MessageModel m = MessageModel(widget.s, data['name'],
-                      data['description'], data["mode"]);
+                  MessageModel m = MessageModel(
+                      companyName: widget.s,
+                      role: data["role"],
+                      name: data["name"],
+                      description: data["description"],
+                      apptitude: data["apptitude"],
+                      interview: data["personal"],
+                      batch: data["batch"],
+                      mode: data["mode"]);
                   listOfMessage.add(m);
                 });
 
                 print(listOfMessage.length);
 
                 return ListView.builder(
-                  padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
+                  padding: EdgeInsets.fromLTRB(0, 10, 0,0),
                   itemCount: listOfMessage.length,
                   itemBuilder: (context, index) {
                     return ListTile(

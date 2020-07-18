@@ -98,8 +98,10 @@ class _ConfusedMainPageState extends State<ConfusedMainPage> {
                   imageURL: 'images/ConfusedPage/brain.png',
                   heading: 'Artificial Intelligence',
                   colorBox: Colors.black,
+                  onPress: () => Navigator.pushNamed(context, '/artificial'),
                 ),
                 MainTile(
+                  onPress: () => Navigator.pushNamed(context, '/datascience'),
                   imageURL: 'images/ConfusedPage/report.png',
                   heading: 'Data Science',
                   txt:

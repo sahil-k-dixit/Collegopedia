@@ -26,24 +26,6 @@ class _AddQuestionState extends State<AddQuestion> {
           key: _formKey,
           child: Column(
             children: <Widget>[
-//              Padding(
-//                  padding: EdgeInsets.all(20),
-//                  child: TextFormField(
-//                    maxLength: 30,
-//                    controller: name,
-//                    validator: (value) {
-//                      if (value.isEmpty) {
-//                        return 'Please enter your name ';
-//                      }
-//                      return null;
-//                    },
-//                    decoration: InputDecoration(
-//                      hintText: "Enter your name",
-//                      enabledBorder: OutlineInputBorder(
-//                        borderRadius: BorderRadius.circular(10.0),
-//                      ),
-//                    ),
-//                  )),
               Padding(
                   padding: EdgeInsets.all(20),
                   child: Container(
@@ -73,6 +55,7 @@ class _AddQuestionState extends State<AddQuestion> {
                   child: FlatButton(
                     color: Colors.lightBlue,
                     onPressed: () {
+                      print(question.text);
                       if (_formKey.currentState.validate()) {
                         dbRef.child(question.text).push().set({
                           "name": userName,
@@ -111,7 +94,7 @@ showAlertDialog(BuildContext context) {
       "Response",
       textAlign: TextAlign.center,
     ),
-    content: Text("Thanks for your valuable time!"),
+    content: Text("Submitted Successfully !"),
     actions: [
       okButton,
     ],

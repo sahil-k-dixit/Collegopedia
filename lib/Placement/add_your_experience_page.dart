@@ -7,6 +7,13 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/widgets.dart';
 
 var categories = ["OnCampus", "OffCampus"];
+var difficultyLevel = [
+  '5- Very Difficult',
+  '4-Difficult',
+  '3-Medium',
+  '2-Easy',
+  '1-Very Easy'
+];
 
 class AddYourExperience extends StatefulWidget {
   @override
@@ -21,6 +28,11 @@ class _AddYourExperienceState extends State<AddYourExperience> {
   final name = TextEditingController();
   final company = TextEditingController();
   final experience = TextEditingController();
+  final batch = TextEditingController();
+  final role = TextEditingController();
+  //final expectations = TextEditingController();
+  String apptitude;
+  String personalInterview;
   String mode;
 
   @override
@@ -60,7 +72,7 @@ class _AddYourExperienceState extends State<AddYourExperience> {
                         borderRadius: BorderRadius.circular(10.0),
                       ),
                     ),
-                  )),
+                  )), // Name
               Padding(
                 padding: EdgeInsets.all(20),
                 child: TextFormField(
@@ -105,8 +117,91 @@ class _AddYourExperienceState extends State<AddYourExperience> {
               Padding(
                   padding: EdgeInsets.all(20),
                   child: TextFormField(
+                    maxLength: 4,
+                    controller: batch,
+                    validator: (value) {
+                      if (value.isEmpty) {
+                        return 'Please enter your batch ';
+                      }
+                      return null;
+                    },
+                    decoration: InputDecoration(
+                      hintText: "Enter your Batch/Graduation Year",
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                    ),
+                  )),
+              Padding(
+                  padding: EdgeInsets.all(20),
+                  child: TextFormField(
+                    maxLength: 60,
+                    controller: role,
+                    validator: (value) {
+                      if (value.isEmpty) {
+                        return 'Enter your role ';
+                      }
+                      return null;
+                    },
+                    decoration: InputDecoration(
+                      hintText: "For which role did you applied?",
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                    ),
+                  )),
+              Padding(
+                padding: const EdgeInsets.all(20),
+                child: DropdownButtonFormField(
+                  items: difficultyLevel.map((String c) {
+                    return DropdownMenuItem(
+                      child: Text(c),
+                      value: c,
+                    );
+                  }).toList(),
+                  onChanged: (value) {
+                    setState(() {
+                      this.apptitude = value;
+                    });
+                  },
+                  value: apptitude,
+                  decoration: InputDecoration(
+                    hintText:
+                        'Difficulty level(Apptitude or written coding test)',
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(20),
+                child: DropdownButtonFormField(
+                  items: difficultyLevel.map((String c) {
+                    return DropdownMenuItem(
+                      child: Text(c),
+                      value: c,
+                    );
+                  }).toList(),
+                  onChanged: (value) {
+                    setState(() {
+                      this.personalInterview = value;
+                    });
+                  },
+                  value: personalInterview,
+                  decoration: InputDecoration(
+                    hintText: 'Difficulty level of personal interview',
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                  padding: EdgeInsets.all(20),
+                  child: TextFormField(
                     minLines: 5,
-                    maxLength: 1000,
+                    maxLength: 1500,
                     maxLines: 15,
                     controller: experience,
                     validator: (value) {
@@ -134,6 +229,10 @@ class _AddYourExperienceState extends State<AddYourExperience> {
 //                        "company": company.text.isEmpty ? null : company.text,
                           "description": experience.text,
                           "mode": mode,
+                          "apptitude": apptitude,
+                          "personal": personalInterview,
+                          "batch": batch.text,
+                          "role": role.text,
                         });
                         name.clear();
                         company.clear();

@@ -36,6 +36,27 @@ class TileDisplay extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
+              child: Text("Role: ${message.role}",
+                  style: TextStyle(fontStyle: FontStyle.italic)),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text("Batch: ${message.batch}",
+                  style: TextStyle(fontStyle: FontStyle.italic)),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                  "Intial rounds difficulty(Aptitude or Written coding test): ${message.apptitude}",
+                  style: TextStyle(fontStyle: FontStyle.italic)),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text("Personal Interview difficulty: ${message.interview}",
+                  style: TextStyle(fontStyle: FontStyle.italic)),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
               child: ReadMoreText(
                 message.description,
                 trimLines: 2,
