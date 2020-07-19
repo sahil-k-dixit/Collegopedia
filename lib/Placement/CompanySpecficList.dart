@@ -24,58 +24,59 @@ class _CompanySpecificPlacementPageState
       appBar: AppBar(
         title: Text("Placement Page"),
       ),
-      body: Padding(
-        padding: const EdgeInsets.fromLTRB(0, 8, 0, 70),
-        child: StreamBuilder(
-            stream: FirebaseDatabase()
-                .reference()
-                .child('Placements')
-                .child(widget.s)
-                .orderByChild('created_at')
-                .onValue,
-            builder: (context, snap) {
-              if (snap.hasData &&
-                  !snap.hasError &&
-                  snap.data.snapshot.value != null) {
-                Map<dynamic, dynamic> data = snap.data.snapshot.value;
-                List<MessageModel> listOfMessage = [];
-                print(data.toString());
-                data.forEach((index, data) {
-                  MessageModel m = MessageModel(
-                      companyName: widget.s,
-                      role: data["role"],
-                      name: data["name"],
-                      description: data["description"],
-                      apptitude: data["apptitude"],
-                      interview: data["personal"],
-                      batch: data["batch"],
-                      mode: data["mode"]);
-                  listOfMessage.add(m);
-                });
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(0, 8, 0, 0),
+          child: StreamBuilder(
+              stream: FirebaseDatabase()
+                  .reference()
+                  .child('Placements')
+                  .child(widget.s)
+                  .onValue,
+              builder: (context, snap) {
+                if (snap.hasData &&
+                    !snap.hasError &&
+                    snap.data.snapshot.value != null) {
+                  Map<dynamic, dynamic> data = snap.data.snapshot.value;
+                  List<MessageModel> listOfMessage = [];
+                  //print(data.toString());
+                  data.forEach((index, data) {
+                    //print(data["mode"]);
+                    MessageModel m = MessageModel(
+                        companyName: widget.s,
+                        role: data["role"].toString(),
+                        name: data["name"].toString(),
+                        description: data["description"].toString(),
+                        apptitude: data["apptitude"].toString(),
+                        interview: data["personal"].toString(),
+                        batch: data["batch"].toString(),
+                        mode: data["mode"].toString(),
+                        branch: data["branch"],
+                        clg: data["clg"]);
+                    listOfMessage.add(m);
+                  });
 
-                print(listOfMessage.length);
+                  print(listOfMessage.length);
 
-                return ListView.builder(
-                  padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
-                  itemCount: listOfMessage.length,
-                  itemBuilder: (context, index) {
-                    return ListTile(
+                  return ListView.builder(
+                    scrollDirection: Axis.vertical,
+                    padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                    itemCount: listOfMessage.length,
+                    itemBuilder: (context, index) {
+                      return ListTile(
 // contentPadding: EdgeInsets.all(10),
-                      title: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                        title: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
 //crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[TileDisplay(listOfMessage[index])],
-                      ),
-                    );
-                  },
-                );
-              } else
-                return Center(
-                  child: CircularProgressIndicator(
-                    valueColor: AlwaysStoppedAnimation<Color>(Colors.redAccent),
-                  ),
-                );
-            }),
+                          children: <Widget>[TileDisplay(listOfMessage[index])],
+                        ),
+                      );
+                    },
+                  );
+                } else
+                  return Center(child: Text("No data"));
+              }),
+        ),
       ),
     );
   }
