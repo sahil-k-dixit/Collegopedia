@@ -53,7 +53,7 @@ class _PlacementPageState extends State<PlacementPage> {
                 companyList.add(index);
               });
               return ListView.builder(
-                padding: EdgeInsets.fromLTRB(40, 10, 40, 10),
+                padding: EdgeInsets.fromLTRB(40, 10, 40, 80),
                 itemCount: companyList.length,
                 itemBuilder: (context, index) {
                   return ListTile(

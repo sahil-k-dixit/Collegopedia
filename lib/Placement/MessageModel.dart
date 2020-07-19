@@ -8,5 +8,7 @@ class MessageModel {
   String apptitude;
   String interview;
   String batch;
-  MessageModel({this.companyName, this.name, this.description, this.mode,this.role,this.batch,this.apptitude,this.interview});
+  String clg;
+  String branch;
+  MessageModel({this.companyName, this.name, this.description, this.mode,this.role,this.batch,this.apptitude,this.interview,this.branch,this.clg});
 }

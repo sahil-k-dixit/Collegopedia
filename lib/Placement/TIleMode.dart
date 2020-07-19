@@ -34,6 +34,16 @@ class TileDisplay extends StatelessWidget {
               child: Text("Mode: ${message.mode}",
                   style: TextStyle(fontStyle: FontStyle.italic)),
             ),
+            message.branch.isEmpty ? Text(''): Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text("Branch: ${message.branch}",
+                  style: TextStyle(fontStyle: FontStyle.italic)),
+            ),
+            message.clg.isEmpty ?Text(''): Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text("College: ${message.clg}",
+                  style: TextStyle(fontStyle: FontStyle.italic)),
+            ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text("Role: ${message.role}",

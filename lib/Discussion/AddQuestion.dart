@@ -57,7 +57,7 @@ class _AddQuestionState extends State<AddQuestion> {
                     onPressed: () {
                       print(question.text);
                       if (_formKey.currentState.validate()) {
-                        dbRef.child(question.text).push().set({
+                        dbRef.child(question.text).set({
                           "name": userName,
                           "vote": 0,
                         });

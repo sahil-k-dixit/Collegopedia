@@ -101,7 +101,6 @@ class _QuestionSpecificPageState extends State<QuestionSpecificPage> {
                                                 dbRef
                                                     .child(questionText)
                                                     .child("Answers")
-                                                    .push()
                                                     .set({
                                                   "answertext": answer.text,
                                                   "user": userName,

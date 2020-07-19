@@ -1,11 +1,13 @@
 import 'package:collegopedia/Drawer/DrawerBarr.dart';
 import 'package:collegopedia/UniversalTile.dart';
 import 'package:collegopedia/globals.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:csv/csv.dart';
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 final GoogleSignIn googleSignIn = GoogleSignIn();
@@ -20,6 +22,36 @@ class _HomeState extends State<Home> {
   void initState() {
     // TODO: implement initState
     super.initState();
+  }
+  final dbRef = FirebaseDatabase.instance.reference().child("Placements");
+  int _counter = 0;
+  List<List<dynamic>> data = [];
+  loadAsset() async {
+    print('object');
+    final myData = await rootBundle.loadString("assets/14.csv");
+    List<List<dynamic>> csvTable = CsvToListConverter().convert(myData);
+
+    data = csvTable;
+    var dict={};
+    // print(data);
+
+    print(data.length);
+    for(int i=1;i<data.length;i++)
+    {
+      dbRef.child(data[i][4]).push().set({
+        "name": data[i][0],
+        "branch":data[i][1],
+        "clg":data[i][2],
+        "batch": data[i][3],
+        "company": data[i][4],
+        "mode": data[i][5],
+        "role": data[i][6],
+        "apptitude": data[i][7],
+        "personal": data[i][8],
+        "description": data[i][9],
+      }).then((value) => print('value'));
+      print(data[i][4].toString());
+    }
   }
   Future<bool> onBackPressed() {
     return showDialog(
@@ -65,9 +97,6 @@ class _HomeState extends State<Home> {
       backgroundColor: Color(0xFF1D1F2D),
       drawer: DrawerrBarr(),
       body: ListView(
-        //mainAxisAlignment: MainAxisAlignment.center,
-        //crossAxisAlignment: CrossAxisAlignment.stretch,
-        // crossAxisAlignment: CrossAxisAlignment.center,
         scrollDirection: Axis.vertical,
         children: <Widget>[
           Container(
@@ -141,6 +170,7 @@ class _HomeState extends State<Home> {
               )),
             ),
           ),
+          FlatButton(onPressed: loadAsset, child: Text('Press')),
           MainTile(
             imageURL: 'images/Home/Job.png',
             txt: 'Checkout the experiences of placements',
@@ -176,15 +206,9 @@ class _HomeState extends State<Home> {
             heading: 'Confused?',
             onPress: () => Navigator.pushNamed(context, '/confused'),
           ),
+
         ],
       ),
-//      floatingActionButton: FloatingActionButton.extended(
-//        onPressed: () {
-//          Navigator.pushNamed(context, '/question');
-//        },
-//        icon: Icon(Icons.add),
-//        label: Text("Got a Question?"),
-//      ),
     );
   }
 }
@@ -197,99 +221,4 @@ void signOutGoogle() async {
 }
 
 
-
-
-//class HomeTile extends StatelessWidget {
-//  String heading;
-//  String txt;
-//  String url;
-//  Color colorBox;
-//  Function onPress;
-//  HomeTile({this.url, this.txt, this.colorBox, this.heading, this.onPress});
-//  @override
-//  Widget build(BuildContext context) {
-//    return Padding(
-//      padding: const EdgeInsets.fromLTRB(40, 9, 40, 8),
-//      child: Container(
-//        decoration: BoxDecoration(
-//          color: Color(0xFF4A5065),
-//          boxShadow: [
-//            BoxShadow(
-//              offset: const Offset(3.0, 3.0),
-//              //color: Colors.grey,
-//              blurRadius: 3.0,
-//              spreadRadius: 0,
-//            ),
-//          ],
-//          borderRadius: BorderRadius.circular(5),
-//        ),
-//        child: FlatButton(
-//          onPressed: onPress,
-//          child: Padding(
-//            padding: const EdgeInsets.all(10.0),
-//            child: Row(
-//              // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//              //crossAxisAlignment: CrossAxisAlignment.stretch,
-//              children: <Widget>[
-//                Expanded(
-//                  flex: 1,
-//                  child: SizedBox(
-//                    width: 60,
-//                    height: 60,
-//                    child: Container(
-//                      decoration: BoxDecoration(
-//                          color: colorBox,
-//                          shape: BoxShape.circle,
-//                          boxShadow: [
-//                            BoxShadow(
-//                              offset: const Offset(3.0, 3.0),
-//                              blurRadius: 5.0,
-//                              spreadRadius: 2.0,
-//                            ),
-//                          ]),
-//                      child: Image.asset(
-//                        url,
-//                        width: 39,
-//                        height: 39,
-//                      ),
-//                    ),
-//                  ),
-//                ),
-//                Expanded(
-//                  flex: 3,
-//                  child: Padding(
-//                    padding: const EdgeInsets.all(8.0),
-//                    child: Column(
-//                      mainAxisAlignment: MainAxisAlignment.center,
-//                      children: <Widget>[
-//                        Text(
-//                          heading,
-//                          textAlign: TextAlign.center,
-//                          style: GoogleFonts.lato(
-//                              textStyle: Theme.of(context).textTheme.display1,
-//                              color: Colors.white,
-//                              fontWeight: FontWeight.bold,
-//                              fontSize: 16),
-//                        ),
-//                        Text(
-//                          txt,
-//                          textAlign: TextAlign.center,
-//                          style: GoogleFonts.lato(
-//                              textStyle: Theme.of(context).textTheme.display1,
-//                              color: Colors.grey,
-//                              fontSize: 12),
-//                        )
-//                      ],
-//                    ),
-//                  ),
-//                ),
-//                Expanded(flex: 1, child: Icon(Icons.arrow_forward_ios))
-//              ],
-//            ),
-//          ),
-//        ),
-//      ),
-//    );
-//  }
-//}
 
