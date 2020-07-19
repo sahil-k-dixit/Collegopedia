@@ -42,7 +42,10 @@ class _PlacementPageState extends State<PlacementPage> {
       ),
       drawer: DrawerrBarr(),
       body: StreamBuilder(
-          stream: FirebaseDatabase().reference().child('Placements').onValue,
+          stream: FirebaseDatabase()
+              .reference()
+              .child('Placements')
+              .onValue,
           builder: (context, snap) {
             if (snap.hasData &&
                 !snap.hasError &&
@@ -52,6 +55,7 @@ class _PlacementPageState extends State<PlacementPage> {
               data.forEach((index, data) {
                 companyList.add(index);
               });
+              companyList.sort();
               return ListView.builder(
                 padding: EdgeInsets.fromLTRB(40, 10, 40, 80),
                 itemCount: companyList.length,

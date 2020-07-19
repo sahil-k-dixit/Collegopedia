@@ -38,7 +38,7 @@ class _HomeState extends State<Home> {
     print(data.length);
     for(int i=1;i<data.length;i++)
     {
-      dbRef.child(data[i][4]).push().set({
+      dbRef.child(data[i][4]).child(data[i][0]).set({
         "name": data[i][0],
         "branch":data[i][1],
         "clg":data[i][2],
