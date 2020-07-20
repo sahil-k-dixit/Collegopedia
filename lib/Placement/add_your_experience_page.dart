@@ -29,6 +29,8 @@ class _AddYourExperienceState extends State<AddYourExperience> {
   final company = TextEditingController();
   final experience = TextEditingController();
   final batch = TextEditingController();
+  final clg =TextEditingController();
+  final branch = TextEditingController();
   final role = TextEditingController();
   //final expectations = TextEditingController();
   String apptitude;
@@ -135,6 +137,42 @@ class _AddYourExperienceState extends State<AddYourExperience> {
               Padding(
                   padding: EdgeInsets.all(20),
                   child: TextFormField(
+                    maxLength: 50,
+                    controller: clg,
+                    validator: (value) {
+                      if (value.isEmpty) {
+                        return 'Please enter your clg name ';
+                      }
+                      return null;
+                    },
+                    decoration: InputDecoration(
+                      hintText: "Enter your College name",
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                    ),
+                  )),
+              Padding(
+                  padding: EdgeInsets.all(20),
+                  child: TextFormField(
+                    maxLength: 30,
+                    controller: branch,
+                    validator: (value) {
+                      if (value.isEmpty) {
+                        return 'Please enter your branch ';
+                      }
+                      return null;
+                    },
+                    decoration: InputDecoration(
+                      hintText: "Enter your branch",
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                    ),
+                  )),
+              Padding(
+                  padding: EdgeInsets.all(20),
+                  child: TextFormField(
                     maxLength: 60,
                     controller: role,
                     validator: (value) {
@@ -233,6 +271,8 @@ class _AddYourExperienceState extends State<AddYourExperience> {
                           "personal": personalInterview,
                           "batch": batch.text,
                           "role": role.text,
+                          "branch":branch.text,
+                          "clg":clg.text
                         });
                         name.clear();
                         company.clear();
