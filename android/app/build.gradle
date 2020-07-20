@@ -47,7 +47,7 @@ android {
         applicationId "com.virus.collegopedia"
         minSdkVersion 16
         targetSdkVersion 28
-        versionCode 2
+        versionCode 6
         versionName flutterVersionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
