@@ -1,5 +1,6 @@
 import 'package:collegopedia/BuyandSell/Sell.dart';
 import 'package:collegopedia/BuyandSell/buy.dart';
+import 'package:collegopedia/Confused/BusinessDevelopment.dart';
 import 'package:collegopedia/Confused/ConfusedMainPage.dart';
 import 'package:collegopedia/Confused/DataScience.dart';
 import 'package:collegopedia/Confused/artificial.dart';
@@ -61,10 +62,9 @@ class MyApp extends StatelessWidget {
         '/mobile': (BuildContext context) => MobileDeveloperPage(),
         '/quality': (BuildContext context) => QualityAssurancePage(),
         '/artificial': (BuildContext context) => ArtificialIntelligence(),
+        '/business': (BuildContext context)=>BusinessDevelopmentPage(),
         '/datascience': (BuildContext context) => DataScientist(),
         '/cyber': (BuildContext context) => CyberSecurity(),
-        '/buy':(BuildContext context)=>BuyPage(),
-        '/sell': (BuildContext context)=> SellPage(),
         '/questionspecific': (BuildContext context) =>
             QuestionSpecificPage(specificQuestion),
       },

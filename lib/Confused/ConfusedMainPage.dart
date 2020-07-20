@@ -24,7 +24,7 @@ class _ConfusedMainPageState extends State<ConfusedMainPage> {
               scrollDirection: Axis.vertical,
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.fromLTRB(15,8,15,8),
                   child: Container(
                     // height: 400,
                     width: MediaQuery.of(context).size.width / 2,
@@ -45,10 +45,13 @@ class _ConfusedMainPageState extends State<ConfusedMainPage> {
                               fontStyle: FontStyle.italic),
                         ),
                         Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.fromLTRB(15,8,15,8),
                           child: Container(
-                            child: Text(
-                              'Its okay if you are confused it is very common. Tells us your area of interest so that we can help you better!',
+                            child: SelectableText(
+                              'A confusion about your career is a good sign. \n'
+                              'How? \n'
+                                  'We have listed some career options for you, try whichever you feel like doing. '
+                                  "We know there are many other options that we haven't listed we will try to update.",
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 color: Colors.white,
@@ -88,7 +91,7 @@ class _ConfusedMainPageState extends State<ConfusedMainPage> {
                   imageURL: 'images/ConfusedPage/growth.png',
                   heading: 'Business Development',
                   colorBox: Colors.black,
-                  onPress: null,
+                  onPress: ()=>Navigator.pushNamed(context, '/business'),
                   txt:
                       'The objectives include branding, expansion in markets, new user acquisition, and awareness. ',
                 ),
@@ -108,15 +111,24 @@ class _ConfusedMainPageState extends State<ConfusedMainPage> {
                       'Data science is the study of data. It involves developing methods of recording, storing, and analyzing data to effectively extract useful information.',
                   colorBox: Colors.black,
                 ),
-                MainTile(
-                  heading: 'UX Designer',
-                  colorBox: null,
-                  onPress: null,
-                  txt:
-                      'UX design focuses on the interaction between real human users (like you and me) and everyday products and services, '
-                      'such as websites, apps, and even coffee machines.',
-                  imageURL: 'images/ConfusedPage/design.png',
-                )
+                Text(
+                  'There are many more options too.. we will be updating as soon as possible thanks for your patience!!',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.red,
+                    fontSize: 16,
+                    fontFamily: 'Times new Roman',
+                  ),
+                ),
+//                MainTile(
+//                  heading: 'UX Designer',
+//                  colorBox: null,
+//                  onPress: null,
+//                  txt:
+//                      'UX design focuses on the interaction between real human users (like you and me) and everyday products and services, '
+//                      'such as websites, apps, and even coffee machines.',
+//                  imageURL: 'images/ConfusedPage/design.png',
+//                )
               ],
             ),
           ),

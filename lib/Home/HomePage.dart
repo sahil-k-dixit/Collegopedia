@@ -166,14 +166,13 @@ class _HomeState extends State<Home> {
               heading: 'Contest',
               onPress: () => Navigator.pushNamed(context, '/contest'),
             ),
-            // Confuded Section
-//          MainTile(
-//            imageURL: 'images/Home/confused.png',
-//            txt: ' Dont know from where to start and how to start',
-//            colorBox: Colors.red,
-//            heading: 'Confused?',
-//            onPress: () => Navigator.pushNamed(context, '/confused'),
-//          ),
+          MainTile(
+            imageURL: 'images/Home/confused.png',
+            txt: ' Dont know from where to start and how to start',
+            colorBox: Colors.red,
+            heading: 'Confused?',
+            onPress: () => Navigator.pushNamed(context, '/confused'),
+          ),
           ],
         ),
       ),

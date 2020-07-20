@@ -24,7 +24,7 @@ class _TechnicalPageState extends State<TechnicalPage> {
               scrollDirection: Axis.vertical,
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.fromLTRB(15,8,15,8),
                   child: Container(
                     // height: 400,
                     width: MediaQuery.of(context).size.width / 2,
@@ -114,53 +114,62 @@ class _TechnicalPageState extends State<TechnicalPage> {
                   imageURL: 'images/TechnicalPage/smartphone.png',
                   onPress: () => Navigator.pushNamed(context, '/mobile'),
                 ),
-                MainTile(
-                  heading: 'Cybersecurity engineer',
-                  colorBox: Colors.black,
-                  txt:
-                      'Cyber security refers to the body of technologies, processes, and practices designed to '
-                      'protect networks, devices, programs, and data from attack, damage, or unauthorized access.',
-                  imageURL: 'images/TechnicalPage/cyber-security.png',
-                ),
-                MainTile(
-                  heading: 'Cloud engineer',
-                  colorBox: Colors.black,
-                  txt:
-                      'Cyber security refers to the body of technologies, processes, and practices designed to '
-                      'protect networks, devices, programs, and data from attack, damage, or unauthorized access.',
-                  imageURL: 'images/TechnicalPage/cloud-computing.png',
-                ),
-                MainTile(
-                  heading: 'DevOps engineer',
-                  colorBox: Colors.black,
-                  txt:
-                      'Cyber security refers to the body of technologies, processes, and practices designed to '
-                      'protect networks, devices, programs, and data from attack, damage, or unauthorized access.',
-                  imageURL: 'images/TechnicalPage/code.png',
-                ),
-                MainTile(
-                  heading: 'System engineer',
-                  colorBox: Colors.black,
-                  txt:
-                  'Cyber security refers to the body of technologies, processes, and practices designed to '
-                      'protect networks, devices, programs, and data from attack, damage, or unauthorized access.',
-                  imageURL: 'images/TechnicalPage/code.png',
-                ),
-                MainTile(
-                  heading: 'Game Developer',
-                  colorBox: Colors.black,
-                  txt:
-                  'Cyber security refers to the body of technologies, processes, and practices designed to '
-                      'protect networks, devices, programs, and data from attack, damage, or unauthorized access.',
-                  imageURL: 'images/TechnicalPage/code.png',
-                ),
-                MainTile(
-                  onPress: () => Navigator.pushNamed(context, '/quality'),
-                  colorBox: null,
-                  heading: 'Quality Assurance Analyst',
-                  imageURL: 'images/TechnicalPage/exam.png',
-                  txt:
-                      'The maintenance of a desired level of quality in a service or product, especially by means of attention to every stage of the process of delivery or production.',
+//                MainTile(
+//                  heading: 'Cybersecurity engineer',
+//                  colorBox: Colors.black,
+//                  txt:
+//                      'Cyber security refers to the body of technologies, processes, and practices designed to '
+//                      'protect networks, devices, programs, and data from attack, damage, or unauthorized access.',
+//                  imageURL: 'images/TechnicalPage/cyber-security.png',
+//                ),
+//                MainTile(
+//                  heading: 'Cloud engineer',
+//                  colorBox: Colors.black,
+//                  txt:
+//                      'Cyber security refers to the body of technologies, processes, and practices designed to '
+//                      'protect networks, devices, programs, and data from attack, damage, or unauthorized access.',
+//                  imageURL: 'images/TechnicalPage/cloud-computing.png',
+//                ),
+//                MainTile(
+//                  heading: 'DevOps engineer',
+//                  colorBox: Colors.black,
+//                  txt:
+//                      'Cyber security refers to the body of technologies, processes, and practices designed to '
+//                      'protect networks, devices, programs, and data from attack, damage, or unauthorized access.',
+//                  imageURL: 'images/TechnicalPage/code.png',
+//                ),
+//                MainTile(
+//                  heading: 'System engineer',
+//                  colorBox: Colors.black,
+//                  txt:
+//                  'Cyber security refers to the body of technologies, processes, and practices designed to '
+//                      'protect networks, devices, programs, and data from attack, damage, or unauthorized access.',
+//                  imageURL: 'images/TechnicalPage/code.png',
+//                ),
+//                MainTile(
+//                  heading: 'Game Developer',
+//                  colorBox: Colors.black,
+//                  txt:
+//                  'Cyber security refers to the body of technologies, processes, and practices designed to '
+//                      'protect networks, devices, programs, and data from attack, damage, or unauthorized access.',
+//                  imageURL: 'images/TechnicalPage/code.png',
+//                ),
+//                MainTile(
+//                  onPress: () => Navigator.pushNamed(context, '/quality'),
+//                  colorBox: null,
+//                  heading: 'Quality Assurance Analyst',
+//                  imageURL: 'images/TechnicalPage/exam.png',
+//                  txt:
+//                      'The maintenance of a desired level of quality in a service or product, especially by means of attention to every stage of the process of delivery or production.',
+//                ),
+                Text(
+                  'There are many more options too.. we will be updating as soon as possible thanks for your patience!!',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.red,
+                    fontSize: 16,
+                    fontFamily: 'Times new Roman',
+                  ),
                 ),
               ],
             ),
