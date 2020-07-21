@@ -117,6 +117,7 @@ class SplashScreenState extends State<SplashScreen> {
         print('not connected'); // show dialog
       }
     });
+    loadData();
   }
 
   Future<FirebaseUser> getUser() async {
