@@ -18,20 +18,28 @@ import 'package:collegopedia/LoginPage/Login_page.dart';
 import 'package:collegopedia/Placement/CompanySpecficList.dart';
 import 'package:collegopedia/Placement/Placement.dart';
 import 'package:collegopedia/Placement/add_your_experience_page.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
+import 'dart:ui';
 
-import 'package:google_fonts/google_fonts.dart';
+import 'package:collegopedia/globals.dart';
+import 'package:flutter/services.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'dart:io';
 
 void main() => runApp(MyApp());
 String companyNameSpecific;
 String specificQuestion;
 
+final FirebaseAuth _auth = FirebaseAuth.instance;
+final GoogleSignIn googleSignIn = GoogleSignIn();
+
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    precacheImage(AssetImage('images/a.jpg'), context);
+    precacheImage(AssetImage('images/mainback.jpg'), context);
     return MaterialApp(
       title: 'Collegopedia',
       debugShowCheckedModeBanner: false,
@@ -79,28 +87,83 @@ class SplashScreen extends StatefulWidget {
 }
 
 class SplashScreenState extends State<SplashScreen> {
+  bool flag = false;
   @override
   void initState() {
     super.initState();
+    //signInWithGoogle();
+    print("hi");
+    Timer.run(() {
+      try {
+        InternetAddress.lookup('google.com').then((result) {
+          if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
+            print('connected');
+            getUser().then((user) {
+              if (user != null) {
+                userName = (user.displayName);
+                print(userName);
+                // Navigator.pushNamed(context, '/home');
+                flag = true;
+              }
+            });
+          } else {
+            _showDialog(); // show dialog
+          }
+        }).catchError((error) {
+          _showDialog(); // show dialog
+        });
+      } on SocketException catch (_) {
+        _showDialog();
+        print('not connected'); // show dialog
+      }
+    });
+  }
 
-    loadData();
+  Future<FirebaseUser> getUser() async {
+    return await _auth.currentUser();
+  }
+
+  void _showDialog() {
+    // dialog implementation
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text("Internet needed!"),
+        content: Text("You may want to exit the app here"),
+        actions: <Widget>[
+          FlatButton(
+              child: Text("EXIT"),
+              onPressed: () {
+                SystemNavigator.pop();
+              })
+        ],
+      ),
+    );
   }
 
   Future<Timer> loadData() async {
+    print("Load");
     return new Timer(Duration(seconds: 5), onDoneLoading);
   }
 
   onDoneLoading() async {
-    Navigator.pushNamed(context, '/login');
+    print("Done");
+    if (!flag) {
+      print("login");
+      Navigator.pushNamed(context, '/login');
+    } else {
+      print("home");
+      Navigator.pushNamed(context, '/home');
+    }
   }
 
   @override
   Widget build(BuildContext context) {
-    precacheImage(AssetImage('images/a.jpg'), context);
+    precacheImage(AssetImage('images/mainback.jpg'), context);
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-            image: AssetImage('images/a.jpg'), fit: BoxFit.cover),
+            image: AssetImage('images/mainback.jpg'), fit: BoxFit.cover),
       ),
       child: Center(
         child: CircularProgressIndicator(

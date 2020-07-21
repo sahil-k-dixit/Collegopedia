@@ -20,52 +20,53 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   void initState() {
     super.initState();
+    print('Login page into');
     //signInWithGoogle();
-    Timer.run(() {
-      try {
-        InternetAddress.lookup('google.com').then((result) {
-          if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
-            print('connected');
-            getUser().then((user) {
-              if (user != null) {
-                userName = (user.displayName);
-
-                Navigator.pushNamed(context, '/home');
-              }
-            });
-          } else {
-            _showDialog(); // show dialog
-          }
-        }).catchError((error) {
-          _showDialog(); // show dialog
-        });
-      } on SocketException catch (_) {
-        _showDialog();
-        print('not connected'); // show dialog
-      }
-    });
+//    Timer.run(() {
+//      try {
+//        InternetAddress.lookup('google.com').then((result) {
+//          if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
+//            print('connected');
+//            getUser().then((user) {
+//              if (user != null) {
+//                userName = (user.displayName);
+//
+//                Navigator.pushNamed(context, '/home');
+//              }
+//            });
+//          } else {
+//            _showDialog(); // show dialog
+//          }
+//        }).catchError((error) {
+//          _showDialog(); // show dialog
+//        });
+//      } on SocketException catch (_) {
+//        _showDialog();
+//        print('not connected'); // show dialog
+//      }
+//    });
   }
-  Future<FirebaseUser> getUser() async {
-    return await _auth.currentUser();
-  }
-
-  void _showDialog() {
-    // dialog implementation
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: Text("Internet needed!"),
-        content: Text("You may want to exit the app here"),
-        actions: <Widget>[
-          FlatButton(
-              child: Text("EXIT"),
-              onPressed: () {
-                SystemNavigator.pop();
-              })
-        ],
-      ),
-    );
-  }
+//  Future<FirebaseUser> getUser() async {
+//    return await _auth.currentUser();
+//  }
+//
+//  void _showDialog() {
+//    // dialog implementation
+//    showDialog(
+//      context: context,
+//      builder: (context) => AlertDialog(
+//        title: Text("Internet needed!"),
+//        content: Text("You may want to exit the app here"),
+//        actions: <Widget>[
+//          FlatButton(
+//              child: Text("EXIT"),
+//              onPressed: () {
+//                SystemNavigator.pop();
+//              })
+//        ],
+//      ),
+//    );
+//  }
 
   @override
   Widget build(BuildContext context) {
@@ -76,7 +77,7 @@ class _LoginPageState extends State<LoginPage> {
         height: double.infinity,
         decoration: BoxDecoration(
             image: DecorationImage(
-                image: AssetImage("images/a.jpg"), fit: BoxFit.cover)),
+                image: AssetImage("images/mainback.jpg"), fit: BoxFit.cover)),
         child: SafeArea(
           child: Center(
             child: Padding(
