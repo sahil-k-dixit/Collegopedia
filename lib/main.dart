@@ -18,6 +18,7 @@ import 'package:collegopedia/LoginPage/Login_page.dart';
 import 'package:collegopedia/Placement/CompanySpecficList.dart';
 import 'package:collegopedia/Placement/Placement.dart';
 import 'package:collegopedia/Placement/add_your_experience_page.dart';
+import 'package:collegopedia/about.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
@@ -73,6 +74,7 @@ class MyApp extends StatelessWidget {
         '/cyber': (BuildContext context) => CyberSecurity(),
         '/questionspecific': (BuildContext context) =>
             QuestionSpecificPage(specificQuestion),
+        '/about': (BuildContext context)=>About(),
       },
       home: SplashScreen(),
     );
