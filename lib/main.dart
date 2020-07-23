@@ -14,6 +14,7 @@ import 'package:collegopedia/Discussion/DiscussionForum.dart';
 import 'package:collegopedia/Discussion/QuestionSpecificPage.dart';
 import 'package:collegopedia/Home/HomePage.dart';
 import 'package:collegopedia/Job/JobSection.dart';
+import 'package:collegopedia/Job/currentopening.dart';
 import 'package:collegopedia/LoginPage/Login_page.dart';
 import 'package:collegopedia/Placement/CompanySpecficList.dart';
 import 'package:collegopedia/Placement/Placement.dart';
@@ -74,6 +75,7 @@ class MyApp extends StatelessWidget {
         '/cyber': (BuildContext context) => CyberSecurity(),
         '/questionspecific': (BuildContext context) =>
             QuestionSpecificPage(specificQuestion),
+        '/current': (BuildContext context)=>JobOpening(),
       },
       home: SplashScreen(),
     );

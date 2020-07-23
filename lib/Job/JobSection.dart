@@ -21,6 +21,13 @@ class JobSection extends StatelessWidget {
           scrollDirection: Axis.vertical,
           children: <Widget>[
             MainTile(
+              txt: 'Checkout ongoing job',
+              // url: '',
+              onPress: ()=>Navigator.pushNamed(context, '/current'),
+              imageURL: 'images/Contest/calendar.png',
+              heading: 'Current Opening ',
+            ),
+            MainTile(
               txt: 'Want to work with Startups? \n' +
                   'Looking for internships? \n' +
                   'Stand a chance with Angellist \n' +
