@@ -18,7 +18,15 @@ class JobSection extends StatelessWidget {
         drawer: DrawerrBarr(),
         backgroundColor: Color(0xFF1D1F2D),
         body: ListView(
+          scrollDirection: Axis.vertical,
           children: <Widget>[
+            MainTile(
+              txt: 'Checkout ongoing job',
+              // url: '',
+              onPress: ()=>Navigator.pushNamed(context, '/current'),
+              imageURL: 'images/Contest/calendar.png',
+              heading: 'Current Opening ',
+            ),
             MainTile(
               txt: 'Want to work with Startups? \n' +
                   'Looking for internships? \n' +
