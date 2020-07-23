@@ -14,6 +14,7 @@ import 'package:collegopedia/Discussion/DiscussionForum.dart';
 import 'package:collegopedia/Discussion/QuestionSpecificPage.dart';
 import 'package:collegopedia/Home/HomePage.dart';
 import 'package:collegopedia/Job/JobSection.dart';
+import 'package:collegopedia/Job/add_job_opening.dart';
 import 'package:collegopedia/Job/currentopening.dart';
 import 'package:collegopedia/LoginPage/Login_page.dart';
 import 'package:collegopedia/Placement/CompanySpecficList.dart';
@@ -21,14 +22,22 @@ import 'package:collegopedia/Placement/Placement.dart';
 import 'package:collegopedia/Placement/add_your_experience_page.dart';
 import 'package:collegopedia/about.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'dart:ui';
-
 import 'package:collegopedia/globals.dart';
 import 'package:flutter/services.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'dart:io';
+
+import 'package:url_launcher/url_launcher.dart';
+import 'package:package_info/package_info.dart';
+import 'package:firebase_remote_config/firebase_remote_config.dart';
+
+const PLAY_STORE_URL =
+    'https://play.google.com/store/apps/details?id=com.virus.collegopedia';
+const APP_STORE_URL = '';
 
 void main() => runApp(MyApp());
 String companyNameSpecific;
@@ -37,8 +46,19 @@ String specificQuestion;
 final FirebaseAuth _auth = FirebaseAuth.instance;
 final GoogleSignIn googleSignIn = GoogleSignIn();
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   // This widget is the root of your application.
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     precacheImage(AssetImage('images/mainback.jpg'), context);
@@ -75,8 +95,9 @@ class MyApp extends StatelessWidget {
         '/cyber': (BuildContext context) => CyberSecurity(),
         '/questionspecific': (BuildContext context) =>
             QuestionSpecificPage(specificQuestion),
-        '/about': (BuildContext context)=>About(),
-        '/current':(BuildContext context)=>JobOpening(),
+        '/about': (BuildContext context) => About(),
+        '/current': (BuildContext context) => JobOpening(),
+        '/addjob': (BuildContext context) => AddJobOpening(),
       },
       home: SplashScreen(),
     );
@@ -95,8 +116,8 @@ class SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
+
     //signInWithGoogle();
-    print("hi");
     Timer.run(() {
       try {
         InternetAddress.lookup('google.com').then((result) {
@@ -121,6 +142,7 @@ class SplashScreenState extends State<SplashScreen> {
         print('not connected'); // show dialog
       }
     });
+    versionCheck(context);
     loadData();
   }
 
@@ -159,6 +181,89 @@ class SplashScreenState extends State<SplashScreen> {
     } else {
       print("home");
       Navigator.pushNamed(context, '/home');
+    }
+  }
+
+  versionCheck(context) async {
+    //Get Current installed version of app
+    final PackageInfo info = await PackageInfo.fromPlatform();
+    double currentVersion =
+        double.parse(info.version.trim().replaceAll(".", ""));
+
+    //Get Latest version info from firebase config
+    final RemoteConfig remoteConfig = await RemoteConfig.instance;
+
+    try {
+      // Using default duration to force fetching from remote server.
+      await remoteConfig.fetch(expiration: const Duration(seconds: 0));
+      await remoteConfig.activateFetched();
+      remoteConfig.getString('force_update_current_version');
+      double newVersion = double.parse(remoteConfig
+          .getString('force_update_current_version')
+          .trim()
+          .replaceAll(".", ""));
+      if (newVersion > currentVersion) {
+        _showVersionDialog(context);
+      } else {
+        print('Update');
+      }
+    } on FetchThrottledException catch (exception) {
+      // Fetch throttled.
+      print(exception);
+    } catch (exception) {
+      print('Unable to fetch remote config. Cached or default values will be '
+          'used');
+    }
+  }
+
+  _showVersionDialog(context) async {
+    await showDialog<String>(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        String title = "New Update Available";
+        String message =
+            "There is a newer version of app available please update it now.";
+        String btnLabel = "Update Now";
+        String btnLabelCancel = "Later";
+        return Platform.isIOS
+            ? new CupertinoAlertDialog(
+                title: Text(title),
+                content: Text(message),
+                actions: <Widget>[
+                  FlatButton(
+                    child: Text(btnLabel),
+                    onPressed: () => _launchURL(APP_STORE_URL),
+                  ),
+                  FlatButton(
+                    child: Text(btnLabelCancel),
+                    onPressed: () => Navigator.pop(context),
+                  ),
+                ],
+              )
+            : new AlertDialog(
+                title: Text(title),
+                content: Text(message),
+                actions: <Widget>[
+                  FlatButton(
+                    child: Text(btnLabel),
+                    onPressed: () => _launchURL(PLAY_STORE_URL),
+                  ),
+                  FlatButton(
+                    child: Text(btnLabelCancel),
+                    onPressed: () => Navigator.pop(context),
+                  ),
+                ],
+              );
+      },
+    );
+  }
+
+  _launchURL(String url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
     }
   }
 

@@ -277,7 +277,10 @@ class _AddYourExperienceState extends State<AddYourExperience> {
                         name.clear();
                         company.clear();
                         experience.clear();
-
+                        branch.clear();
+                        clg.clear();
+                        batch.clear();
+                        role.clear();
                         showAlertDialog(context);
                         // Navigator.pushNamed(context, '/placement');
                       }
