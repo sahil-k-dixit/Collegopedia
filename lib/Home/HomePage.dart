@@ -178,7 +178,7 @@ class _HomeState extends State<Home> {
               )),
             ),
           ),
-           FlatButton(onPressed: loadAsset, child: Text('Press')),
+           //FlatButton(onPressed: loadAsset, child: Text('Press')),
           MainTile(
             imageURL: 'images/Home/Job.png',
             txt: 'Checkout the experiences of placements',
