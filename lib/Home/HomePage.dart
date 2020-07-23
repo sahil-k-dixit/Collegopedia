@@ -41,7 +41,7 @@ class _HomeState extends State<Home> {
     final PackageInfo info = await PackageInfo.fromPlatform();
     double currentVersion =
         double.parse(info.version.trim().replaceAll(".", ""));
-      print(currentVersion);
+    print(currentVersion);
     //Get Latest version info from firebase config
     final RemoteConfig remoteConfig = await RemoteConfig.instance;
 
