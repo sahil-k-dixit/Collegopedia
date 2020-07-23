@@ -26,13 +26,11 @@ class _HomeState extends State<Home> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    _messaging.getToken().then((token) {
-      _firestore.collection('pushtoken').add({'devtoken':token});
-    //print(_db.settings());
-    });
+//    _messaging.getToken().then((token) {
+//      _firestore.collection('pushtoken').add({'devtoken':token});
+//    //print(_db.settings());
+//    });
   }
-
-
 
   final dbRef = FirebaseDatabase.instance.reference().child("Placements");
   int _counter = 0;
@@ -180,7 +178,7 @@ class _HomeState extends State<Home> {
               )),
             ),
           ),
-          FlatButton(onPressed: loadAsset, child: Text('Press')),
+           FlatButton(onPressed: loadAsset, child: Text('Press')),
           MainTile(
             imageURL: 'images/Home/Job.png',
             txt: 'Checkout the experiences of placements',
