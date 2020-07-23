@@ -1,8 +1,10 @@
 import 'dart:io';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collegopedia/Drawer/DrawerBarr.dart';
 import 'package:collegopedia/UniversalTile.dart';
 import 'package:collegopedia/globals.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -25,6 +27,8 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  final FirebaseMessaging _messaging = FirebaseMessaging();
+  final Firestore _firestore = Firestore.instance;
   @override
   void initState() {
     // TODO: implement initState
@@ -37,7 +41,7 @@ class _HomeState extends State<Home> {
     final PackageInfo info = await PackageInfo.fromPlatform();
     double currentVersion =
         double.parse(info.version.trim().replaceAll(".", ""));
-
+      print(currentVersion);
     //Get Latest version info from firebase config
     final RemoteConfig remoteConfig = await RemoteConfig.instance;
 
