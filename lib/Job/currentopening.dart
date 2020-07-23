@@ -28,7 +28,6 @@ class _JobOpeningState extends State<JobOpening> {
                 if (snap.hasData) {
                   //Map<dynamic, dynamic> data = snap.data.snapshot.value;
                   final messages = snap.data.documents.reversed;
-
                   List<Message> openList = [];
                   for (var message in messages) {
                     final msg = Message(
