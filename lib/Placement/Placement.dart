@@ -54,6 +54,7 @@ class _PlacementPageState extends State<PlacementPage> {
               companyList = [];
               data.forEach((index, data) {
                 companyList.add(index);
+                print(index);
               });
               companyList.sort();
               return ListView.builder(

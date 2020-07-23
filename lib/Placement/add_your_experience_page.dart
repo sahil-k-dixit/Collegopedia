@@ -262,7 +262,7 @@ class _AddYourExperienceState extends State<AddYourExperience> {
                     color: Colors.lightBlue,
                     onPressed: () {
                       if (_formKey.currentState.validate()) {
-                        dbRef.child(company.text).push().set({
+                        dbRef.child(company.text).child(name.text)..set({
                           "name": name.text,
 //                        "company": company.text.isEmpty ? null : company.text,
                           "description": experience.text,
@@ -273,7 +273,7 @@ class _AddYourExperienceState extends State<AddYourExperience> {
                           "role": role.text,
                           "branch":branch.text,
                           "clg":clg.text
-                        });
+                        }).then((_) => print('Added Successfully'));
                         name.clear();
                         company.clear();
                         experience.clear();
