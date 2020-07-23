@@ -27,6 +27,7 @@ import 'package:collegopedia/globals.dart';
 import 'package:flutter/services.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'dart:io';
+import 'package:firebase_messaging/firebase_messaging.dart';
 
 void main() => runApp(MyApp());
 String companyNameSpecific;
@@ -88,11 +89,10 @@ class SplashScreen extends StatefulWidget {
 
 class SplashScreenState extends State<SplashScreen> {
   bool flag = false;
+
   @override
   void initState() {
     super.initState();
-    //signInWithGoogle();
-    print("hi");
     Timer.run(() {
       try {
         InternetAddress.lookup('google.com').then((result) {

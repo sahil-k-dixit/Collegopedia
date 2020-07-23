@@ -1,7 +1,9 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collegopedia/Drawer/DrawerBarr.dart';
 import 'package:collegopedia/UniversalTile.dart';
 import 'package:collegopedia/globals.dart';
 import 'package:firebase_database/firebase_database.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
@@ -18,11 +20,20 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  final FirebaseMessaging _messaging = FirebaseMessaging();
+  final Firestore _firestore = Firestore.instance;
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
+    _messaging.getToken().then((token) {
+      _firestore.collection('pushtoken').add({'devtoken':token});
+    //print(_db.settings());
+    });
   }
+
+
+
   final dbRef = FirebaseDatabase.instance.reference().child("Placements");
   int _counter = 0;
   List<List<dynamic>> data = [];
@@ -32,16 +43,15 @@ class _HomeState extends State<Home> {
     List<List<dynamic>> csvTable = CsvToListConverter().convert(myData);
 
     data = csvTable;
-    var dict={};
+    var dict = {};
     // print(data);
 
     print(data.length);
-    for(int i=1;i<data.length;i++)
-    {
+    for (int i = 1; i < data.length; i++) {
       dbRef.child(data[i][4]).child(data[i][0]).set({
         "name": data[i][0],
-        "branch":data[i][1],
-        "clg":data[i][2],
+        "branch": data[i][1],
+        "clg": data[i][2],
         "batch": data[i][3],
         "company": data[i][4],
         "mode": data[i][5],
@@ -53,6 +63,7 @@ class _HomeState extends State<Home> {
       print(data[i][4].toString());
     }
   }
+
   Future<bool> onBackPressed() {
     return showDialog(
         context: context,
@@ -69,8 +80,7 @@ class _HomeState extends State<Home> {
               ),
               FlatButton(
                 child: Text('YES'),
-                onPressed: ()
-                {
+                onPressed: () {
                   signOutGoogle();
                   Navigator.pushNamedAndRemoveUntil(
                       context, '/login', (Route<dynamic> route) => false);
@@ -206,7 +216,6 @@ class _HomeState extends State<Home> {
             heading: 'Confused?',
             onPress: () => Navigator.pushNamed(context, '/confused'),
           ),
-
         ],
       ),
     );
@@ -219,6 +228,3 @@ void signOutGoogle() async {
 
   print("User Sign Out");
 }
-
-
-
