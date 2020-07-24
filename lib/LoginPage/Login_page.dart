@@ -98,7 +98,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(50,8,50,8),
+                    padding: const EdgeInsets.fromLTRB(50, 8, 50, 8),
                     child: Container(
                       color: Colors.transparent,
                       child: OutlineButton(
@@ -111,6 +111,7 @@ class _LoginPageState extends State<LoginPage> {
                         onPressed: () async {
                           var s = await signInWithGoogle();
                           print(s);
+                          Navigator.pop(context);
                           Navigator.pushNamed(
                             context,
                             '/home',
@@ -126,7 +127,8 @@ class _LoginPageState extends State<LoginPage> {
                                   image: AssetImage("images/google_logo.png"),
                                   height: 35.0),
                               Padding(
-                                padding: const EdgeInsets.only(left: 10,right: 20),
+                                padding:
+                                    const EdgeInsets.only(left: 10, right: 20),
                                 child: Text(
                                   'Sign in with Google',
                                   style: TextStyle(
@@ -150,7 +152,6 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 }
-
 
 Future<String> signInWithGoogle() async {
   final GoogleSignInAccount googleSignInAccount = await googleSignIn.signIn();

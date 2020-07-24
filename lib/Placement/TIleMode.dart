@@ -53,7 +53,8 @@ class TileDisplay extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text("Role: ${message.role}",
-                  style: TextStyle(fontStyle: FontStyle.italic)),
+                  style: TextStyle(
+                      fontWeight: FontWeight.w900, color: Colors.red)),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),

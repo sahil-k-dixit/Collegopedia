@@ -125,7 +125,7 @@ class _HomeState extends State<Home> {
         builder: (BuildContext context) {
           return AlertDialog(
             title: Text('Are you sure?'),
-            content: Text('You are going to sigout the application!!'),
+            content: Text('You are going to exit the application!!'),
             actions: <Widget>[
               FlatButton(
                 child: Text('NO'),
@@ -136,7 +136,7 @@ class _HomeState extends State<Home> {
               FlatButton(
                 child: Text('YES'),
                 onPressed: () {
-                  signOutGoogle();
+                 // signOutGoogle();
                   Navigator.of(context).pop(true);
                 },
               ),
@@ -264,20 +264,20 @@ class _HomeState extends State<Home> {
               heading: 'Contest',
               onPress: () => Navigator.pushNamed(context, '/contest'),
             ),
-            MainTile(
-              imageURL: 'images/about.png',
-              txt: 'Know about us',
-              colorBox: Color(0xFFAEFFA1),
-              heading: 'About us!',
-              onPress: () => Navigator.pushNamed(context, '/about'),
-            )
-//          MainTile(
-//            imageURL: 'images/Home/confused.png',
-//            txt: ' Dont know from where to start and how to start',
-//            colorBox: Colors.red,
-//            heading: 'Confused?',
-//            onPress: () => Navigator.pushNamed(context, '/confused'),
-//          ),
+//            MainTile(
+//              imageURL: 'images/about.png',
+//              txt: 'Know about us',
+//              colorBox: Color(0xFFAEFFA1),
+//              heading: 'About us!',
+//              onPress: () => Navigator.pushNamed(context, '/about'),
+//            ),
+          MainTile(
+            imageURL: 'images/Home/confused.png',
+            txt: ' Dont know from where to start and how to start',
+            colorBox: Colors.red,
+            heading: 'Confused?',
+            onPress: () => Navigator.pushNamed(context, '/confused'),
+          ),
           ],
         ),
       ),

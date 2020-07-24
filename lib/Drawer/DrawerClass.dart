@@ -38,7 +38,7 @@ class DrawerBar extends StatelessWidget {
                   Navigator.pushNamed(context, '/confused');
                 }
               else {
-                Navigator.pushNamed(context, '/buy');
+                Navigator.pushNamed(context, '/about');
               }
             },
             child: Row(

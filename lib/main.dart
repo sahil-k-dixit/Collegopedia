@@ -173,9 +173,11 @@ class SplashScreenState extends State<SplashScreen> {
     print("Done");
     if (!flag) {
       print("login");
+      Navigator.pop(context);
       Navigator.pushNamed(context, '/login');
     } else {
       print("home");
+      Navigator.pop(context);
       Navigator.pushNamed(context, '/home');
     }
   }
