@@ -1,3 +1,4 @@
+import 'package:collegopedia/Confused/BusinessDevelopment.dart';
 import 'package:collegopedia/Confused/ConfusedMainPage.dart';
 import 'package:collegopedia/Confused/DataScience.dart';
 import 'package:collegopedia/Confused/artificial.dart';
@@ -94,6 +95,7 @@ class _MyAppState extends State<MyApp> {
         '/about': (BuildContext context) => About(),
         '/current': (BuildContext context) => JobOpening(),
         '/addjob': (BuildContext context) => AddJobOpening(),
+        '/business':(BuildContext context)=>BusinessDevelopmentPage(),
       },
       home: SplashScreen(),
     );

@@ -6,7 +6,7 @@ class Tile extends StatelessWidget {
   String txt;
   Function onPress;
   Color colorBox;
-  Tile({this.heading, this.txt, this.onPress,this.colorBox});
+  Tile({this.heading, this.txt, this.onPress, this.colorBox});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -41,7 +41,7 @@ class Tile extends StatelessWidget {
             textAlign: TextAlign.left,
             style: GoogleFonts.lato(
                 textStyle: Theme.of(context).textTheme.display1,
-                color: Colors.white,
+                color: Colors.grey,
                 fontSize: 13),
           ),
         ),
