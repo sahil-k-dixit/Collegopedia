@@ -37,7 +37,7 @@ class _HomeState extends State<Home> {
   List<List<dynamic>> data = [];
   loadAsset() async {
     print('object');
-    final myData = await rootBundle.loadString("assets/14.csv");
+    final myData = await rootBundle.loadString("assets/3.csv");
     List<List<dynamic>> csvTable = CsvToListConverter().convert(myData);
 
     data = csvTable;
@@ -103,6 +103,7 @@ class _HomeState extends State<Home> {
         )),
       ),
       backgroundColor: Color(0xFF1D1F2D),
+      //backgroundColor: Colors.white,
       drawer: DrawerrBarr(),
       body: ListView(
         scrollDirection: Axis.vertical,
@@ -154,7 +155,7 @@ class _HomeState extends State<Home> {
               padding: const EdgeInsets.fromLTRB(30, 10, 30, 10),
               child: Text(
                 'Stay connected with Collegopedia. Our portal gives you an access to learning resources, '
-                'discussions and assists with college planning and preparation.',
+                'discussions and assists with college planning and preparation.',textAlign: TextAlign.center,
                 style: GoogleFonts.lato(
                     textStyle: Theme.of(context).textTheme.display1,
                     color: Colors.white,
@@ -182,35 +183,35 @@ class _HomeState extends State<Home> {
           MainTile(
             imageURL: 'images/Home/Job.png',
             txt: 'Checkout the experiences of placements',
-            colorBox: Color(0xFFFFCE46),
+            colorBox: Color(0xFFAEFFA1),
             heading: 'Placement',
             onPress: () => Navigator.pushNamed(context, '/placement'),
           ),
           MainTile(
             imageURL: 'images/Home/Jobseek.png',
             txt: 'Looking for jobs?',
-            colorBox: Color(0xFF7BE1FA),
+            colorBox: Color(0xFFFFCE46),
             heading: 'Jobs',
             onPress: () => Navigator.pushNamed(context, '/job'),
           ),
           MainTile(
             imageURL: 'images/Home/Discussion.png',
             txt: 'Have a Query? Discuss with us',
-            colorBox: Color(0xFFDC5858),
+            colorBox: Color(0xFF7BE1FA),
             heading: 'Discussion',
             onPress: () => Navigator.pushNamed(context, '/discuss'),
           ),
           MainTile(
             imageURL: 'images/Home/trophy.png',
             txt: 'Participate in competitive coding events.',
-            colorBox: Color(0xFFAEFFA1),
+            colorBox: Color(0xFFDC5858),
             heading: 'Contest',
             onPress: () => Navigator.pushNamed(context, '/contest'),
           ),
           MainTile(
             imageURL: 'images/Home/confused.png',
             txt: ' Dont know from where to start and how to start',
-            colorBox: Colors.red,
+            colorBox: Colors.lime,
             heading: 'Confused?',
             onPress: () => Navigator.pushNamed(context, '/confused'),
           ),
