@@ -40,7 +40,11 @@ class MainTile extends StatelessWidget {
         child: ListTile(
           onTap: onPress,
           leading: Container(
+            padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+            width: 49,
+            height: 49,
             decoration: BoxDecoration(color: colorBox,
+                borderRadius: BorderRadius.circular(50),
                 //shape: BoxShape.circle,
                 boxShadow: [
                   BoxShadow(
