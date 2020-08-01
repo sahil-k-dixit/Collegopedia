@@ -12,16 +12,16 @@ class DiscussionForum extends StatelessWidget {
       backgroundColor: Color(0xFF1D1F2D),
       appBar: AppBar(
         title: Text("Discussion Forum"),
-        actions: <Widget>[
-          IconButton(
-              icon: Icon(
-                Icons.search,
-                color: Colors.white,
-              ),
-              onPressed: () {
-                showSearch(context: context, delegate: DiscussionSearch());
-              })
-        ],
+//        actions: <Widget>[
+//          IconButton(
+//              icon: Icon(
+//                Icons.search,
+//                color: Colors.white,
+//              ),
+//              onPressed: () {
+//                showSearch(context: context, delegate: DiscussionSearch());
+//              })
+//        ],
       ),
       drawer: DrawerrBarr(),
       body: Padding(

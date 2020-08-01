@@ -28,18 +28,11 @@ class Contest extends StatelessWidget {
                         style: BorderStyle.solid)),
                 child: Column(
                   children: <Widget>[
-                    Text(
-                      'Why Contest ?',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontStyle: FontStyle.italic),
-                    ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Container(
                         child: Text(
-                          'It allows programmer to improve their knowledge on data structures and algorithms and the way of using those according to the problem statement.'
+                          'Allows programmer to improve their knowledge on data structures and algorithms and the way of using those according to the problem statement.'
                           ' Competitive coding is independent of programming language.  '
                           'The understanding and solving the problem using algorithms and data structures is important here.'
                           'So simple if want to crack into big tech or startup who should participate in competitive coding. '
@@ -67,6 +60,7 @@ class Contest extends StatelessWidget {
             MainTile(
               txt: 'Participate in Hackerrank Events',
               //url: 'https://www.hackerrank.com/contests',
+              colorBox: Colors.lime,
               onPress: () async {
                 //const url = 'https://flutter.dev';
                 if (await canLaunch('https://www.hackerrank.com/contests')) {
@@ -82,6 +76,7 @@ class Contest extends StatelessWidget {
               txt: 'Participate in Hackerearth Events',
               heading: 'Hackerearth',
               imageURL: 'images/Contest/contest.png',
+              colorBox: Colors.blue,
               onPress: () async {
                 //const url = 'https://flutter.dev';
                 if (await canLaunch(
@@ -96,6 +91,7 @@ class Contest extends StatelessWidget {
               txt: 'Participate in CodeChef Events',
               heading: 'CodeChef',
               imageURL: 'images/Contest/cooking.png',
+              colorBox: Colors.orangeAccent,
               onPress: () async {
                 //const url = 'https://flutter.dev';
                 if (await canLaunch('https://www.codechef.com/contests')) {

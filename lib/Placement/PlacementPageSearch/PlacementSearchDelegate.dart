@@ -55,11 +55,11 @@ class PlacementSearch extends SearchDelegate {
       itemBuilder: (context, index) => ListTile(
         onTap: () {
           query = suggestion[index];
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => CompanySpecificPlacementPage(query)));
-          showResults(context);
+//          Navigator.push(
+//              context,
+//              MaterialPageRoute(
+//                  builder: (context) => CompanySpecificPlacementPage(query)));
+//          showResults(context);
         },
         leading: Icon(Icons.business_center),
         title: RichText(

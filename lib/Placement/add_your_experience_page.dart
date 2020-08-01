@@ -9,10 +9,10 @@ import 'package:flutter/widgets.dart';
 var categories = ["OnCampus", "OffCampus"];
 var difficultyLevel = [
   '5- Very Difficult',
-  '4-Difficult',
-  '3-Medium',
-  '2-Easy',
-  '1-Very Easy'
+  '4- Difficult',
+  '3- Medium',
+  '2- Easy',
+  '1- Very Easy'
 ];
 
 class AddYourExperience extends StatefulWidget {

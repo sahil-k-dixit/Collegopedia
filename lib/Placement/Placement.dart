@@ -29,16 +29,16 @@ class _PlacementPageState extends State<PlacementPage> {
       appBar: AppBar(
         backgroundColor: Color(0xFF0E0F1B),
         title: Center(child: Text("List of Companies")),
-        actions: <Widget>[
-          IconButton(
-              icon: Icon(
-                Icons.search,
-                color: Colors.white,
-              ),
-              onPressed: () {
-                showSearch(context: context, delegate: PlacementSearch());
-              })
-        ],
+//        actions: <Widget>[
+//          IconButton(
+//              icon: Icon(
+//                Icons.search,
+//                color: Colors.white,
+//              ),
+//              onPressed: () {
+//                showSearch(context: context, delegate: PlacementSearch());
+//              })
+//        ],
       ),
       drawer: DrawerrBarr(),
       body: StreamBuilder(
@@ -76,8 +76,7 @@ class _PlacementPageState extends State<PlacementPage> {
           }),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => AddYourExperience()));
+          Navigator.pushNamed(context, '/addexperience');
         },
         label: Text("Add your experience"),
         icon: Icon(Icons.exposure_plus_1),

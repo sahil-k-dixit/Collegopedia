@@ -37,13 +37,7 @@ class _TechnicalPageState extends State<TechnicalPage> {
                             style: BorderStyle.solid)),
                     child: Column(
                       children: <Widget>[
-                        Text(
-                          'Technical Field',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                              fontStyle: FontStyle.italic),
-                        ),
+
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Container(
@@ -86,7 +80,7 @@ class _TechnicalPageState extends State<TechnicalPage> {
                   imageURL: 'images/TechnicalPage/front-end.png',
                   heading: 'Front-end Developer',
                   onPress: () => Navigator.pushNamed(context, '/front'),
-                  colorBox: Colors.black,
+                  colorBox: Colors.lime,
                   txt:
                       'A front-end web developer is responsible for implementing visual elements that users see and interact with in a web application. ',
                 ),
@@ -94,21 +88,21 @@ class _TechnicalPageState extends State<TechnicalPage> {
                   imageURL: 'images/TechnicalPage/backend.png',
                   heading: 'Backend Developer',
                   onPress: () => Navigator.pushNamed(context, '/back'),
-                  colorBox: Colors.black,
+                  colorBox: Colors.grey,
                   txt:
                       'A back-end developer is a type of programmer who creates the logical back-end and core computational logic of a website, software or information system.',
                 ),
                 MainTile(
-                  imageURL: 'images/TechnicalPage/full.png',
+                  imageURL: 'images/TechnicalPage/algorithm.png',
                   heading: 'Full Stack Developer',
-                  colorBox: Colors.black,
+                  colorBox: Colors.white,
                   onPress: () => Navigator.pushNamed(context, '/fullstack'),
                   txt:
                       'A full stack developer is a web developer or engineer who works with both the front and back ends of a website or application',
                 ),
                 MainTile(
                   heading: 'Mobile App Developer',
-                  colorBox: Colors.black,
+                  colorBox: Colors.red,
                   txt:
                       'Mobile app developer primary duty is to create, maintain and implement the source code to develop mobile apps',
                   imageURL: 'images/TechnicalPage/smartphone.png',

@@ -21,6 +21,7 @@ class JobSection extends StatelessWidget {
           scrollDirection: Axis.vertical,
           children: <Widget>[
             MainTile(
+              colorBox: Colors.blue,
               txt: 'Checkout ongoing job',
               // url: '',
               onPress: ()=>Navigator.pushNamed(context, '/current'),
@@ -28,6 +29,7 @@ class JobSection extends StatelessWidget {
               heading: 'Current Opening ',
             ),
             MainTile(
+              colorBox: Colors.orangeAccent,
               txt: 'Want to work with Startups? \n' +
                   'Looking for internships? \n' +
                   'Stand a chance with Angellist \n' +
@@ -45,6 +47,7 @@ class JobSection extends StatelessWidget {
               heading: 'Startups',
             ),
             MainTile(
+              colorBox: Colors.grey,
               heading: 'Work Internationally',
               imageURL: 'images/Job/international.png',
               txt: 'Want to work in different Countires?\n' +
@@ -60,6 +63,7 @@ class JobSection extends StatelessWidget {
               },
             ),
             MainTile(
+              colorBox: Colors.blueGrey,
               txt: 'Want to improve your aptitude skills? \n' +
                   'Stand a chance with IndiaBix \n' +
                   'Click here we will land to the place',
@@ -75,6 +79,7 @@ class JobSection extends StatelessWidget {
               heading: 'Aptitude',
             ),
             MainTile(
+              colorBox: Colors.lime,
               heading: 'Coding Skills',
               imageURL: 'images/Job/computer.png',
               txt: 'Want to improve your coding skills? \n' +
@@ -90,6 +95,7 @@ class JobSection extends StatelessWidget {
               },
             ),
             MainTile(
+              colorBox: Colors.red,
               heading: 'Personal Interview',
               txt: 'Want to improve your personal interview skills? \n' +
                   'Want to take mock Interviews ? \n'

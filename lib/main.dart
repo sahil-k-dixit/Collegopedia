@@ -75,8 +75,8 @@ class _MyAppState extends State<MyApp> {
         '/placement': (BuildContext context) => PlacementPage(),
         '/confused': (BuildContext context) => ConfusedMainPage(),
         '/addexperience': (BuildContext context) => AddYourExperience(),
-        '/company/$companyNameSpecific': (BuildContext context) =>
-            CompanySpecificPlacementPage(companyNameSpecific),
+        '/company': (BuildContext context) =>
+            CompanySpecificPlacementPage(),
         '/contest': (BuildContext context) => Contest(),
         '/job': (BuildContext context) => JobSection(),
         '/discuss': (BuildContext context) => DiscussionForum(),
@@ -91,7 +91,7 @@ class _MyAppState extends State<MyApp> {
         '/datascience': (BuildContext context) => DataScientist(),
         '/cyber': (BuildContext context) => CyberSecurity(),
         '/questionspecific': (BuildContext context) =>
-            QuestionSpecificPage(specificQuestion),
+            QuestionSpecificPage(),
         '/about': (BuildContext context) => About(),
         '/current': (BuildContext context) => JobOpening(),
         '/addjob': (BuildContext context) => AddJobOpening(),

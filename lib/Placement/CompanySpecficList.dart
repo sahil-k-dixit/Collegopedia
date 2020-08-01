@@ -2,14 +2,15 @@
 import 'package:collegopedia/Drawer/DrawerBarr.dart';
 import 'package:collegopedia/Placement/MessageModel.dart';
 import 'package:collegopedia/Placement/TIleMode.dart';
+import 'package:collegopedia/argumentModel.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:pie_chart/pie_chart.dart';
 
 class CompanySpecificPlacementPage extends StatefulWidget {
-  String s;
+//  final String s = ModalRoute.of(context).settings.arguments;
 
-  CompanySpecificPlacementPage(this.s);
+  //CompanySpecificPlacementPage(this.s);
 
   @override
   _CompanySpecificPlacementPageState createState() =>
@@ -41,6 +42,9 @@ class _CompanySpecificPlacementPageState
 
   @override
   Widget build(BuildContext context) {
+    final ArgumentModel args = ModalRoute.of(context).settings.arguments;
+    final String s = args.args;
+    print(s);
     return Scaffold(
       backgroundColor: Color(0xFF1D1F2D),
       drawer: DrawerrBarr(),
@@ -54,7 +58,7 @@ class _CompanySpecificPlacementPageState
               stream: FirebaseDatabase()
                   .reference()
                   .child('Placements')
-                  .child(widget.s)
+                  .child(s)
                   .onValue,
               builder: (context, snap) {
                 if (snap.hasData &&
@@ -65,8 +69,8 @@ class _CompanySpecificPlacementPageState
                   //print(data.toString());
                   data.forEach((index, data) {
                     //print(data["mode"]);
-                    MessageModel m = MessageModel(
-                        companyName: widget.s,
+                    MessageModel message = MessageModel(
+                        companyName: s,
                         role: data["role"].toString(),
                         name: data["name"].toString(),
                         description: data["description"].toString(),
@@ -77,12 +81,10 @@ class _CompanySpecificPlacementPageState
                         branch: data["branch"],
                         clg: data["clg"]);
 
-                    apptiDataMap.putIfAbsent(data["apptitude"].toString().split('-')[1].replaceFirst(' ', ''), () => 1);
                     apptiDataMap.update(data["apptitude"].toString().split('-')[1].replaceFirst(' ', ''), (value) => value +1,);
-                    placeDataMap.putIfAbsent(data["personal"].toString().split('-')[1].replaceFirst(' ', ''), () => 1);
                     placeDataMap.update(data["personal"].toString().split('-')[1].replaceFirst(' ', ''), (value) => value +1,);
-                    print(apptiDataMap);
-                    listOfMessage.add(m);
+                    print('ss');
+                    listOfMessage.add(message);
                   });
 
                   print(listOfMessage.length);

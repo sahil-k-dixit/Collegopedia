@@ -1,3 +1,4 @@
+import 'package:collegopedia/argumentModel.dart';
 import 'package:collegopedia/globals.dart';
 import 'package:collegopedia/readMore.dart';
 import 'package:firebase_database/firebase_database.dart';
@@ -6,10 +7,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_linkify/flutter_linkify.dart';
 
 class QuestionSpecificPage extends StatefulWidget {
-  String questionText;
-
-  QuestionSpecificPage(this.questionText);
-
   @override
   _QuestionSpecificPageState createState() => _QuestionSpecificPageState();
 }
@@ -18,18 +15,20 @@ class _QuestionSpecificPageState extends State<QuestionSpecificPage> {
   bool isAnswer = false;
   final _formKey = GlobalKey<FormState>();
   final answer = TextEditingController();
-  String questionText;
+ //
   final dbRef = FirebaseDatabase.instance.reference().child("Questions");
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    questionText = widget.questionText;
+   // questionText = widget.questionText;
   }
 
   @override
   Widget build(BuildContext context) {
+    final ArgumentModel arg = ModalRoute.of(context).settings.arguments;
+    String questionText = arg.args;
     return Scaffold(
         backgroundColor: Color(0xFF1D1F2D),
         appBar: AppBar(
@@ -53,7 +52,7 @@ class _QuestionSpecificPageState extends State<QuestionSpecificPage> {
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
-                            widget.questionText,
+                            questionText,
 // textAlign: TextAlign.center,
                             style: TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 20),
@@ -168,7 +167,7 @@ class _QuestionSpecificPageState extends State<QuestionSpecificPage> {
                       ),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: AnswerStream(widget.questionText),
+                        child: AnswerStream(questionText),
                       ),
                     ],
                   ),

@@ -1,4 +1,5 @@
 import 'package:collegopedia/Placement/CompanySpecficList.dart';
+import 'package:collegopedia/argumentModel.dart';
 import 'package:collegopedia/globals.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -26,12 +27,13 @@ class CompanyListTile extends StatelessWidget {
         ),
         child: FlatButton(
           onPressed: () {
-//            Navigator.pushNamed(context, '/company',arguments: companyName);
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) =>
-                        CompanySpecificPlacementPage(companyName)));
+           // Navigator.pushNamed(context, '/company',arguments: companyName);
+//            Navigator.push(
+//                context,
+//                MaterialPageRoute(
+//                    builder: (context) =>
+//                        CompanySpecificPlacementPage(companyName)));
+          Navigator.pushNamed(context, '/company',arguments: ArgumentModel(companyName));
           },
           child:  Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,

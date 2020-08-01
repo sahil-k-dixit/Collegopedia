@@ -17,13 +17,13 @@ class TileDisplay extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                message.companyName,
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-            ),
+//            Padding(
+//              padding: const EdgeInsets.all(8.0),
+//              child: Text(
+//                message.companyName,
+//                style: TextStyle(fontWeight: FontWeight.bold),
+//              ),
+//            ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text("Written by: ${message.name}",

@@ -37,20 +37,11 @@ class _ConfusedMainPageState extends State<ConfusedMainPage> {
                             style: BorderStyle.solid)),
                     child: Column(
                       children: <Widget>[
-                        Text(
-                          ' Confused?',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                              fontStyle: FontStyle.italic),
-                        ),
                         Padding(
                           padding: const EdgeInsets.fromLTRB(15,8,15,8),
                           child: Container(
                             child: SelectableText(
-                              'A confusion about your career is a good sign. \n'
-                              'How? \n'
-                                  'We have listed some career options for you, try whichever you feel like doing. '
+                                  'We have listed some career options with road-maps for you, try whichever you feel like doing. '
                                   "We know there are many other options that we haven't listed we will try to update.",
                               textAlign: TextAlign.center,
                               style: TextStyle(
@@ -83,14 +74,14 @@ class _ConfusedMainPageState extends State<ConfusedMainPage> {
                   imageURL: 'images/ConfusedPage/technical.png',
                   heading: 'Technical',
                   onPress: () => Navigator.pushNamed(context, '/tech'),
-                  colorBox: Colors.black,
+                  colorBox: Colors.lime,
                   txt:
                       'Technical Job means that jobs are related to your field Like IT Specialist, Software Engineering, Quality Engineer.',
                 ),
                 MainTile(
                   imageURL: 'images/ConfusedPage/growth.png',
                   heading: 'Business Development',
-                  colorBox: Colors.black,
+                  colorBox: Colors.grey,
                   onPress: ()=>Navigator.pushNamed(context, '/business'),
                   txt:
                       'The objectives include branding, expansion in markets, new user acquisition, and awareness. ',
@@ -100,7 +91,7 @@ class _ConfusedMainPageState extends State<ConfusedMainPage> {
                       'Artificial intelligence (AI) is the ability of a computer program or a machine to think and learn.',
                   imageURL: 'images/ConfusedPage/brain.png',
                   heading: 'Artificial Intelligence',
-                  colorBox: Colors.black,
+                  colorBox: Colors.blue,
                   onPress: () => Navigator.pushNamed(context, '/artificial'),
                 ),
                 MainTile(
@@ -109,7 +100,7 @@ class _ConfusedMainPageState extends State<ConfusedMainPage> {
                   heading: 'Data Science',
                   txt:
                       'Data science is the study of data. It involves developing methods of recording, storing, and analyzing data to effectively extract useful information.',
-                  colorBox: Colors.black,
+                  colorBox: Colors.black54,
                 ),
                 Text(
                   'There are many more options too.. we will be updating as soon as possible thanks for your patience!!',

@@ -137,7 +137,18 @@ class _HomeState extends State<Home> {
                 child: Text('YES'),
                 onPressed: () {
                  // signOutGoogle();
-                  Navigator.of(context).pop(true);
+                  //Navigator.p
+                 // Navigator.of(context).pop(true);
+                //  Navigator.popUntil(context, ModalRoute.withName('/home'));
+//                  Navigator.
+//                 // Navigator.
+//                  Navigator.of(context).pop(true);
+                while(Navigator.canPop(context)==true)
+                  {
+                    Navigator.pop(context);
+                   // Navigator.of(context).pop(true);
+                  }
+                Navigator.of(context).pop(true);
                 },
               ),
             ],
@@ -278,13 +289,13 @@ class _HomeState extends State<Home> {
 //              heading: 'About us!',
 //              onPress: () => Navigator.pushNamed(context, '/about'),
 //            ),
-          MainTile(
-            imageURL: 'images/Home/confused.png',
-            txt: ' Dont know from where to start and how to start',
-            colorBox: Colors.red,
-            heading: 'Confused?',
-            onPress: () => Navigator.pushNamed(context, '/confused'),
-          ),
+//          MainTile(
+//            imageURL: 'images/Home/confused.png',
+//            txt: ' Dont know from where to start and how to start',
+//            colorBox: Colors.red,
+//            heading: 'Confused?',
+//            onPress: () => Navigator.pushNamed(context, '/confused'),
+//          ),
           ],
         ),
       ),
