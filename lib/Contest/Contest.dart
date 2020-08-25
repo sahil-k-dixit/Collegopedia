@@ -22,30 +22,31 @@ class Contest extends StatelessWidget {
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     shape: BoxShape.rectangle,
-                    border: Border.all(
-                        color: Colors.white,
-                        width: 2,
-                        style: BorderStyle.solid)),
+//                    border: Border.all(
+//                        color: Colors.white,
+//                        width: 2,
+//                        style: BorderStyle.solid)
+                ),
                 child: Column(
                   children: <Widget>[
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        child: Text(
-                          'Allows programmer to improve their knowledge on data structures and algorithms and the way of using those according to the problem statement.'
-                          ' Competitive coding is independent of programming language.  '
-                          'The understanding and solving the problem using algorithms and data structures is important here.'
-                          'So simple if want to crack into big tech or startup who should participate in competitive coding. '
-                          'Incase if are asking someone to refer you competitive coding plays a vital role. ',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 13,
-                            fontFamily: 'Times new Roman',
-                          ),
-                        ),
-                      ),
-                    )
+//                    Padding(
+//                      padding: const EdgeInsets.all(8.0),
+//                      child: Container(
+//                        child: Text(
+//                          'Allows programmer to improve their knowledge on data structures and algorithms and the way of using those according to the problem statement.'
+//                          ' Competitive coding is independent of programming language.  '
+//                          'The understanding and solving the problem using algorithms and data structures is important here.'
+//                          'So simple if want to crack into big tech or startup who should participate in competitive coding. '
+//                          'Incase if are asking someone to refer you competitive coding plays a vital role. ',
+//                          textAlign: TextAlign.left,
+//                          style: TextStyle(
+//                            color: Colors.white,
+//                            fontSize: 13,
+//                            fontFamily: 'Times new Roman',
+//                          ),
+//                        ),
+//                      ),
+//                    )
                   ],
                 ),
               ),
@@ -104,6 +105,20 @@ class Contest extends StatelessWidget {
             MainTile(
               txt: 'Participate in CodeForces Events',
               heading: 'CodeForces',
+              imageURL: 'images/Contest/gym.png',
+              colorBox: Colors.white,
+              onPress: () async {
+                //const url = 'https://flutter.dev';
+                if (await canLaunch('https://codeforces.com/contests')) {
+                  await launch('https://codeforces.com/contests');
+                } else {
+                  throw 'Could not launch https://codeforces.com/contests';
+                }
+              },
+            ),
+            MainTile(
+              txt: 'Participate in Kaggle Events',
+              heading: 'Kaggle',
               imageURL: 'images/Contest/gym.png',
               colorBox: Colors.white,
               onPress: () async {

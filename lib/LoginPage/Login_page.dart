@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'dart:ui';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collegopedia/globals.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -165,7 +167,19 @@ Future<String> signInWithGoogle() async {
   );
 
   final AuthResult authResult = await _auth.signInWithCredential(credential);
+
   final FirebaseUser user = authResult.user;
+
+  if(authResult.additionalUserInfo.isNewUser)
+    {
+      final Firestore _firestore = Firestore.instance;
+      final FirebaseMessaging _messaging = FirebaseMessaging();
+      _messaging.getToken().then((token) {
+        _firestore.collection('pushtoken').add({'devtoken':token});
+      });
+      _firestore.collection('userInfo').add({'userName':authResult.user.displayName,
+      'email':authResult.user.email});
+    }
   userName = authResult.user.displayName;
 
   assert(!user.isAnonymous);

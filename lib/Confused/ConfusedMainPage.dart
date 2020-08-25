@@ -1,6 +1,8 @@
+import 'package:collegopedia/Contest/event.dart';
 import 'package:collegopedia/Drawer/DrawerBarr.dart';
 import 'package:collegopedia/UniversalTile.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 class ConfusedMainPage extends StatefulWidget {
   @override
@@ -8,6 +10,12 @@ class ConfusedMainPage extends StatefulWidget {
 }
 
 class _ConfusedMainPageState extends State<ConfusedMainPage> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    //print(fetchEvents(http.Client()).toString());
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(

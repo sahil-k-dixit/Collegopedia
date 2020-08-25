@@ -49,7 +49,7 @@ class _CompanySpecificPlacementPageState
       backgroundColor: Color(0xFF1D1F2D),
       drawer: DrawerrBarr(),
       appBar: AppBar(
-        title: Text("Placement Page"),
+        title: Center(child: Text(s)),
       ),
       body: SafeArea(
         child: Padding(

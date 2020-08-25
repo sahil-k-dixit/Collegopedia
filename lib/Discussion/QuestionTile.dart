@@ -30,7 +30,7 @@ class QuestionListTile extends StatelessWidget {
               style: GoogleFonts.lato(
                   textStyle: Theme.of(context).textTheme.display1,
                   color: Colors.white,
-                  fontSize: 15,
+                  fontSize: 12,
                   fontWeight: FontWeight.bold),
             ),
           ),

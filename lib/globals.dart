@@ -19,6 +19,15 @@ BoxDecoration tileDecoration = BoxDecoration(
     // backgroundBlendMode: BlendMode.colorBurn,
     borderRadius: BorderRadius.circular(10),
     shape: BoxShape.rectangle,
-    border: Border.all(color: Colors.grey, width: 2, style: BorderStyle.solid));
+    boxShadow: [
+        BoxShadow(
+            offset: const Offset(3.0, 3.0),
+            color: Colors.grey,
+            blurRadius: 3.0,
+            spreadRadius: 0,
+        ),
+    ],
+  //  border: Border.all(color: Colors.black54, width: 2, style: BorderStyle.solid)
+);
 
 Color mainColor = Color(0xFF1D1F2D);

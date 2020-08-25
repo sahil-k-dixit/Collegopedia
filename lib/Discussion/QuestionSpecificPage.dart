@@ -55,7 +55,7 @@ class _QuestionSpecificPageState extends State<QuestionSpecificPage> {
                             questionText,
 // textAlign: TextAlign.center,
                             style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 20),
+                                fontWeight: FontWeight.bold, fontSize: 13),
                           ),
                         ),
                       ),
@@ -161,7 +161,7 @@ class _QuestionSpecificPageState extends State<QuestionSpecificPage> {
                           child: Text(
                             "Answers",
                             style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.bold),
+                                fontSize: 15, fontWeight: FontWeight.bold),
                           ),
                         ),
                       ),

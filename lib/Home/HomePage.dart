@@ -1,10 +1,7 @@
 import 'dart:io';
-
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collegopedia/Drawer/DrawerBarr.dart';
 import 'package:collegopedia/UniversalTile.dart';
 import 'package:collegopedia/globals.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -27,12 +24,12 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  final FirebaseMessaging _messaging = FirebaseMessaging();
-  final Firestore _firestore = Firestore.instance;
+
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
+
     versionCheck(context);
   }
 
@@ -171,117 +168,115 @@ class _HomeState extends State<Home> {
       ),
       backgroundColor: Color(0xFF1D1F2D),
       drawer: DrawerrBarr(),
-      body: WillPopScope(
-        onWillPop: _onBackPressed,
-        child: ListView(
-          scrollDirection: Axis.vertical,
-          children: <Widget>[
-            Container(
-              decoration: BoxDecoration(
-                color: mainColor,
-              ),
-              child: Padding(
-                padding: const EdgeInsets.only(top: 50),
-                child: Align(
-                  alignment: Alignment.center,
-                  child: Text(
-                    ("HI " + userName.split(" ")[0]).toUpperCase(),
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.lato(
-                        textStyle: Theme.of(context).textTheme.display1,
-                        color: Colors.white,
-                        fontSize: 11),
-                  ),
-                ),
-              ),
+      body: ListView(
+        scrollDirection: Axis.vertical,
+        children: <Widget>[
+          Container(
+            decoration: BoxDecoration(
+              color: mainColor,
             ),
-            Container(
-              decoration: BoxDecoration(
-                color: mainColor,
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Align(
-                  alignment: Alignment.center,
-                  child: Text(
-                    'Welcome to Collegopedia',
-                    style: GoogleFonts.lato(
-                        textStyle: Theme.of(context).textTheme.display1,
-                        color: Colors.white,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold),
-                  ),
-                ),
-              ),
-            ),
-            Container(
-              decoration: BoxDecoration(
-                color: mainColor,
-              ),
-              //height: 200,
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(30, 10, 30, 10),
+            child: Padding(
+              padding: const EdgeInsets.only(top: 50),
+              child: Align(
+                alignment: Alignment.center,
                 child: Text(
-                  'Stay connected with Collegopedia. Our portal gives you an access to learning resources, '
-                  'discussions and assists with college planning and preparation.',
+                  ("HI " + userName.split(" ")[0]).toUpperCase(),
+                  textAlign: TextAlign.center,
                   style: GoogleFonts.lato(
                       textStyle: Theme.of(context).textTheme.display1,
                       color: Colors.white,
-                      fontStyle: FontStyle.normal,
-                      fontSize: 12),
+                      fontSize: 11),
                 ),
               ),
             ),
-            Container(
-              decoration: BoxDecoration(color: mainColor),
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(10, 10, 30, 10),
-                child: Align(
-                    child: Text(
-                  'Please select your area of interest:',
+          ),
+          Container(
+            decoration: BoxDecoration(
+              color: mainColor,
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Align(
+                alignment: Alignment.center,
+                child: Text(
+                  'Welcome to Collegopedia',
                   style: GoogleFonts.lato(
                       textStyle: Theme.of(context).textTheme.display1,
-                      color: Colors.grey,
-                      fontSize: 12,
-                      fontStyle: FontStyle.italic),
-                )),
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold),
+                ),
               ),
             ),
-            MainTile(
-              imageURL: 'images/Home/Job.png',
-              txt: 'Checkout the experiences of placements',
-              colorBox: Color(0xFFAEFFA1),
-              heading: 'Placement',
-              onPress: () => Navigator.pushNamed(context, '/placement'),
+          ),
+          Container(
+            decoration: BoxDecoration(
+              color: mainColor,
             ),
-            MainTile(
-              imageURL: 'images/Home/Jobseek.png',
-              txt: 'Looking for jobs?',
-              colorBox: Color(0xFFFFCE46),
-              heading: 'Jobs',
-              onPress: () => Navigator.pushNamed(context, '/job'),
+            //height: 200,
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(30, 10, 30, 10),
+              child: Text(
+                'Stay connected with Collegopedia. Our portal gives you an access to learning resources, '
+                'discussions and assists with college planning and preparation.',
+                style: GoogleFonts.lato(
+                    textStyle: Theme.of(context).textTheme.display1,
+                    color: Colors.white,
+                    fontStyle: FontStyle.normal,
+                    fontSize: 12),
+              ),
             ),
-            MainTile(
-              imageURL: 'images/Home/Discussion.png',
-              txt: 'Have a Query? Discuss with us',
-              colorBox: Color(0xFF7BE1FA),
-              heading: 'Discussion',
-              onPress: () => Navigator.pushNamed(context, '/discuss'),
+          ),
+          Container(
+            decoration: BoxDecoration(color: mainColor),
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(10, 10, 30, 10),
+              child: Align(
+                  child: Text(
+                'Please select your area of interest:',
+                style: GoogleFonts.lato(
+                    textStyle: Theme.of(context).textTheme.display1,
+                    color: Colors.grey,
+                    fontSize: 12,
+                    fontStyle: FontStyle.italic),
+              )),
             ),
-            MainTile(
-              imageURL: 'images/Home/trophy.png',
-              txt: 'Participate in competitive coding events.',
-              colorBox: Color(0xFFDC5858),
-              heading: 'Contest',
-              onPress: () => Navigator.pushNamed(context, '/contest'),
-            ),
-            MainTile(
-              imageURL: 'images/Home/confused.png',
-              txt: ' Dont know from where to start and how to start',
-              colorBox: Colors.lime,
-              heading: 'Confused?',
-              onPress: () => Navigator.pushNamed(context, '/confused'),
-            ),
+          ),
+          MainTile(
+            imageURL: 'images/Home/Job.png',
+            txt: 'Checkout the experiences of placements',
+            colorBox: Color(0xFFAEFFA1),
+            heading: 'Placement',
+            onPress: () => Navigator.pushNamed(context, '/placement'),
+          ),
+          MainTile(
+            imageURL: 'images/Home/Jobseek.png',
+            txt: 'Looking for jobs?',
+            colorBox: Color(0xFFFFCE46),
+            heading: 'Jobs',
+            onPress: () => Navigator.pushNamed(context, '/job'),
+          ),
+          MainTile(
+            imageURL: 'images/Home/Discussion.png',
+            txt: 'Have a Query? Discuss with us',
+            colorBox: Color(0xFF7BE1FA),
+            heading: 'Discussion',
+            onPress: () => Navigator.pushNamed(context, '/discuss'),
+          ),
+          MainTile(
+            imageURL: 'images/Home/trophy.png',
+            txt: 'Participate in competitive coding events.',
+            colorBox: Color(0xFFDC5858),
+            heading: 'Contest',
+            onPress: () => Navigator.pushNamed(context, '/contest'),
+          ),
+          MainTile(
+            imageURL: 'images/Home/confused.png',
+            txt: ' Dont know from where to start and how to start',
+            colorBox: Colors.lime,
+            heading: 'Confused?',
+            onPress: () => Navigator.pushNamed(context, '/confused'),
+          ),
 //            MainTile(
 //              imageURL: 'images/about.png',
 //              txt: 'Know about us',
@@ -296,8 +291,7 @@ class _HomeState extends State<Home> {
 //            heading: 'Confused?',
 //            onPress: () => Navigator.pushNamed(context, '/confused'),
 //          ),
-          ],
-        ),
+        ],
       ),
     );
   }
