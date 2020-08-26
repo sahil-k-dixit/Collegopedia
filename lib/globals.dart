@@ -13,10 +13,32 @@ List<MessageModel> listOfMessage = [];
 List<String> companyList = [];
 List<String> questionList = [];
 
+
+TextStyle appBarHeaderTextStyle =  GoogleFonts.lato(
+fontSize: 20,
+color: Colors.white,
+fontWeight: FontWeight.bold,
+fontStyle: FontStyle.italic
+);
+
+
 TextStyle textStyle = GoogleFonts.lato(
    // textStyle: Theme.of(context).textTheme.display1,
     color: Colors.grey,
     fontSize: 10);
+
+
+TextStyle placementTextStyle = GoogleFonts.lato(
+    color: Colors.white,
+    fontSize: 16,
+    fontWeight: FontWeight.normal);
+
+TextStyle hintTextStyle = GoogleFonts.lato(
+    // textStyle: Theme.of(context).textTheme.display1,
+    color: Colors.grey,
+    fontStyle: FontStyle.italic,
+    fontSize: 14);
+
 BoxDecoration tileDecoration = BoxDecoration(
     color: Color(0xFF1C1B20),
     // backgroundBlendMode: BlendMode.colorBurn,

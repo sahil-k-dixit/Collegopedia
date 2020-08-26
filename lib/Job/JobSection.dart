@@ -1,5 +1,6 @@
 import 'package:collegopedia/Drawer/DrawerBarr.dart';
 import 'package:collegopedia/UniversalTile.dart';
+import 'package:collegopedia/globals.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -11,7 +12,7 @@ class JobSection extends StatelessWidget {
           title: Center(
             child: Text(
               "Job Section",
-              style: TextStyle(),
+              style: appBarHeaderTextStyle,
             ),
           ),
         ),

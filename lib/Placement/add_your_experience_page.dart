@@ -5,6 +5,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/widgets.dart';
+import 'package:collegopedia/globals.dart';
 
 var categories = ["OnCampus", "OffCampus"];
 var difficultyLevel = [
@@ -50,8 +51,9 @@ class _AddYourExperienceState extends State<AddYourExperience> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Add your Experience"),
+        title: Center(child: Text("Add Your Experience",style: appBarHeaderTextStyle,)),
       ),
+      backgroundColor: Color(0xFF1D1F2D),
       body: Form(
         key: _formKey,
         child: SingleChildScrollView(
@@ -69,6 +71,7 @@ class _AddYourExperienceState extends State<AddYourExperience> {
                       return null;
                     },
                     decoration: InputDecoration(
+                      hintStyle: hintTextStyle,
                       hintText: "Enter your name",
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10.0),
@@ -87,6 +90,7 @@ class _AddYourExperienceState extends State<AddYourExperience> {
                     return null;
                   },
                   decoration: InputDecoration(
+                      hintStyle: hintTextStyle,
                       hintText: "Enter your company name",
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10.0),
@@ -96,6 +100,11 @@ class _AddYourExperienceState extends State<AddYourExperience> {
               Padding(
                 padding: const EdgeInsets.all(20),
                 child: DropdownButtonFormField(
+                  style: hintTextStyle.copyWith(
+                      color: Colors.white
+                  ),
+                  //iconDisabledColor: Colors.black,
+
                   items: categories.map((String c) {
                     return DropdownMenuItem(
                       child: Text(c),
@@ -109,6 +118,7 @@ class _AddYourExperienceState extends State<AddYourExperience> {
                   },
                   value: mode,
                   decoration: InputDecoration(
+                    hintStyle: hintTextStyle,
                     hintText: 'Please Select mode',
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10.0),
@@ -128,6 +138,7 @@ class _AddYourExperienceState extends State<AddYourExperience> {
                       return null;
                     },
                     decoration: InputDecoration(
+                      hintStyle: hintTextStyle,
                       hintText: "Enter your Batch/Graduation Year",
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10.0),
@@ -146,6 +157,7 @@ class _AddYourExperienceState extends State<AddYourExperience> {
                       return null;
                     },
                     decoration: InputDecoration(
+                      hintStyle: hintTextStyle,
                       hintText: "Enter your College name",
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10.0),
@@ -164,6 +176,7 @@ class _AddYourExperienceState extends State<AddYourExperience> {
                       return null;
                     },
                     decoration: InputDecoration(
+                      hintStyle: hintTextStyle,
                       hintText: "Enter your branch",
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10.0),
@@ -182,6 +195,7 @@ class _AddYourExperienceState extends State<AddYourExperience> {
                       return null;
                     },
                     decoration: InputDecoration(
+                      hintStyle: hintTextStyle,
                       hintText: "For which role did you applied?",
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10.0),
@@ -191,6 +205,9 @@ class _AddYourExperienceState extends State<AddYourExperience> {
               Padding(
                 padding: const EdgeInsets.all(20),
                 child: DropdownButtonFormField(
+                  style: hintTextStyle.copyWith(
+                    color: Colors.white
+                  ),
                   items: difficultyLevel.map((String c) {
                     return DropdownMenuItem(
                       child: Text(c),
@@ -204,6 +221,7 @@ class _AddYourExperienceState extends State<AddYourExperience> {
                   },
                   value: apptitude,
                   decoration: InputDecoration(
+                    hintStyle: hintTextStyle,
                     hintText:
                         'Difficulty level(Apptitude or written coding test)',
                     enabledBorder: OutlineInputBorder(
@@ -215,8 +233,12 @@ class _AddYourExperienceState extends State<AddYourExperience> {
               Padding(
                 padding: const EdgeInsets.all(20),
                 child: DropdownButtonFormField(
+                  style: hintTextStyle.copyWith(
+                      color: Colors.white
+                  ),
                   items: difficultyLevel.map((String c) {
                     return DropdownMenuItem(
+
                       child: Text(c),
                       value: c,
                     );
@@ -228,6 +250,7 @@ class _AddYourExperienceState extends State<AddYourExperience> {
                   },
                   value: personalInterview,
                   decoration: InputDecoration(
+                    hintStyle: hintTextStyle,
                     hintText: 'Difficulty level of personal interview',
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10.0),
@@ -249,6 +272,7 @@ class _AddYourExperienceState extends State<AddYourExperience> {
                       return null;
                     },
                     decoration: InputDecoration(
+                      hintStyle: hintTextStyle,
                       hintText: 'Enter your Experience',
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10.0),

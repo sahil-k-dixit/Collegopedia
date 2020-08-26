@@ -19,9 +19,10 @@ class _AddQuestionState extends State<AddQuestion> {
     return Scaffold(
       appBar: AppBar(
         title: Center(
-          child: Text('Question'),
+          child: Text('Question',style: appBarHeaderTextStyle,),
         ),
       ),
+      backgroundColor: mainColor,
       body: Form(
           key: _formKey,
           child: Column(
@@ -31,7 +32,7 @@ class _AddQuestionState extends State<AddQuestion> {
                   child: Container(
                     child: TextFormField(
                       enableSuggestions: true,
-                      maxLength: 100,
+                      maxLength: 300,
                       minLines: 5,
                       maxLines: 10,
                       controller: question,
@@ -42,7 +43,8 @@ class _AddQuestionState extends State<AddQuestion> {
                         return null;
                       },
                       decoration: InputDecoration(
-                        hintText: "Enter your question",
+                        hintStyle: hintTextStyle,
+                        hintText: "Ask your question",
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10.0),
                         ),

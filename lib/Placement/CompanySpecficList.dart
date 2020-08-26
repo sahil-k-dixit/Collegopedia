@@ -3,6 +3,7 @@ import 'package:collegopedia/Drawer/DrawerBarr.dart';
 import 'package:collegopedia/Placement/MessageModel.dart';
 import 'package:collegopedia/Placement/TIleMode.dart';
 import 'package:collegopedia/argumentModel.dart';
+import 'package:collegopedia/globals.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -50,7 +51,7 @@ class _CompanySpecificPlacementPageState
       backgroundColor: Color(0xFF1D1F2D),
       drawer: DrawerrBarr(),
       appBar: AppBar(
-        title: Center(child: Text(s)),
+        title: Center(child: Text(s,style: appBarHeaderTextStyle,)),
       ),
       body: SafeArea(
         child: Padding(

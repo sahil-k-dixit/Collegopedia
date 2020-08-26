@@ -35,32 +35,28 @@ class TileDisplay extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Text("Written by: ${message.name}",
-                  style: GoogleFonts.lato(
-                  textStyle: Theme.of(context).textTheme.display1,
-          color: Colors.grey,
-          fontSize: 12,
-          fontWeight: FontWeight.normal),),
+              child: Text(
+                "Written by: ${message.name}",
+                style: GoogleFonts.lato(
+                    textStyle: Theme.of(context).textTheme.display1,
+                    color: Colors.grey,
+                    fontSize: 14,
+                    fontWeight: FontWeight.normal),
+              ),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Text("Mode: ${message.mode}",
-                style: GoogleFonts.lato(
-                    textStyle: Theme.of(context).textTheme.display1,
-                    color: Colors.white,
-                    fontSize: 14,
-                    fontWeight: FontWeight.normal),),
+              child: Text(
+                "Mode: ${message.mode}",
+                style: placementTextStyle,
+              ),
             ),
             message.branch.isEmpty
                 ? Text('')
                 : Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Text(" ${message.branch}",
-                      style: GoogleFonts.lato(
-                          textStyle: Theme.of(context).textTheme.display1,
-                          color: Colors.white,
-                          fontSize: 14,
-                          fontWeight: FontWeight.normal),),
+                    child:
+                        Text(" ${message.branch}", style: placementTextStyle),
                   ),
             message.clg.isEmpty
                 ? Text('')
@@ -68,49 +64,36 @@ class TileDisplay extends StatelessWidget {
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
                       " ${message.clg}",
-                        style: GoogleFonts.lato(
-                            textStyle: Theme.of(context).textTheme.display1,
-                            color: Colors.white,
-                            fontSize: 14,
-                            fontWeight: FontWeight.normal),
+                      style: placementTextStyle,
                     ),
                   ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Text("Role: ${message.role}",
-                style: GoogleFonts.lato(
-                    textStyle: Theme.of(context).textTheme.display1,
-                    color: Colors.redAccent,
-                    fontSize: 14,
-                    fontWeight: FontWeight.normal),),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text("Batch: ${message.batch}",
-                style: GoogleFonts.lato(
-                    textStyle: Theme.of(context).textTheme.display1,
-                    color: Colors.white,
-                    fontSize: 14,
-                    fontWeight: FontWeight.normal),),
+              child: Text(
+                "Role: ${message.role}",
+                style: placementTextStyle.copyWith(color: Colors.redAccent),
+              ),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
-                  "Intial rounds difficulty(Aptitude or Written coding test): ${message.apptitude}",
-                style: GoogleFonts.lato(
-                    textStyle: Theme.of(context).textTheme.display1,
-                    color: Colors.white,
-                    fontSize: 14,
-                    fontWeight: FontWeight.normal),),
+                "Batch: ${message.batch}",
+                style: placementTextStyle,
+              ),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Text("Personal Interview difficulty: ${message.interview}",
-                style: GoogleFonts.lato(
-                    textStyle: Theme.of(context).textTheme.display1,
-                    color: Colors.white,
-                    fontSize: 14,
-                    fontWeight: FontWeight.normal),),
+              child: Text(
+                "Intial rounds difficulty(Aptitude or Written coding test): ${message.apptitude}",
+                style: placementTextStyle,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                "Personal Interview difficulty: ${message.interview}",
+                style: placementTextStyle,
+              ),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
@@ -121,11 +104,8 @@ class TileDisplay extends StatelessWidget {
                 trimMode: TrimMode.Line,
                 trimCollapsedText: '...Show more',
                 trimExpandedText: ' show less',
-                style: GoogleFonts.lato(
-                    textStyle: Theme.of(context).textTheme.display1,
-                    color: Colors.white,
-                    fontSize: 14,
-                    fontWeight: FontWeight.normal),
+                textAlign: TextAlign.left,
+                style: placementTextStyle,
               ),
             ),
           ],

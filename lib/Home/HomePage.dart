@@ -161,9 +161,7 @@ class _HomeState extends State<Home> {
         title: Center(
             child: Text(
           "Collegopedia",
-          style: TextStyle(
-            fontFamily: 'Lato Font Family',
-          ),
+          style: appBarHeaderTextStyle,
         )),
       ),
       backgroundColor: Color(0xFF1D1F2D),
@@ -185,6 +183,7 @@ class _HomeState extends State<Home> {
                   style: GoogleFonts.lato(
                       textStyle: Theme.of(context).textTheme.display1,
                       color: Colors.white,
+                      fontStyle: FontStyle.italic,
                       fontSize: 12),
                 ),
               ),

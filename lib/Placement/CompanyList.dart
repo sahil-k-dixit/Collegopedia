@@ -23,7 +23,7 @@ class CompanyListTile extends StatelessWidget {
               spreadRadius: 0,
             ),
           ],
-          borderRadius: BorderRadius.circular(5),
+          borderRadius: BorderRadius.circular(10),
         ),
         child: FlatButton(
           onPressed: () {
@@ -58,11 +58,11 @@ class CompanyListTile extends StatelessWidget {
                       textStyle: Theme.of(context).textTheme.display1,
                       color: Colors.white,
                       fontWeight: FontWeight.normal,
-                      fontSize: 15),)),
+                      fontSize: 16),)),
                 flex: 3,
               ),
               Expanded(
-                child: Icon(Icons.arrow_forward_ios),
+                child: Icon(Icons.arrow_forward_ios,color: Colors.grey,),
                 flex: 1,
               )
             ],

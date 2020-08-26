@@ -27,6 +27,8 @@ class MainTile extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           color: Color(0xFF4A5065),
+          shape: BoxShape.rectangle,
+          borderRadius: BorderRadius.circular(10), 
           boxShadow: [
             BoxShadow(
               offset: const Offset(3.0, 3.0),
@@ -66,7 +68,7 @@ class MainTile extends StatelessWidget {
                 textStyle: Theme.of(context).textTheme.display1,
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
-                fontSize: 14),
+                fontSize: 16),
           ),
           subtitle: Text(
             txt,
@@ -74,9 +76,9 @@ class MainTile extends StatelessWidget {
             style: GoogleFonts.lato(
                 textStyle: Theme.of(context).textTheme.display1,
                 color: Colors.grey,
-                fontSize: 12),
+                fontSize: 14),
           ),
-          trailing: Icon(Icons.arrow_forward_ios),
+          trailing: Icon(Icons.arrow_forward_ios,color: Colors.grey,),
         ),
 //        child: FlatButton(
 //          onPressed: onPress,

@@ -19,7 +19,7 @@ class _JobOpeningState extends State<JobOpening> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Center(child: Text('Current Opening')),
+          title: Center(child: Text('Current Openings',style: appBarHeaderTextStyle,)),
         ),
         backgroundColor: Color(0xFF1D1F2D),
         floatingActionButton: FloatingActionButton.extended(

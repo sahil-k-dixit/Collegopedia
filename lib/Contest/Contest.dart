@@ -1,5 +1,6 @@
 import 'package:collegopedia/Drawer/DrawerBarr.dart';
 import 'package:collegopedia/UniversalTile.dart';
+import 'package:collegopedia/globals.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -8,7 +9,7 @@ class Contest extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Center(child: Text("Contest")),
+          title: Center(child: Text("Contest",style: appBarHeaderTextStyle,)),
         ),
         drawer: DrawerrBarr(),
         backgroundColor: Color(0xFF1D1F2D),

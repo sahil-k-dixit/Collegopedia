@@ -28,7 +28,11 @@ class _PlacementPageState extends State<PlacementPage> {
       backgroundColor: Color(0xFF1D1F2D),
       appBar: AppBar(
         backgroundColor: Color(0xFF0E0F1B),
-        title: Center(child: Text("List of Companies")),
+        title: Center(
+            child: Text(
+          "List of Companies",
+          style: appBarHeaderTextStyle,
+        )),
 //        actions: <Widget>[
 //          IconButton(
 //              icon: Icon(
@@ -42,10 +46,7 @@ class _PlacementPageState extends State<PlacementPage> {
       ),
       drawer: DrawerrBarr(),
       body: StreamBuilder(
-          stream: FirebaseDatabase()
-              .reference()
-              .child('Placements')
-              .onValue,
+          stream: FirebaseDatabase().reference().child('Placements').onValue,
           builder: (context, snap) {
             if (snap.hasData &&
                 !snap.hasError &&

@@ -15,14 +15,14 @@ class _QuestionSpecificPageState extends State<QuestionSpecificPage> {
   bool isAnswer = false;
   final _formKey = GlobalKey<FormState>();
   final answer = TextEditingController();
- //
+  //
   final dbRef = FirebaseDatabase.instance.reference().child("Questions");
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-   // questionText = widget.questionText;
+    // questionText = widget.questionText;
   }
 
   @override
@@ -33,7 +33,10 @@ class _QuestionSpecificPageState extends State<QuestionSpecificPage> {
         backgroundColor: Color(0xFF1D1F2D),
         appBar: AppBar(
           title: Center(
-            child: Text('Discussion'),
+            child: Text(
+              'Discussion',
+              style: appBarHeaderTextStyle,
+            ),
           ),
         ),
         body: SafeArea(
@@ -47,16 +50,17 @@ class _QuestionSpecificPageState extends State<QuestionSpecificPage> {
                   Column(
                     children: <Widget>[
                       Container(
-                       // decoration: tileDecoration,
+                        // decoration: tileDecoration,
                         width: MediaQuery.of(context).size.width,
                         child: Padding(
-                          padding: const EdgeInsets.fromLTRB(8,18,8,0),
+                          padding: const EdgeInsets.fromLTRB(8, 18, 8, 0),
                           child: Center(
                             child: Text(
                               questionText,
 // textAlign: TextAlign.center,
                               style: GoogleFonts.lato(
-                                  textStyle: Theme.of(context).textTheme.display1,
+                                  textStyle:
+                                      Theme.of(context).textTheme.display1,
                                   color: Colors.white,
                                   fontSize: 16,
                                   fontWeight: FontWeight.normal),
@@ -85,6 +89,7 @@ class _QuestionSpecificPageState extends State<QuestionSpecificPage> {
                                         },
                                         decoration: InputDecoration(
                                           hintText: "Write your answer",
+                                          hintStyle: hintTextStyle,
                                           enabledBorder: OutlineInputBorder(
                                             borderRadius:
                                                 BorderRadius.circular(10.0),
@@ -136,9 +141,14 @@ class _QuestionSpecificPageState extends State<QuestionSpecificPage> {
                                       },
                                       child: Row(
                                         //crossAxisAlignment: CrossAxisAlignment.stretch,
-                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
                                         children: <Widget>[
-                                          Icon(Icons.text_format,size: 16,color: Colors.redAccent,),
+                                          Icon(
+                                            Icons.text_format,
+                                            size: 16,
+                                            color: Colors.redAccent,
+                                          ),
                                           Text(
                                             'Write Answer',
                                             style: GoogleFonts.lato(
@@ -154,13 +164,14 @@ class _QuestionSpecificPageState extends State<QuestionSpecificPage> {
                             ),
 
                       Padding(
-                        padding: const EdgeInsets.fromLTRB(12,0,12,0),
+                        padding: const EdgeInsets.fromLTRB(12, 0, 12, 0),
                         child: Container(
                           child: Text(
                             "Answers",
                             style: TextStyle(
-                              color: Colors.grey,
-                                fontSize: 12, fontWeight: FontWeight.normal),
+                                color: Colors.grey,
+                                fontSize: 12,
+                                fontWeight: FontWeight.normal),
                           ),
                         ),
                       ),
@@ -240,13 +251,11 @@ class AnswerItem extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: Text(
                 "Written by: ${userName}",
-                style: textStyle.copyWith(
-                  fontSize: 12
-                ),
+                style: textStyle.copyWith(fontSize: 12),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 8,right: 8,bottom: 8),
+              padding: const EdgeInsets.only(left: 8, right: 8, bottom: 8),
               child: ReadMoreText(
                 answerText,
                 trimLines: 2,
@@ -261,7 +270,6 @@ class AnswerItem extends StatelessWidget {
                     fontWeight: FontWeight.normal),
               ),
             ),
-
           ],
         ),
       ),

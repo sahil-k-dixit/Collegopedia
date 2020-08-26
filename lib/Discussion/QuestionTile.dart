@@ -36,11 +36,11 @@ class QuestionListTile extends StatelessWidget {
                     style: GoogleFonts.lato(
                         textStyle: Theme.of(context).textTheme.display1,
                         color: Colors.white,
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold),
+                        fontSize: 16,
+                        fontWeight: FontWeight.normal),
                   ),
                 ),
-                Icon(Icons.arrow_forward_ios)
+                Icon(Icons.arrow_forward_ios,color: Colors.grey,)
               ],
             ),
 //            Padding(
