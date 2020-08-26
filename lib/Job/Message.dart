@@ -2,5 +2,6 @@ class Message
 {
   String description;
   String link;
-  Message({this.description,this.link});
+  String key;
+  Message({this.description,this.link,this.key});
 }

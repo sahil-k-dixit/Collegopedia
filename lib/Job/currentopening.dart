@@ -15,6 +15,7 @@ class JobOpening extends StatefulWidget {
 }
 
 class _JobOpeningState extends State<JobOpening> {
+  final dbRef = FirebaseDatabase.instance.reference();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,11 +39,14 @@ class _JobOpeningState extends State<JobOpening> {
                 if (snap.hasData &&
                     !snap.hasError &&
                     snap.data.snapshot.value != null) {
-                  Map<dynamic, dynamic> data = snap.data.snapshot.value;
+                  Map<dynamic, dynamic> raw = snap.data.snapshot.value;
+                 // print(raw.keys);
                   openList = [];
-                  data.forEach((index, data) {
-                   final message = Message(description: data["description"],link: data["link"]);
-                   openList.add(message);
+                  raw.forEach((index, data) {
+                    final message = Message(
+                        description: data["description"], link: data["link"],key: raw.keys.toString());
+                     // print(rwa.toString());
+                    openList.add(message);
                   });
                   return ListView.builder(
                     padding: EdgeInsets.fromLTRB(20, 10, 40, 80),
@@ -67,11 +71,25 @@ class _JobOpeningState extends State<JobOpening> {
                                   padding: const EdgeInsets.all(8.0),
                                   child: Text('Apply :-'),
                                 ),
+
                                 Padding(
                                   padding: const EdgeInsets.all(8.0),
                                   child:
                                       RichTextView(text: openList[index].link),
                                 ),
+//                                Padding(
+//                                  padding: const EdgeInsets.all(8),
+//                                  child: Container(
+//                                    color: Colors.blueGrey,
+//                                    child: FlatButton(
+//                                        onPressed: () async {
+//                                           // print(openList[index].key);
+//                                          await dbRef.child('jobOpening').child(openList[index].key).remove();
+//                                          print('object');
+//                                        },
+//                                        child: Text('Delete')),
+//                                  ),
+//                                ),
                               ],
                             )),
                       );
@@ -79,10 +97,11 @@ class _JobOpeningState extends State<JobOpening> {
                   );
                 } else
                   return Center(
-                    child: CircularProgressIndicator(
-                      valueColor:
-                          AlwaysStoppedAnimation<Color>(Colors.redAccent),
-                    ),
+
+//                    child: CircularProgressIndicator(
+//                      valueColor:
+//                          AlwaysStoppedAnimation<Color>(Colors.redAccent),
+//                    ),
                   );
               }),
         ));
