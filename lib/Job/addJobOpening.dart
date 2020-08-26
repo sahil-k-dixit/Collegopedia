@@ -12,6 +12,8 @@ class _AddJobOpeningState extends State<AddJobOpening> {
   final _formKey = GlobalKey<FormState>();
   final dbRef = FirebaseDatabase.instance.reference();
   final decription = TextEditingController();
+  final name = TextEditingController();
+  final title = TextEditingController();
   final link = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -25,6 +27,42 @@ class _AddJobOpeningState extends State<AddJobOpening> {
           child: Column(
             children: <Widget>[
                // Name
+              Padding(
+                padding: EdgeInsets.all(20),
+                child: TextFormField(
+                  maxLength: 100,
+                  controller: name,
+                  validator: (value) {
+                    if (value.isEmpty) {
+                      return 'Please enter title of organization/company ';
+                    }
+                    return null;
+                  },
+                  decoration: InputDecoration(
+                      hintText: "title of organization/company",
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      )),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(20),
+                child: TextFormField(
+                  maxLength: 100,
+                  controller: title,
+                  validator: (value) {
+                    if (value.isEmpty) {
+                      return 'Job Title';
+                    }
+                    return null;
+                  },
+                  decoration: InputDecoration(
+                      hintText: "Job Title",
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      )),
+                ),
+              ),
               Padding(
                 padding: EdgeInsets.all(20),
                 child: TextFormField(
@@ -48,7 +86,7 @@ class _AddJobOpeningState extends State<AddJobOpening> {
               Padding(
                   padding: EdgeInsets.all(20),
                   child: TextFormField(
-                    maxLength: 100,
+                    maxLength: 500,
                     minLines: 5,
                     maxLines: 10,
                     controller: link,
@@ -75,9 +113,13 @@ class _AddJobOpeningState extends State<AddJobOpening> {
                         dbRef.child('jobOpening').push().set({
                           "description":decription.text,
                           "link":link.text,
+                          "name":name.text,
+                          "title":title.text
                         });
                         link.clear();
                         decription.clear();
+                        name.clear();
+                        title.clear();
                         showAlertDialog(context);
                         // Navigator.pushNamed(context, '/placement');
                       }

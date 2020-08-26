@@ -11,7 +11,7 @@ class DiscussionForum extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color(0xFF1D1F2D),
       appBar: AppBar(
-        title: Text("Discussion Forum"),
+        title: Center(child: Text("Discussion Forum")),
 //        actions: <Widget>[
 //          IconButton(
 //              icon: Icon(

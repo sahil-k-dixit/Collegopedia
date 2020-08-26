@@ -5,6 +5,7 @@ import 'package:collegopedia/Placement/TIleMode.dart';
 import 'package:collegopedia/argumentModel.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:pie_chart/pie_chart.dart';
 
 class CompanySpecificPlacementPage extends StatefulWidget {
@@ -102,7 +103,11 @@ class _CompanySpecificPlacementPageState
                               padding: const EdgeInsets.all(8.0),
                               child: Column(
                                 children: <Widget>[
-                                  Text("Initial Round Difficulty level"),
+                                  Text("Initial Round Difficulty level",style: GoogleFonts.lato(
+                                      textStyle: Theme.of(context).textTheme.display1,
+                                      color: Colors.grey,
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.normal),),
                                   Pie(apptiDataMap),
                                 ],
                               ),
@@ -111,7 +116,11 @@ class _CompanySpecificPlacementPageState
                               padding: const EdgeInsets.all(8.0),
                               child: Column(
                                 children: <Widget>[
-                                  Text("Personal Interview Difficulty level"),
+                                  Text("Personal Interview Difficulty level",style: GoogleFonts.lato(
+                                      textStyle: Theme.of(context).textTheme.display1,
+                                      color: Colors.grey,
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.normal),),
                                   Pie(placeDataMap),
                                 ],
                               ),
@@ -182,6 +191,16 @@ class _PieState extends State<Pie> {
       decimalPlaces: 0,
       showChartValueLabel: false,
       initialAngle: 0,
+      chartValueStyle: GoogleFonts.lato(
+          textStyle: Theme.of(context).textTheme.display1,
+          color: Colors.black,
+          fontSize: 14,
+          fontWeight: FontWeight.normal),
+      legendStyle: GoogleFonts.lato(
+          textStyle: Theme.of(context).textTheme.display1,
+          color: Colors.grey,
+          fontSize: 14,
+          fontWeight: FontWeight.normal),
 //      chartValueStyle: defaultChartValueStyle.copyWith(
 //        color: Colors.blueGrey[900].withOpacity(0.9),
 //      ),

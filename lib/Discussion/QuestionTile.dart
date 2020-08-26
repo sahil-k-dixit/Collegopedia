@@ -1,6 +1,9 @@
+//import 'dart:html';
+
 import 'package:collegopedia/Discussion/QuestionSpecificPage.dart';
 import 'package:collegopedia/argumentModel.dart';
 import 'package:collegopedia/globals.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -11,29 +14,43 @@ class QuestionListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       width: MediaQuery.of(context).size.width,
-      child: Container(
-        decoration: tileDecoration,
-        child: FlatButton(
-          onPressed: () {
+      child: FlatButton(
+        onPressed: () {
 //            Navigator.push(
 //                context,
 //                MaterialPageRoute(
 //                    builder: (context) => QuestionSpecificPage(questionText)));
-          Navigator.pushNamed(context, '/questionspecific',arguments: ArgumentModel(questionText));
-          },
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text(
-              questionText,
-              style: GoogleFonts.lato(
-                  textStyle: Theme.of(context).textTheme.display1,
-                  color: Colors.white,
-                  fontSize: 12,
-                  fontWeight: FontWeight.bold),
+        Navigator.pushNamed(context, '/questionspecific',arguments: ArgumentModel(questionText));
+        },
+        child: Column(
+          children: <Widget>[
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                Expanded(
+                  child: Text(
+                    questionText,
+                    textAlign: TextAlign.left,
+                    style: GoogleFonts.lato(
+                        textStyle: Theme.of(context).textTheme.display1,
+                        color: Colors.white,
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+                Icon(Icons.arrow_forward_ios)
+              ],
             ),
-          ),
+//            Padding(
+//              padding: const EdgeInsets.all(8.0),
+//              child: Text('Click here to view the discussion',style: TextStyle(
+//                fontSize: 8,
+//                color: Colors.grey
+//              ),),
+//            ),
+          ],
         ),
       ),
     );

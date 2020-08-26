@@ -19,7 +19,7 @@ class _JobOpeningState extends State<JobOpening> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Center(child: Text('Job Opening')),
+          title: Center(child: Text('Current Opening')),
         ),
         backgroundColor: Color(0xFF1D1F2D),
         floatingActionButton: FloatingActionButton.extended(
@@ -41,8 +41,9 @@ class _JobOpeningState extends State<JobOpening> {
                   Map<dynamic, dynamic> data = snap.data.snapshot.value;
                   openList = [];
                   data.forEach((index, data) {
-                   final message = Message(description: data["description"],link: data["link"]);
-                   openList.add(message);
+                    final message = Message(
+                        description: data["description"], link: data["link"],name: data['name'],title: data["title"]);
+                    openList.add(message);
                   });
                   return ListView.builder(
                     padding: EdgeInsets.fromLTRB(20, 10, 40, 80),
@@ -51,29 +52,56 @@ class _JobOpeningState extends State<JobOpening> {
                       return ListTile(
                         // contentPadding: EdgeInsets.all(10),
                         title: Container(
-                            decoration: tileDecoration,
+                            // decoration: tileDecoration,
                             child: Column(
-                              children: <Widget>[
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Text('Description:-'),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: RichTextView(
-                                      text: openList[index].description),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Text('Apply :-'),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child:
-                                      RichTextView(text: openList[index].link),
-                                ),
-                              ],
-                            )),
+                          children: <Widget>[
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                openList[index].name,
+                                style: textStyle.copyWith(fontSize: 14,color: Colors.red,fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                openList[index].title,
+                                style: textStyle.copyWith(fontSize: 13,color: Colors.white,fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(8,8,8,0),
+                              child: Text(
+                                'Description:-',
+                                style: textStyle.copyWith(fontSize: 13),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(8,8,8,0),
+                              child: RichTextView(
+                                text: openList[index].description,
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(8,8,8,0),
+                              child: Text('Apply :-',style: textStyle.copyWith(
+                                fontSize: 13
+                              ),),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: RichTextView(text: openList[index].link),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 2.0),
+                              child: Container(
+                                height: 0.5,
+                                width: MediaQuery.of(context).size.width,
+                                color: Colors.grey,
+                              ),
+                            ),
+                          ],
+                        )),
                       );
                     },
                   );

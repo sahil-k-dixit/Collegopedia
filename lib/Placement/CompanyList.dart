@@ -57,8 +57,8 @@ class CompanyListTile extends StatelessWidget {
                   style: GoogleFonts.lato(
                       textStyle: Theme.of(context).textTheme.display1,
                       color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 14),)),
+                      fontWeight: FontWeight.normal,
+                      fontSize: 15),)),
                 flex: 3,
               ),
               Expanded(

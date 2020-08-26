@@ -185,7 +185,7 @@ class _HomeState extends State<Home> {
                   style: GoogleFonts.lato(
                       textStyle: Theme.of(context).textTheme.display1,
                       color: Colors.white,
-                      fontSize: 11),
+                      fontSize: 12),
                 ),
               ),
             ),
@@ -203,7 +203,7 @@ class _HomeState extends State<Home> {
                   style: GoogleFonts.lato(
                       textStyle: Theme.of(context).textTheme.display1,
                       color: Colors.white,
-                      fontSize: 20,
+                      fontSize: 16,
                       fontWeight: FontWeight.bold),
                 ),
               ),
@@ -223,7 +223,7 @@ class _HomeState extends State<Home> {
                     textStyle: Theme.of(context).textTheme.display1,
                     color: Colors.white,
                     fontStyle: FontStyle.normal,
-                    fontSize: 12),
+                    fontSize: 14),
               ),
             ),
           ),
@@ -270,13 +270,13 @@ class _HomeState extends State<Home> {
             heading: 'Contest',
             onPress: () => Navigator.pushNamed(context, '/contest'),
           ),
-          MainTile(
-            imageURL: 'images/Home/confused.png',
-            txt: ' Dont know from where to start and how to start',
-            colorBox: Colors.lime,
-            heading: 'Confused?',
-            onPress: () => Navigator.pushNamed(context, '/confused'),
-          ),
+//          MainTile(
+//            imageURL: 'images/Home/confused.png',
+//            txt: ' Dont know from where to start and how to start',
+//            colorBox: Colors.lime,
+//            heading: 'Confused?',
+//            onPress: () => Navigator.pushNamed(context, '/confused'),
+//          ),
 //            MainTile(
 //              imageURL: 'images/about.png',
 //              txt: 'Know about us',

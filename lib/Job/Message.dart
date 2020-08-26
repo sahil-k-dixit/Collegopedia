@@ -2,5 +2,7 @@ class Message
 {
   String description;
   String link;
-  Message({this.description,this.link});
+  String name;
+  String title;
+  Message({this.description,this.link,this.name,this.title});
 }

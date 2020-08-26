@@ -66,7 +66,7 @@ class MainTile extends StatelessWidget {
                 textStyle: Theme.of(context).textTheme.display1,
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
-                fontSize: 16),
+                fontSize: 14),
           ),
           subtitle: Text(
             txt,

@@ -33,7 +33,7 @@ class _QuestionSpecificPageState extends State<QuestionSpecificPage> {
         backgroundColor: Color(0xFF1D1F2D),
         appBar: AppBar(
           title: Center(
-            child: Text('Question'),
+            child: Text('Discussion'),
           ),
         ),
         body: SafeArea(
@@ -47,22 +47,27 @@ class _QuestionSpecificPageState extends State<QuestionSpecificPage> {
                   Column(
                     children: <Widget>[
                       Container(
-                        decoration: tileDecoration,
+                       // decoration: tileDecoration,
                         width: MediaQuery.of(context).size.width,
                         child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                            questionText,
+                          padding: const EdgeInsets.fromLTRB(8,18,8,0),
+                          child: Center(
+                            child: Text(
+                              questionText,
 // textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 13),
+                              style: GoogleFonts.lato(
+                                  textStyle: Theme.of(context).textTheme.display1,
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.normal),
+                            ),
                           ),
                         ),
                       ),
 // this is for writing answer
                       isAnswer
                           ? Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding: const EdgeInsets.fromLTRB(8, 8, 8, 0),
                               child: Form(
                                   key: _formKey,
                                   child: Column(
@@ -119,10 +124,10 @@ class _QuestionSpecificPageState extends State<QuestionSpecificPage> {
                                   )),
                             )
                           : Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
                               child: Container(
-                                  decoration: tileDecoration,
-                                  width: 150,
+                                  //decoration: tileDecoration,
+                                  //width: 150,
                                   child: FlatButton(
                                       onPressed: () {
                                         setState(() {
@@ -131,44 +136,35 @@ class _QuestionSpecificPageState extends State<QuestionSpecificPage> {
                                       },
                                       child: Row(
                                         //crossAxisAlignment: CrossAxisAlignment.stretch,
+                                        mainAxisAlignment: MainAxisAlignment.center,
                                         children: <Widget>[
-                                          Icon(Icons.text_format),
+                                          Icon(Icons.text_format,size: 16,color: Colors.redAccent,),
                                           Text(
                                             'Write Answer',
                                             style: GoogleFonts.lato(
                                                 textStyle: Theme.of(context)
                                                     .textTheme
                                                     .display1,
-                                                color: Colors.white,
-                                                fontSize: 12,
-                                                fontWeight: FontWeight.bold),
+                                                color: Colors.redAccent,
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.normal),
                                           )
                                         ],
                                       ))),
                             ),
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 10.0),
-                        child: Container(
-                          height: 2.0,
-                          width: MediaQuery.of(context).size.width,
-                          color: Colors.white,
-                        ),
-                      ),
 
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.fromLTRB(12,0,12,0),
                         child: Container(
                           child: Text(
                             "Answers",
                             style: TextStyle(
-                                fontSize: 15, fontWeight: FontWeight.bold),
+                              color: Colors.grey,
+                                fontSize: 12, fontWeight: FontWeight.normal),
                           ),
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: AnswerStream(questionText),
-                      ),
+                      AnswerStream(questionText),
                     ],
                   ),
                   // AnswerStream(questionText),
@@ -229,22 +225,28 @@ class AnswerItem extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: Container(
         width: MediaQuery.of(context).size.width,
-        decoration: tileDecoration,
+        //decoration: tileDecoration,
         child: Column(
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                "Written by: ${userName}",
-                style: GoogleFonts.lato(
-                    textStyle: Theme.of(context).textTheme.display1,
-                    color: Colors.white,
-                    fontSize: 12,
-                    fontWeight: FontWeight.bold),
+              padding: EdgeInsets.symmetric(horizontal: 10.0),
+              child: Container(
+                height: 0.5,
+                width: MediaQuery.of(context).size.width,
+                color: Colors.grey,
               ),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
+              child: Text(
+                "Written by: ${userName}",
+                style: textStyle.copyWith(
+                  fontSize: 12
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 8,right: 8,bottom: 8),
               child: ReadMoreText(
                 answerText,
                 trimLines: 2,
@@ -252,8 +254,14 @@ class AnswerItem extends StatelessWidget {
                 trimMode: TrimMode.Line,
                 trimCollapsedText: '...Show more',
                 trimExpandedText: ' show less',
+                style: GoogleFonts.lato(
+                    textStyle: Theme.of(context).textTheme.display1,
+                    color: Colors.white,
+                    fontSize: 14,
+                    fontWeight: FontWeight.normal),
               ),
             ),
+
           ],
         ),
       ),

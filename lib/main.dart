@@ -15,7 +15,7 @@ import 'package:collegopedia/Discussion/DiscussionForum.dart';
 import 'package:collegopedia/Discussion/QuestionSpecificPage.dart';
 import 'package:collegopedia/Home/HomePage.dart';
 import 'package:collegopedia/Job/JobSection.dart';
-import 'package:collegopedia/Job/add_job_opening.dart';
+import 'package:collegopedia/Job/addJobOpening.dart';
 import 'package:collegopedia/Job/currentopening.dart';
 import 'package:collegopedia/LoginPage/Login_page.dart';
 import 'package:collegopedia/Placement/CompanySpecficList.dart';

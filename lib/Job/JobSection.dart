@@ -22,7 +22,7 @@ class JobSection extends StatelessWidget {
           children: <Widget>[
             MainTile(
               colorBox: Colors.blue,
-              txt: 'Checkout ongoing job',
+              txt: 'Checkout ongoing job and internships',
               // url: '',
               onPress: ()=>Navigator.pushNamed(context, '/current'),
               imageURL: 'images/Contest/calendar.png',
