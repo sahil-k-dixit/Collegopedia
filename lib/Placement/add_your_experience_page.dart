@@ -53,7 +53,7 @@ class _AddYourExperienceState extends State<AddYourExperience> {
       appBar: AppBar(
         title: Center(child: Text("Add Your Experience",style: appBarHeaderTextStyle,)),
       ),
-      backgroundColor: Color(0xFF1D1F2D),
+     // backgroundColor: Color(0xFF1D1F2D),
       body: Form(
         key: _formKey,
         child: SingleChildScrollView(

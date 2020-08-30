@@ -48,7 +48,7 @@ class _CompanySpecificPlacementPageState
     final String s = args.args;
     print(s);
     return Scaffold(
-      backgroundColor: Color(0xFF1D1F2D),
+     // backgroundColor: Color(0xFF1D1F2D),
       drawer: DrawerrBarr(),
       appBar: AppBar(
         title: Center(child: Text(s,style: appBarHeaderTextStyle,)),

@@ -30,7 +30,7 @@ class _QuestionSpecificPageState extends State<QuestionSpecificPage> {
     final ArgumentModel arg = ModalRoute.of(context).settings.arguments;
     String questionText = arg.args;
     return Scaffold(
-        backgroundColor: Color(0xFF1D1F2D),
+       // backgroundColor: Color(0xFF1D1F2D),
         appBar: AppBar(
           title: Center(
             child: Text(
@@ -61,8 +61,8 @@ class _QuestionSpecificPageState extends State<QuestionSpecificPage> {
                               style: GoogleFonts.lato(
                                   textStyle:
                                       Theme.of(context).textTheme.display1,
-                                  color: Colors.white,
-                                  fontSize: 16,
+                                 // color: Colors.white,
+                                  fontSize: 18,
                                   fontWeight: FontWeight.normal),
                             ),
                           ),
@@ -251,7 +251,7 @@ class AnswerItem extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: Text(
                 "Written by: ${userName}",
-                style: textStyle.copyWith(fontSize: 12),
+                style: textStyle.copyWith(fontSize: 14),
               ),
             ),
             Padding(
@@ -265,8 +265,8 @@ class AnswerItem extends StatelessWidget {
                 trimExpandedText: ' show less',
                 style: GoogleFonts.lato(
                     textStyle: Theme.of(context).textTheme.display1,
-                    color: Colors.white,
-                    fontSize: 14,
+                  //  color: Colors.white,
+                    fontSize: 16,
                     fontWeight: FontWeight.normal),
               ),
             ),

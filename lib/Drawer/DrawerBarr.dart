@@ -34,7 +34,7 @@ class DrawerrBarr extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: GoogleFonts.lato(
                         textStyle: Theme.of(context).textTheme.headline4,
-                        color: Colors.white,
+                      //  color: Colors.white,
                         fontWeight: FontWeight.bold,
                         fontSize: 16),
                   ),
@@ -102,7 +102,7 @@ class DrawerrBarr extends StatelessWidget {
                               style: GoogleFonts.lato(
                                   textStyle:
                                       Theme.of(context).textTheme.display1,
-                                  color: Colors.white,
+                               //   color: Colors.white,
                                   fontWeight: FontWeight.bold,
                                   fontSize: 14),
                             )),

@@ -22,7 +22,7 @@ class _AboutState extends State<About> {
           'About us',
         )),
       ),
-      backgroundColor: Color(0xFF1D1F2D),
+      //backgroundColor: Color(0xFF1D1F2D),
       drawer: DrawerrBarr(),
       body: Padding(
         padding: const EdgeInsets.fromLTRB(20, 8, 20, 8),

@@ -25,9 +25,9 @@ class _PlacementPageState extends State<PlacementPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF1D1F2D),
+      //backgroundColor: Color(0xFF1D1F2D),
       appBar: AppBar(
-        backgroundColor: Color(0xFF0E0F1B),
+       // backgroundColor: Color(0xFF0E0F1B),
         title: Center(
             child: Text(
           "List of Companies",

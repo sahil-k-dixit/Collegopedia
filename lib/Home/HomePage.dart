@@ -157,21 +157,21 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFF0E0F1B),
+        //backgroundColor: Color(0xFF0E0F1B),
         title: Center(
             child: Text(
           "Collegopedia",
           style: appBarHeaderTextStyle,
         )),
       ),
-      backgroundColor: Color(0xFF1D1F2D),
+      //backgroundColor: Color(0xFF1D1F2D),
       drawer: DrawerrBarr(),
       body: ListView(
         scrollDirection: Axis.vertical,
         children: <Widget>[
           Container(
             decoration: BoxDecoration(
-              color: mainColor,
+            //  color: mainColor,
             ),
             child: Padding(
               padding: const EdgeInsets.only(top: 50),
@@ -182,7 +182,7 @@ class _HomeState extends State<Home> {
                   textAlign: TextAlign.center,
                   style: GoogleFonts.lato(
                       textStyle: Theme.of(context).textTheme.display1,
-                      color: Colors.white,
+                     // color: Colors.white,
                       fontStyle: FontStyle.italic,
                       fontSize: 12),
                 ),
@@ -191,7 +191,7 @@ class _HomeState extends State<Home> {
           ),
           Container(
             decoration: BoxDecoration(
-              color: mainColor,
+            //  color: mainColor,
             ),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
@@ -201,7 +201,7 @@ class _HomeState extends State<Home> {
                   'Welcome to Collegopedia',
                   style: GoogleFonts.lato(
                       textStyle: Theme.of(context).textTheme.display1,
-                      color: Colors.white,
+                     // color: Colors.white,
                       fontSize: 16,
                       fontWeight: FontWeight.bold),
                 ),
@@ -210,7 +210,7 @@ class _HomeState extends State<Home> {
           ),
           Container(
             decoration: BoxDecoration(
-              color: mainColor,
+            //  color: mainColor,
             ),
             //height: 200,
             child: Padding(
@@ -220,14 +220,16 @@ class _HomeState extends State<Home> {
                 'discussions and assists with college planning and preparation.',
                 style: GoogleFonts.lato(
                     textStyle: Theme.of(context).textTheme.display1,
-                    color: Colors.white,
+                   // color: Colors.white,
                     fontStyle: FontStyle.normal,
                     fontSize: 14),
               ),
             ),
           ),
           Container(
-            decoration: BoxDecoration(color: mainColor),
+            decoration: BoxDecoration(
+    //color: mainColor
+            ),
             child: Padding(
               padding: const EdgeInsets.fromLTRB(10, 10, 30, 10),
               child: Align(
@@ -269,6 +271,13 @@ class _HomeState extends State<Home> {
             heading: 'Contest',
             onPress: () => Navigator.pushNamed(context, '/contest'),
           ),
+          MainTile(
+            imageURL: 'images/Events/event.png',
+            txt: 'Events around you',
+            colorBox: Colors.purple,
+            heading: 'Events',
+            onPress: ()=>Navigator.pushNamed(context, '/events'),
+          )
 //          MainTile(
 //            imageURL: 'images/Home/confused.png',
 //            txt: ' Dont know from where to start and how to start',

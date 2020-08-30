@@ -9,7 +9,7 @@ class DiscussionForum extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF1D1F2D),
+      //backgroundColor: Color(0xFF1D1F2D),
       appBar: AppBar(
         title: Center(child: Text("Discussion Forum",style: appBarHeaderTextStyle,)),
 //        actions: <Widget>[

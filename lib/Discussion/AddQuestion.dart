@@ -22,7 +22,7 @@ class _AddQuestionState extends State<AddQuestion> {
           child: Text('Question',style: appBarHeaderTextStyle,),
         ),
       ),
-      backgroundColor: mainColor,
+     // backgroundColor: mainColor,
       body: Form(
           key: _formKey,
           child: Column(

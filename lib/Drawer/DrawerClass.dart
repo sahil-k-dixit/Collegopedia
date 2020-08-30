@@ -52,7 +52,7 @@ class DrawerBar extends StatelessWidget {
                   child: Center(child: Text(text,textAlign: TextAlign.center,
                     style: GoogleFonts.lato(
                         textStyle: Theme.of(context).textTheme.display1,
-                        color: Colors.white,
+                       // color: Colors.white,
                         fontWeight: FontWeight.bold,
                         fontSize: 14),)),
                   flex: 3,

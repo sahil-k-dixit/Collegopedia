@@ -39,7 +39,7 @@ class RichTextView extends StatelessWidget {
                 style: _style.copyWith(color: Colors.blue))
             : new TextSpan(
                 text: '$word ',
-                style: textStyle.copyWith(fontSize: 14, color: Colors.white),
+                style: textStyle.copyWith(fontSize: 16, ),
               ),
       );
     });
@@ -48,7 +48,7 @@ class RichTextView extends StatelessWidget {
         text: new TextSpan(text: '', children: span, style: textStyle),
       );
     } else {
-      return new Text(text, style: textStyle.copyWith(fontSize: 14, color: Colors.white),);
+      return new Text(text, style: textStyle.copyWith(fontSize: 16, color: Colors.white),);
     }
   }
 }

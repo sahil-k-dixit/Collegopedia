@@ -24,19 +24,20 @@ class MainTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.fromLTRB(40, 9, 40, 8),
-      child: Container(
+      child: AnimatedContainer(
+        duration: Duration(seconds: 2),
         decoration: BoxDecoration(
-          color: Color(0xFF4A5065),
+         // color: Color(0xFF4A5065),
           shape: BoxShape.rectangle,
-          borderRadius: BorderRadius.circular(10), 
-          boxShadow: [
-            BoxShadow(
-              offset: const Offset(3.0, 3.0),
-              //color: Colors.grey,
-              blurRadius: 3.0,
-              spreadRadius: 0,
-            ),
-          ],
+          borderRadius: BorderRadius.circular(10),
+//          boxShadow: [
+//            BoxShadow(
+//              offset: const Offset(3.0, 3.0),
+//              //color: Colors.grey,
+//              blurRadius: 3.0,
+//              spreadRadius: 0,
+//            ),
+//          ],
           // borderRadius: BorderRadius.circular(5),
         ),
         child: ListTile(
@@ -66,7 +67,7 @@ class MainTile extends StatelessWidget {
             textAlign: TextAlign.center,
             style: GoogleFonts.lato(
                 textStyle: Theme.of(context).textTheme.display1,
-                color: Colors.white,
+               // color: Colors.white,
                 fontWeight: FontWeight.bold,
                 fontSize: 16),
           ),

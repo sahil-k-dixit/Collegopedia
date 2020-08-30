@@ -21,7 +21,7 @@ class _JobOpeningState extends State<JobOpening> {
         appBar: AppBar(
           title: Center(child: Text('Current Openings',style: appBarHeaderTextStyle,)),
         ),
-        backgroundColor: Color(0xFF1D1F2D),
+       // backgroundColor: Color(0xFF1D1F2D),
         floatingActionButton: FloatingActionButton.extended(
           onPressed: () {
             Navigator.pushNamed(context, '/addjob');
@@ -59,21 +59,21 @@ class _JobOpeningState extends State<JobOpening> {
                               padding: const EdgeInsets.all(8.0),
                               child: Text(
                                 openList[index].name,
-                                style: textStyle.copyWith(fontSize: 14,color: Colors.red,fontWeight: FontWeight.bold),
+                                style: textStyle.copyWith(fontSize: 18,color: Colors.red,fontWeight: FontWeight.bold),
                               ),
                             ),
                             Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Text(
                                 openList[index].title,
-                                style: textStyle.copyWith(fontSize: 13,color: Colors.white,fontWeight: FontWeight.bold),
+                                style: textStyle.copyWith(fontSize: 14,fontWeight: FontWeight.bold),
                               ),
                             ),
                             Padding(
                               padding: const EdgeInsets.fromLTRB(8,8,8,0),
                               child: Text(
                                 'Description:-',
-                                style: textStyle.copyWith(fontSize: 13),
+                                style: textStyle.copyWith(fontSize: 14),
                               ),
                             ),
                             Padding(
@@ -85,7 +85,7 @@ class _JobOpeningState extends State<JobOpening> {
                             Padding(
                               padding: const EdgeInsets.fromLTRB(8,8,8,0),
                               child: Text('Apply :-',style: textStyle.copyWith(
-                                fontSize: 13
+                                fontSize: 14
                               ),),
                             ),
                             Padding(

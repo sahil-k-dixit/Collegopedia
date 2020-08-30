@@ -14,15 +14,15 @@ class CompanyListTile extends StatelessWidget {
     return SizedBox(
       child: Container(
         decoration: BoxDecoration(
-          color: Color(0xFF4A5065),
-          boxShadow: [
-            BoxShadow(
-              offset: const Offset(3.0, 3.0),
-              //color: Colors.grey,
-              blurRadius: 3.0,
-              spreadRadius: 0,
-            ),
-          ],
+         // color: Color(0xFF4A5065),
+//          boxShadow: [
+//            BoxShadow(
+//              offset: const Offset(3.0, 3.0),
+//              //color: Colors.grey,
+//              blurRadius: 3.0,
+//              spreadRadius: 0,
+//            ),
+//          ],
           borderRadius: BorderRadius.circular(10),
         ),
         child: FlatButton(
@@ -56,7 +56,7 @@ class CompanyListTile extends StatelessWidget {
                 child: Center(child: Text(companyName,textAlign: TextAlign.center,
                   style: GoogleFonts.lato(
                       textStyle: Theme.of(context).textTheme.display1,
-                      color: Colors.white,
+                     // color: Colors.white,
                       fontWeight: FontWeight.normal,
                       fontSize: 16),)),
                 flex: 3,

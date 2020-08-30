@@ -13,6 +13,7 @@ import 'package:collegopedia/Contest/Contest.dart';
 import 'package:collegopedia/Discussion/AddQuestion.dart';
 import 'package:collegopedia/Discussion/DiscussionForum.dart';
 import 'package:collegopedia/Discussion/QuestionSpecificPage.dart';
+import 'package:collegopedia/Events/eventMainPage.dart';
 import 'package:collegopedia/Home/HomePage.dart';
 import 'package:collegopedia/Job/JobSection.dart';
 import 'package:collegopedia/Job/addJobOpening.dart';
@@ -62,12 +63,18 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: 'Collegopedia',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark().copyWith(
-          //backgroundColor: Color(0xFF4A5065),
-          primaryColorDark: Color(0xFF4A5065),
-          appBarTheme: AppBarTheme(
-            color: Color(0xFF0E0F1B),
-          )),
+//      theme: ThemeData.dark().copyWith(
+//          //backgroundColor: Color(0xFF4A5065),
+//          scaffoldBackgroundColor: Color(0xFF1D1F2D),
+//          primaryColorDark: Color(0xFF4A5065),
+//          appBarTheme: AppBarTheme(
+//            color: Color(0xFF0E0F1B),
+//          )),
+
+      theme: ThemeData.light().copyWith(
+          appBarTheme: AppBarTheme(color: Colors.teal),
+          floatingActionButtonTheme:
+              FloatingActionButtonThemeData(backgroundColor: Colors.teal)),
       routes: <String, WidgetBuilder>{
         '/main': (BuildContext context) => MyApp(),
         '/home': (BuildContext context) => Home(),
@@ -75,8 +82,7 @@ class _MyAppState extends State<MyApp> {
         '/placement': (BuildContext context) => PlacementPage(),
         '/confused': (BuildContext context) => ConfusedMainPage(),
         '/addexperience': (BuildContext context) => AddYourExperience(),
-        '/company': (BuildContext context) =>
-            CompanySpecificPlacementPage(),
+        '/company': (BuildContext context) => CompanySpecificPlacementPage(),
         '/contest': (BuildContext context) => Contest(),
         '/job': (BuildContext context) => JobSection(),
         '/discuss': (BuildContext context) => DiscussionForum(),
@@ -90,12 +96,12 @@ class _MyAppState extends State<MyApp> {
         '/artificial': (BuildContext context) => ArtificialIntelligence(),
         '/datascience': (BuildContext context) => DataScientist(),
         '/cyber': (BuildContext context) => CyberSecurity(),
-        '/questionspecific': (BuildContext context) =>
-            QuestionSpecificPage(),
+        '/questionspecific': (BuildContext context) => QuestionSpecificPage(),
         '/about': (BuildContext context) => About(),
         '/current': (BuildContext context) => JobOpening(),
         '/addjob': (BuildContext context) => AddJobOpening(),
-        '/business':(BuildContext context)=>BusinessDevelopmentPage(),
+        '/business': (BuildContext context) => BusinessDevelopmentPage(),
+        '/events': (BuildContext context) => Events(),
       },
       home: SplashScreen(),
     );

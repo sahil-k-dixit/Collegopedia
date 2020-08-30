@@ -16,7 +16,7 @@ List<String> questionList = [];
 
 TextStyle appBarHeaderTextStyle =  GoogleFonts.lato(
 fontSize: 20,
-color: Colors.white,
+//color: Colors.white,
 fontWeight: FontWeight.bold,
 fontStyle: FontStyle.italic
 );
@@ -29,7 +29,7 @@ TextStyle textStyle = GoogleFonts.lato(
 
 
 TextStyle placementTextStyle = GoogleFonts.lato(
-    color: Colors.white,
+//    color: Colors.white,
     fontSize: 16,
     fontWeight: FontWeight.normal);
 
@@ -40,7 +40,7 @@ TextStyle hintTextStyle = GoogleFonts.lato(
     fontSize: 14);
 
 BoxDecoration tileDecoration = BoxDecoration(
-    color: Color(0xFF1C1B20),
+    //color: Color(0xFF1C1B20),
     // backgroundBlendMode: BlendMode.colorBurn,
     borderRadius: BorderRadius.circular(10),
     shape: BoxShape.rectangle,

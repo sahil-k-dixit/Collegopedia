@@ -17,7 +17,7 @@ class JobSection extends StatelessWidget {
           ),
         ),
         drawer: DrawerrBarr(),
-        backgroundColor: Color(0xFF1D1F2D),
+      //  backgroundColor: Color(0xFF1D1F2D),
         body: ListView(
           scrollDirection: Axis.vertical,
           children: <Widget>[
