@@ -103,7 +103,7 @@ class _QuestionSpecificPageState extends State<QuestionSpecificPage> {
                                                   .width /
                                               2,
                                           child: FlatButton(
-                                            color: Colors.lightBlue,
+                                            color: Colors.teal,
                                             onPressed: () {
                                               if (_formKey.currentState
                                                   .validate()) {

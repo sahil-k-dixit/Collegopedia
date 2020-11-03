@@ -52,10 +52,12 @@ class MainTile extends StatelessWidget {
                 boxShadow: [
                   BoxShadow(
                     offset: const Offset(3.0, 3.0),
-                    blurRadius: 5.0,
+                    blurRadius: 2.0,
                     spreadRadius: 2.0,
+                 //   color: Colors.brown
                   ),
-                ]),
+                ]
+            ),
             child: Image.asset(
               imageURL,
               width: 39,

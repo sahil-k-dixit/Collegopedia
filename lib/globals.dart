@@ -22,6 +22,19 @@ fontStyle: FontStyle.italic
 );
 
 
+ThemeData lightMode = ThemeData.light().copyWith(
+    appBarTheme: AppBarTheme(color: Colors.orangeAccent),
+    floatingActionButtonTheme:
+    FloatingActionButtonThemeData(backgroundColor: Colors.orangeAccent));
+
+ThemeData darkMode =  ThemeData.dark().copyWith(
+    //backgroundColor: Color(0xFF4A5065),
+    scaffoldBackgroundColor: Color(0xFF1D1F2D),
+    primaryColorDark: Color(0xFF4A5065),
+    appBarTheme: AppBarTheme(
+        color: Color(0xFF0E0F1B),
+    ));
+
 TextStyle textStyle = GoogleFonts.lato(
    // textStyle: Theme.of(context).textTheme.display1,
     color: Colors.grey,

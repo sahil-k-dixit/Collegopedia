@@ -271,13 +271,13 @@ class _HomeState extends State<Home> {
             heading: 'Contest',
             onPress: () => Navigator.pushNamed(context, '/contest'),
           ),
-          MainTile(
-            imageURL: 'images/Events/event.png',
-            txt: 'Events around you',
-            colorBox: Colors.purple,
-            heading: 'Events',
-            onPress: ()=>Navigator.pushNamed(context, '/events'),
-          )
+//          MainTile(
+//            imageURL: 'images/Events/event.png',
+//            txt: 'Events around you',
+//            colorBox: Colors.purple,
+//            heading: 'Events',
+//            onPress: ()=>Navigator.pushNamed(context, '/events'),
+//          )
 //          MainTile(
 //            imageURL: 'images/Home/confused.png',
 //            txt: ' Dont know from where to start and how to start',

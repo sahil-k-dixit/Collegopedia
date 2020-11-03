@@ -51,6 +51,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  bool status=false;
   @override
   void initState() {
     // TODO: implement initState
@@ -63,18 +64,23 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: 'Collegopedia',
       debugShowCheckedModeBanner: false,
-//      theme: ThemeData.dark().copyWith(
-//          //backgroundColor: Color(0xFF4A5065),
-//          scaffoldBackgroundColor: Color(0xFF1D1F2D),
-//          primaryColorDark: Color(0xFF4A5065),
-//          appBarTheme: AppBarTheme(
-//            color: Color(0xFF0E0F1B),
-//          )),
+//      theme:
 
-      theme: ThemeData.light().copyWith(
+      darkTheme:ThemeData.dark().copyWith(
+          //backgroundColor: Color(0xFF4A5065),
+          scaffoldBackgroundColor: Color(0xFF1D1F2D),
+          primaryColorDark: Color(0xFF4A5065),
+          appBarTheme: AppBarTheme(
+            color: Color(0xFF0E0F1B),
+          )),
+      theme:ThemeData.light().copyWith(
           appBarTheme: AppBarTheme(color: Colors.teal),
           floatingActionButtonTheme:
-              FloatingActionButtonThemeData(backgroundColor: Colors.teal)),
+          FloatingActionButtonThemeData(backgroundColor: Colors.teal)),
+//      theme: ThemeData.light().copyWith(
+//          appBarTheme: AppBarTheme(color: Colors.teal),
+//          floatingActionButtonTheme:
+//              FloatingActionButtonThemeData(backgroundColor: Colors.teal)),
       routes: <String, WidgetBuilder>{
         '/main': (BuildContext context) => MyApp(),
         '/home': (BuildContext context) => Home(),

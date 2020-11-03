@@ -107,7 +107,7 @@ class Contest extends StatelessWidget {
               txt: 'Participate in CodeForces Events',
               heading: 'CodeForces',
               imageURL: 'images/Contest/gym.png',
-              colorBox: Colors.white,
+              colorBox: Colors.blue,
               onPress: () async {
                 //const url = 'https://flutter.dev';
                 if (await canLaunch('https://codeforces.com/contests')) {
@@ -120,14 +120,28 @@ class Contest extends StatelessWidget {
             MainTile(
               txt: 'Participate in Kaggle Events',
               heading: 'Kaggle',
-              imageURL: 'images/Contest/gym.png',
-              colorBox: Colors.white,
+              imageURL: 'images/TechnicalPage/cloud-computing.png',
+              colorBox: Colors.red,
               onPress: () async {
                 //const url = 'https://flutter.dev';
-                if (await canLaunch('https://codeforces.com/contests')) {
-                  await launch('https://codeforces.com/contests');
+                if (await canLaunch('https://www.kaggle.com/competitions')) {
+                  await launch('https://www.kaggle.com/competitions');
                 } else {
-                  throw 'Could not launch https://codeforces.com/contests';
+                  throw 'Could not launch https://www.kaggle.com/competitions';
+                }
+              },
+            ),
+            MainTile(
+              txt: 'Participate in TopCoder Events',
+              heading: 'TopCoder',
+              imageURL: 'images/TechnicalPage/cyber-security.png',
+              colorBox: Colors.teal,
+              onPress: () async {
+                //const url = 'https://flutter.dev';
+                if (await canLaunch('https://www.topcoder.com/challenges')) {
+                  await launch('https://www.topcoder.com/challenges');
+                } else {
+                  throw 'Could not launch https://www.topcoder.com/challenges';
                 }
               },
             ),

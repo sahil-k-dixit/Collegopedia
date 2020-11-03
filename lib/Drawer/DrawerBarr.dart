@@ -1,15 +1,24 @@
 import 'package:collegopedia/Drawer/DrawerClass.dart';
 import 'package:collegopedia/Home/HomePage.dart';
+import 'package:collegopedia/globals.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_switch/flutter_switch.dart';
 
-class DrawerrBarr extends StatelessWidget {
+class DrawerrBarr extends StatefulWidget {
   const DrawerrBarr({
     Key key,
   }) : super(key: key);
 
   @override
+  _DrawerrBarrState createState() => _DrawerrBarrState();
+}
+
+class _DrawerrBarrState extends State<DrawerrBarr> {
+
+  @override
   Widget build(BuildContext context) {
+
     return Drawer(
       child: Column(
         children: <Widget>[
@@ -34,7 +43,7 @@ class DrawerrBarr extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: GoogleFonts.lato(
                         textStyle: Theme.of(context).textTheme.headline4,
-                      //  color: Colors.white,
+                        //  color: Colors.white,
                         fontWeight: FontWeight.bold,
                         fontSize: 16),
                   ),
@@ -51,11 +60,40 @@ class DrawerrBarr extends StatelessWidget {
                 DrawerBar('Discussion', Icon(Icons.question_answer)),
                 DrawerBar('Contest', Icon(Icons.event)),
                 // DrawerBar('Buy/Sell Resources', Icon(Icons.business)),
-               // DrawerBar('Confused?', Icon(Icons.help)),
-               // DrawerBar('About us?', Icon(Icons.contact_mail)),
+                // DrawerBar('Confused?', Icon(Icons.help)),
+                // DrawerBar('About us?', Icon(Icons.contact_mail)),
               ],
             ),
           ),
+//          Padding(
+//            padding: const EdgeInsets.all(8.0),
+//            child: Row(
+//              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//              children: <Widget>[
+//                Text('Dark Mode'),
+//                FlutterSwitch(
+//                  showOnOff: true,
+//                  height: 25,
+//                  activeTextColor: Colors.black,
+//                  inactiveTextColor: Colors.blue[50],
+//                  value: status,
+//                  onToggle: (val) {
+//                    setState(() {
+//                      if(status==false)
+//                        {
+//                          status = true;
+//                        }
+//                      else
+//                        {
+//                          status = false;
+//                        }
+//                     // print(status);
+//                    });
+//                  },
+//                ),
+//              ],
+//            ),
+//          ),
           Padding(
             padding: const EdgeInsets.fromLTRB(20, 0, 20, 10),
             child: Container(
@@ -102,7 +140,7 @@ class DrawerrBarr extends StatelessWidget {
                               style: GoogleFonts.lato(
                                   textStyle:
                                       Theme.of(context).textTheme.display1,
-                               //   color: Colors.white,
+                                  //   color: Colors.white,
                                   fontWeight: FontWeight.bold,
                                   fontSize: 14),
                             )),

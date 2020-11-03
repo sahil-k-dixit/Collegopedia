@@ -283,7 +283,7 @@ class _AddYourExperienceState extends State<AddYourExperience> {
                 child: Container(
                   width: MediaQuery.of(context).size.width / 2,
                   child: RaisedButton(
-                    color: Colors.lightBlue,
+                    color: Colors.teal,
                     onPressed: () {
                       if (_formKey.currentState.validate()) {
                         dbRef.child(company.text).child(name.text)..set({

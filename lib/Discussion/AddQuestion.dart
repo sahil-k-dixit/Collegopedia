@@ -55,7 +55,7 @@ class _AddQuestionState extends State<AddQuestion> {
                 child: Container(
                   width: MediaQuery.of(context).size.width / 2,
                   child: FlatButton(
-                    color: Colors.lightBlue,
+                    color: Colors.teal,
                     onPressed: () {
                       if (_formKey.currentState.validate()) {
                         dbRef.child(question.text).push().set({
