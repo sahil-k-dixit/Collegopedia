@@ -23,7 +23,7 @@ class DiscussionForum extends StatelessWidget {
 //              })
 //        ],
       ),
-      drawer: DrawerrBarr(),
+//      drawer: DrawerrBarr(),
       body: Padding(
         padding: EdgeInsets.fromLTRB(10, 10, 10, 100),
         child: QuestionStream(),

@@ -23,21 +23,28 @@ class DrawerBar extends StatelessWidget {
             onPressed: () {
               if (text == 'Home') {
                 print('HOme');
+                Navigator.pop(context);
                 Navigator.pushNamed(context, '/home');
               } else if (text == 'Placement Section') {
+                Navigator.pop(context);
                 Navigator.pushNamed(context, '/placement');
               } else if (text.toLowerCase() == 'contest') {
+                Navigator.pop(context);
                 Navigator.pushNamed(context, '/contest');
               } else if (text.toLowerCase() == 'jobs') {
+                Navigator.pop(context);
                 Navigator.pushNamed(context, '/job');
               } else if(text == 'Discussion'){
+                Navigator.pop(context);
                 Navigator.pushNamed(context, '/discuss');
               }
               else if(text == 'Confused?')
                 {
+                  Navigator.pop(context);
                   Navigator.pushNamed(context, '/confused');
                 }
               else {
+                Navigator.pop(context);
                 Navigator.pushNamed(context, '/about');
               }
             },
@@ -51,7 +58,7 @@ class DrawerBar extends StatelessWidget {
                 Expanded(
                   child: Center(child: Text(text,textAlign: TextAlign.center,
                     style: GoogleFonts.lato(
-                        textStyle: Theme.of(context).textTheme.display1,
+                      //  textStyle: Theme.of(context).textTheme.display1,
                        // color: Colors.white,
                         fontWeight: FontWeight.bold,
                         fontSize: 14),)),

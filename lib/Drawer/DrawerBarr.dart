@@ -138,8 +138,8 @@ class _DrawerrBarrState extends State<DrawerrBarr> {
                               'Sign out',
                               textAlign: TextAlign.center,
                               style: GoogleFonts.lato(
-                                  textStyle:
-                                      Theme.of(context).textTheme.display1,
+//                                  textStyle:
+//                                      Theme.of(context).textTheme.display1,
                                   //   color: Colors.white,
                                   fontWeight: FontWeight.bold,
                                   fontSize: 14),

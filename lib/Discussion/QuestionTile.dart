@@ -34,7 +34,7 @@ class QuestionListTile extends StatelessWidget {
                     questionText,
                     textAlign: TextAlign.left,
                     style: GoogleFonts.lato(
-                        textStyle: Theme.of(context).textTheme.display1,
+                       // textStyle: Theme.of(context).textTheme.display1,
                       //  color: Colors.white,
                         fontSize: 16,
                         fontWeight: FontWeight.normal),

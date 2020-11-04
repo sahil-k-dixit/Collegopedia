@@ -66,6 +66,8 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
 //      theme:
 
+
+
       darkTheme:ThemeData.dark().copyWith(
           //backgroundColor: Color(0xFF4A5065),
           scaffoldBackgroundColor: Color(0xFF1D1F2D),
@@ -75,6 +77,7 @@ class _MyAppState extends State<MyApp> {
           )),
       theme:ThemeData.light().copyWith(
           appBarTheme: AppBarTheme(color: Colors.teal),
+         // textSelectionColor: Colors.black,
           floatingActionButtonTheme:
           FloatingActionButtonThemeData(backgroundColor: Colors.teal)),
 //      theme: ThemeData.light().copyWith(

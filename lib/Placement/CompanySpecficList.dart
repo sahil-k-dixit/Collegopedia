@@ -49,7 +49,7 @@ class _CompanySpecificPlacementPageState
     print(s);
     return Scaffold(
      // backgroundColor: Color(0xFF1D1F2D),
-      drawer: DrawerrBarr(),
+//      drawer: DrawerrBarr(),
       appBar: AppBar(
         title: Center(child: Text(s,style: appBarHeaderTextStyle,)),
       ),

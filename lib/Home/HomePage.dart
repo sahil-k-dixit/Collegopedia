@@ -181,7 +181,7 @@ class _HomeState extends State<Home> {
                   ("HI " + userName.split(" ")[0]).toUpperCase(),
                   textAlign: TextAlign.center,
                   style: GoogleFonts.lato(
-                      textStyle: Theme.of(context).textTheme.display1,
+                      //textStyle: Theme.of(context).textTheme.display1,
                      // color: Colors.white,
                       fontStyle: FontStyle.italic,
                       fontSize: 12),
@@ -200,7 +200,7 @@ class _HomeState extends State<Home> {
                 child: Text(
                   'Welcome to Collegopedia',
                   style: GoogleFonts.lato(
-                      textStyle: Theme.of(context).textTheme.display1,
+                      //textStyle: Theme.of(context).textTheme.display1,
                      // color: Colors.white,
                       fontSize: 16,
                       fontWeight: FontWeight.bold),

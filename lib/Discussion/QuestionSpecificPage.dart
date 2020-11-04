@@ -59,8 +59,8 @@ class _QuestionSpecificPageState extends State<QuestionSpecificPage> {
                               questionText,
 // textAlign: TextAlign.center,
                               style: GoogleFonts.lato(
-                                  textStyle:
-                                      Theme.of(context).textTheme.display1,
+//                                  textStyle:
+//                                      Theme.of(context).textTheme.display1,
                                  // color: Colors.white,
                                   fontSize: 18,
                                   fontWeight: FontWeight.normal),
@@ -152,9 +152,9 @@ class _QuestionSpecificPageState extends State<QuestionSpecificPage> {
                                           Text(
                                             'Write Answer',
                                             style: GoogleFonts.lato(
-                                                textStyle: Theme.of(context)
-                                                    .textTheme
-                                                    .display1,
+//                                                textStyle: Theme.of(context)
+//                                                    .textTheme
+//                                                    .display1,
                                                 color: Colors.redAccent,
                                                 fontSize: 14,
                                                 fontWeight: FontWeight.normal),
@@ -264,7 +264,7 @@ class AnswerItem extends StatelessWidget {
                 trimCollapsedText: '...Show more',
                 trimExpandedText: ' show less',
                 style: GoogleFonts.lato(
-                    textStyle: Theme.of(context).textTheme.display1,
+                   // textStyle: Theme.of(context).textTheme.display1,
                   //  color: Colors.white,
                     fontSize: 16,
                     fontWeight: FontWeight.normal),

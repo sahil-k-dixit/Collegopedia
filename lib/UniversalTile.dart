@@ -68,7 +68,7 @@ class MainTile extends StatelessWidget {
             heading,
             textAlign: TextAlign.center,
             style: GoogleFonts.lato(
-                textStyle: Theme.of(context).textTheme.display1,
+               // textStyle: Theme.of(context).textTheme.display1,
                // color: Colors.white,
                 fontWeight: FontWeight.bold,
                 fontSize: 16),

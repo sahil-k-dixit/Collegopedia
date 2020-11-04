@@ -55,9 +55,9 @@ class CompanyListTile extends StatelessWidget {
               Expanded(
                 child: Center(child: Text(companyName,textAlign: TextAlign.center,
                   style: GoogleFonts.lato(
-                      textStyle: Theme.of(context).textTheme.display1,
+                     // textStyle: Theme.of(context).textTheme.display1,
                      // color: Colors.white,
-                      fontWeight: FontWeight.normal,
+                      fontWeight: FontWeight.bold,
                       fontSize: 16),)),
                 flex: 3,
               ),

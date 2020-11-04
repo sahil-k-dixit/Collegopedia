@@ -44,7 +44,7 @@ class _PlacementPageState extends State<PlacementPage> {
 //              })
 //        ],
       ),
-      drawer: DrawerrBarr(),
+//      drawer: DrawerrBarr(),
       body: StreamBuilder(
           stream: FirebaseDatabase().reference().child('Placements').onValue,
           builder: (context, snap) {

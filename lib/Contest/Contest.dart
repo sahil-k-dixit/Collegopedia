@@ -11,7 +11,7 @@ class Contest extends StatelessWidget {
         appBar: AppBar(
           title: Center(child: Text("Contest",style: appBarHeaderTextStyle,)),
         ),
-        drawer: DrawerrBarr(),
+//        drawer: DrawerrBarr(),
        // backgroundColor: Color(0xFF1D1F2D),
         body: ListView(
           children: <Widget>[
